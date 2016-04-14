@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <data class="OtherBinding">
+        <variable
+            name="viewModel"
+            type="com.llbt.meepwn.lincoinblock.main.view_model.OtherViewModel"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:onClick="@{viewModel.handleClick}"
+        >
+
+        <TextView
+            android:text="@{viewModel.model.name}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            />
+        <TextView
+            android:text="@{viewModel.model.age}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+</layout>
