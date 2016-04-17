@@ -40,7 +40,7 @@ class UserModel : BaseModel() {
     }
 
     override fun toString(): String {
-        return "UserModel(lastName=$lastName, name=$name, imageUrl='$imageUrl', watcher=$watcher)"
+        return "UserModel(lastName=${lastName.get()}, name=$name, imageUrl='$imageUrl', watcher=$watcher)"
     }
 
 }
