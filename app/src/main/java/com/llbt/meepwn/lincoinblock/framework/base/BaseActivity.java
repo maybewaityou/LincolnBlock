@@ -21,4 +21,16 @@ public class BaseActivity<M extends Model, VM extends ViewModel, S extends Servi
     protected VM viewModel;
     protected S service;
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+    }
+
 }
