@@ -1,4 +1,4 @@
-package com.llbt.meepwn.lincoinblock.main.adapter
+package com.llbt.meepwn.lincoinblock.main.view.adapter
 
 import android.content.Context
 import android.databinding.DataBindingUtil

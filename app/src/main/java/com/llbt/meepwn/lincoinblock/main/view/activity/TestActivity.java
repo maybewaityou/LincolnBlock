@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.llbt.meepwn.lincoinblock.R;
 import com.llbt.meepwn.lincoinblock.framework.base.BaseActivity;
-import com.llbt.meepwn.lincoinblock.main.adapter.RecycleViewAdapter;
+import com.llbt.meepwn.lincoinblock.main.view.adapter.RecycleViewAdapter;
 import com.llbt.meepwn.lincoinblock.main.model.ItemModel;
 import com.llbt.meepwn.lincoinblock.main.service.ItemService;
 import com.llbt.meepwn.lincoinblock.main.view_model.ItemViewModel;

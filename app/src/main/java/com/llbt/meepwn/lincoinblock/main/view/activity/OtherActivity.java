@@ -4,7 +4,7 @@ import android.databinding.ObservableField;
 import android.os.Bundle;
 import android.widget.ListView;
 
-import com.llbt.meepwn.lincoinblock.main.adapter.OtherAdapter;
+import com.llbt.meepwn.lincoinblock.main.view.adapter.OtherAdapter;
 import com.llbt.meepwn.lincoinblock.R;
 import com.llbt.meepwn.lincoinblock.framework.base.BaseActivity;
 import com.llbt.meepwn.lincoinblock.main.model.OtherModel;
