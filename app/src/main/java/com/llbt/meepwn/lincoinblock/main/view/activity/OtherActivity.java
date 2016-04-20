@@ -1,18 +1,14 @@
 package com.llbt.meepwn.lincoinblock.main.view.activity;
 
-import android.databinding.ObservableField;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.widget.ListView;
 
-import com.llbt.meepwn.lincoinblock.main.view.adapter.OtherAdapter;
 import com.llbt.meepwn.lincoinblock.R;
+import com.llbt.meepwn.lincoinblock.databinding.OtherBinding;
+import com.llbt.meepwn.lincoinblock.framework.NullableValue;
 import com.llbt.meepwn.lincoinblock.framework.base.BaseActivity;
-import com.llbt.meepwn.lincoinblock.main.model.OtherModel;
 import com.llbt.meepwn.lincoinblock.main.service.OtherService;
-import com.llbt.meepwn.lincoinblock.main.view_model.OtherItemViewModel;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.llbt.meepwn.lincoinblock.main.view_model.OtherViewModel;
 
 /**
  * package: com.llbt.meepwn.lincoinblock
@@ -23,56 +19,16 @@ import java.util.List;
  * <p>
  * desc:
  */
-public class OtherActivity extends BaseActivity<OtherModel, OtherItemViewModel, OtherService> {
-
-    private List<OtherItemViewModel> dataList;
-    private OtherAdapter adapter;
-    private ListView listView;
+public class OtherActivity extends BaseActivity<NullableValue, OtherViewModel, OtherService> {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_other);
-
-        initialize();
-    }
-
-    private void initialize() {
-        initData();
-        initTitle();
-        setupTitle();
-        initViews();
-        setupViews();
-    }
-
-    private void initData() {
-        dataList = new ArrayList<>();
-        for (int i = 0; i < 20; i ++) {
-            OtherModel otherModel = new OtherModel();
-            otherModel.getAge().set("== age =>>> " + i);
-            otherModel.getName().set("== Jake =>>> " + i);
-            ObservableField<OtherModel> itemModel = new ObservableField<>(otherModel);
-            OtherService service = new OtherService(this);
-            OtherItemViewModel viewModel = new OtherItemViewModel(service, itemModel);
-            dataList.add(viewModel);
-        }
-        adapter = new OtherAdapter(this, dataList);
-    }
-
-    private void initTitle() {
-
-    }
-
-    private void setupTitle() {
-
-    }
-
-    private void initViews() {
-        listView = (ListView) findViewById(R.id.listView);
-    }
-
-    private void setupViews() {
-        listView.setAdapter(adapter);
+        OtherBinding binding = DataBindingUtil.setContentView(this, R.layout.act_other);
+        service = new OtherService(this);
+        viewModel = new OtherViewModel(service);
+        binding.listView.setAdapter(viewModel.fetchAdapter());
+        binding.listView.setOnItemClickListener(viewModel);
     }
 
 }

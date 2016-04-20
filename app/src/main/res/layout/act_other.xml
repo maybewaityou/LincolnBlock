@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ListView
-        android:id="@+id/listView"
+    <data class="OtherBinding">
+        <import type="com.llbt.meepwn.lincoinblock.main.view_model.OtherViewModel"/>
+
+        <variable
+            name="viewModel"
+            type="OtherViewModel"/>
+    </data>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:divider="#ffff0000"
-        android:dividerHeight="1dp"
-        />
+        android:layout_height="match_parent">
 
-</RelativeLayout>
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#ffff0000"
+            android:dividerHeight="1dp"
+            />
+    </RelativeLayout>
+
+</layout>

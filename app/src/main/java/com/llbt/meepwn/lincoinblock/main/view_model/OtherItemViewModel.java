@@ -4,8 +4,8 @@ import android.databinding.ObservableField;
 import android.view.View;
 
 import com.llbt.meepwn.lincoinblock.framework.base.BaseViewModel;
-import com.llbt.meepwn.lincoinblock.main.model.OtherModel;
-import com.llbt.meepwn.lincoinblock.main.service.OtherService;
+import com.llbt.meepwn.lincoinblock.main.model.OtherItemModel;
+import com.llbt.meepwn.lincoinblock.main.service.OtherItemService;
 
 /**
  * package: com.llbt.meepwn.lincoinblock.main.view_model
@@ -15,9 +15,9 @@ import com.llbt.meepwn.lincoinblock.main.service.OtherService;
  * date: 16/4/14 下午1:32
  * desc:
  */
-public class OtherItemViewModel extends BaseViewModel<OtherModel, OtherService> {
+public class OtherItemViewModel extends BaseViewModel<OtherItemModel, OtherItemService> {
 
-    public OtherItemViewModel(OtherService service, ObservableField<OtherModel> model) {
+    public OtherItemViewModel(OtherItemService service, ObservableField<OtherItemModel> model) {
         super(service, model);
     }
 

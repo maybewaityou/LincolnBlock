@@ -11,7 +11,7 @@ import com.llbt.meepwn.lincoinblock.framework.base.BaseModel
  * date: 16/4/6 下午5:02
  * desc:
  */
-class OtherModel : BaseModel() {
+class OtherItemModel : BaseModel() {
 
     var name = ObservableField<String>()
     var age = ObservableField<String>()

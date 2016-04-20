@@ -11,7 +11,7 @@ import com.llbt.meepwn.lincoinblock.framework.base.BaseModel
  * date: 16/4/5 下午5:39
  * desc:
  */
-class ItemModel : BaseModel() {
+class TestItemModel : BaseModel() {
 
     var text = ObservableField<String>()
 

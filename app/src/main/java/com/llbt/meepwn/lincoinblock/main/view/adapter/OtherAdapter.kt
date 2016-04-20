@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import com.llbt.meepwn.lincoinblock.R
-import com.llbt.meepwn.lincoinblock.databinding.OtherBinding
+import com.llbt.meepwn.lincoinblock.databinding.OtherItemBinding
 import com.llbt.meepwn.lincoinblock.main.view_model.OtherItemViewModel
 
 /**
@@ -18,7 +18,7 @@ import com.llbt.meepwn.lincoinblock.main.view_model.OtherItemViewModel
  * date: 16/4/6 下午5:06
  * desc:
  */
-class OtherAdapter(context: Context, private val dataList: List<OtherItemViewModel>) : BaseAdapter() {
+class OtherAdapter(context: Context, private var dataList: List<OtherItemViewModel>) : BaseAdapter() {
     private val inflater: LayoutInflater
 
     init {
@@ -40,19 +40,28 @@ class OtherAdapter(context: Context, private val dataList: List<OtherItemViewMod
     @Suppress("NAME_SHADOWING")
     override fun getView(position: Int, convertView: View?, viewGroup: ViewGroup): View {
         var convertView = convertView
-        val binding: OtherBinding
+        val binding: OtherItemBinding
         if (convertView == null) {
-            binding = DataBindingUtil.inflate<OtherBinding>(inflater, R.layout.other, viewGroup, false)
+            binding = DataBindingUtil.inflate<OtherItemBinding>(inflater, R.layout.other, viewGroup, false)
             convertView = binding.root
             convertView!!.tag = binding
         } else {
-            binding = convertView.tag as OtherBinding
+            binding = convertView.tag as OtherItemBinding
         }
         val viewModel = dataList[position]
         binding.viewModel= viewModel
         binding.executePendingBindings()
 
         return convertView
+    }
+
+    fun getDataList() : List<OtherItemViewModel>{
+        return dataList
+    }
+
+    fun updateWithDataList(dataList: List<OtherItemViewModel>) {
+        this.dataList = dataList
+        notifyDataSetChanged()
     }
 
 }

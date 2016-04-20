@@ -11,6 +11,5 @@ import rx.Observable;
  * desc:
  */
 public interface Service {
-
     Observable sendRequest();
 }

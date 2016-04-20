@@ -8,8 +8,8 @@ import android.support.v7.widget.RecyclerView;
 import com.llbt.meepwn.lincoinblock.R;
 import com.llbt.meepwn.lincoinblock.framework.base.BaseActivity;
 import com.llbt.meepwn.lincoinblock.main.view.adapter.RecycleViewAdapter;
-import com.llbt.meepwn.lincoinblock.main.model.ItemModel;
-import com.llbt.meepwn.lincoinblock.main.service.ItemService;
+import com.llbt.meepwn.lincoinblock.main.model.TestItemModel;
+import com.llbt.meepwn.lincoinblock.main.service.TestItemService;
 import com.llbt.meepwn.lincoinblock.main.view_model.TestItemViewModel;
 
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ import java.util.List;
  * <p/>
  * desc:
  */
-public class TestActivity extends BaseActivity<ItemModel, TestItemViewModel, ItemService> {
+public class TestActivity extends BaseActivity<TestItemModel, TestItemViewModel, TestItemService> {
 
     private List<TestItemViewModel> dataList;
     private RecycleViewAdapter adapter;
@@ -49,10 +49,10 @@ public class TestActivity extends BaseActivity<ItemModel, TestItemViewModel, Ite
     private void initData() {
         dataList = new ArrayList<>();
         for (int i=0; i<20; i++) {
-            ItemModel model = new ItemModel();
+            TestItemModel model = new TestItemModel();
             model.getText().set("====>>>> " + i);
-            ObservableField<ItemModel> itemModel = new ObservableField<>(model);
-            ItemService service = new ItemService(this);
+            ObservableField<TestItemModel> itemModel = new ObservableField<>(model);
+            TestItemService service = new TestItemService(this);
             TestItemViewModel viewModel = new TestItemViewModel(service, itemModel);
             dataList.add(viewModel);
         }

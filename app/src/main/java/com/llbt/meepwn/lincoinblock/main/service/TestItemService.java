@@ -13,9 +13,9 @@ import com.llbt.meepwn.lincoinblock.main.data_model.ItemDataModel;
  * date: 16/4/14 下午1:10
  * desc:
  */
-public class ItemService extends BaseService<ItemDataModel> {
+public class TestItemService extends BaseService<ItemDataModel> {
 
-    public ItemService(Context context) {
+    public TestItemService(Context context) {
         super(context);
     }
 

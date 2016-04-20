@@ -19,6 +19,10 @@ public class BaseViewModel<M extends Model, S extends Service> implements ViewMo
     protected ObservableField<M> model;
     protected S service;
 
+    public BaseViewModel(S service) {
+        this.service = service;
+    }
+
     public BaseViewModel(S service, ObservableField<M> model) {
         this.service = service;
         this.model = model;
