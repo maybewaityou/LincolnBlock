@@ -2,7 +2,7 @@ package com.llbt.meepwn.lincoinblock.main.model
 
 import android.databinding.ObservableField
 import com.llbt.meepwn.lincoinblock.framework.base.BaseModel
-import com.llbt.meepwn.lincoinblock.utils.EditTextWatcher
+import com.llbt.meepwn.lincoinblock.utils.binding.EditTextWatcher
 
 /**
  * package: com.llbt.meepwn.lincoinblock.main.model

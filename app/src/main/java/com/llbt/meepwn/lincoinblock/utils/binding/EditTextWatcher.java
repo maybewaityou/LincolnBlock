@@ -1,4 +1,4 @@
-package com.llbt.meepwn.lincoinblock.utils;
+package com.llbt.meepwn.lincoinblock.utils.binding;
 
 import android.text.Editable;
 import android.text.TextWatcher;
