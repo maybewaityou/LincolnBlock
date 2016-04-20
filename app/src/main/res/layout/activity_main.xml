@@ -74,6 +74,8 @@
             android:layout_centerInParent="true"
             android:gravity="center"
             />
+            <!--android:background="@{viewModel.isError ? @color/red : @color/white}"-->
+
             <!--android:addTextChangedListener="@{viewModel.model.watcher}"-->
 
     </RelativeLayout>
