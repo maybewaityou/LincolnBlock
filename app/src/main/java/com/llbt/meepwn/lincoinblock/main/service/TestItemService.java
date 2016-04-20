@@ -3,7 +3,7 @@ package com.llbt.meepwn.lincoinblock.main.service;
 import android.content.Context;
 
 import com.llbt.meepwn.lincoinblock.framework.base.BaseService;
-import com.llbt.meepwn.lincoinblock.main.data_model.ItemDataModel;
+import com.llbt.meepwn.lincoinblock.main.data_model.TestItemDataModel;
 
 /**
  * package: com.llbt.meepwn.lincoinblock.main.service
@@ -13,14 +13,14 @@ import com.llbt.meepwn.lincoinblock.main.data_model.ItemDataModel;
  * date: 16/4/14 下午1:10
  * desc:
  */
-public class TestItemService extends BaseService<ItemDataModel> {
+public class TestItemService extends BaseService<TestItemDataModel> {
 
     public TestItemService(Context context) {
         super(context);
     }
 
     @Override
-    protected void pushActivityWithDataModel(ItemDataModel dataModel, Class clazz) {
+    protected void pushActivityWithDataModel(TestItemDataModel dataModel, Class clazz) {
 
     }
 }

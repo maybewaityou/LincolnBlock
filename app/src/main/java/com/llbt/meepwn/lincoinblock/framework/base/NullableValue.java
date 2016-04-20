@@ -1,5 +1,9 @@
-package com.llbt.meepwn.lincoinblock.framework;
+package com.llbt.meepwn.lincoinblock.framework.base;
 
+import com.llbt.meepwn.lincoinblock.framework.DataModel;
+import com.llbt.meepwn.lincoinblock.framework.Model;
+import com.llbt.meepwn.lincoinblock.framework.Service;
+import com.llbt.meepwn.lincoinblock.framework.ViewModel;
 import com.llbt.meepwn.lincoinblock.utils.network.Just;
 
 import rx.Observable;

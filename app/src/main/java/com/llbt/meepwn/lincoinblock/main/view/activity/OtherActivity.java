@@ -5,8 +5,8 @@ import android.os.Bundle;
 
 import com.llbt.meepwn.lincoinblock.R;
 import com.llbt.meepwn.lincoinblock.databinding.OtherBinding;
-import com.llbt.meepwn.lincoinblock.framework.NullableValue;
 import com.llbt.meepwn.lincoinblock.framework.base.BaseActivity;
+import com.llbt.meepwn.lincoinblock.framework.nullable.ModelNullable;
 import com.llbt.meepwn.lincoinblock.main.service.OtherService;
 import com.llbt.meepwn.lincoinblock.main.view_model.OtherViewModel;
 
@@ -19,7 +19,7 @@ import com.llbt.meepwn.lincoinblock.main.view_model.OtherViewModel;
  * <p>
  * desc:
  */
-public class OtherActivity extends BaseActivity<NullableValue, OtherViewModel, OtherService> {
+public class OtherActivity extends BaseActivity<ModelNullable, OtherViewModel, OtherService> {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
