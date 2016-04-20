@@ -10,7 +10,7 @@ import com.llbt.meepwn.lincoinblock.framework.base.BaseActivity;
 import com.llbt.meepwn.lincoinblock.main.view.adapter.RecycleViewAdapter;
 import com.llbt.meepwn.lincoinblock.main.model.ItemModel;
 import com.llbt.meepwn.lincoinblock.main.service.ItemService;
-import com.llbt.meepwn.lincoinblock.main.view_model.ItemViewModel;
+import com.llbt.meepwn.lincoinblock.main.view_model.TestItemViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,9 +24,9 @@ import java.util.List;
  * <p/>
  * desc:
  */
-public class TestActivity extends BaseActivity<ItemModel, ItemViewModel, ItemService> {
+public class TestActivity extends BaseActivity<ItemModel, TestItemViewModel, ItemService> {
 
-    private List<ItemViewModel> dataList;
+    private List<TestItemViewModel> dataList;
     private RecycleViewAdapter adapter;
     private RecyclerView recyclerView;
 
@@ -53,7 +53,7 @@ public class TestActivity extends BaseActivity<ItemModel, ItemViewModel, ItemSer
             model.getText().set("====>>>> " + i);
             ObservableField<ItemModel> itemModel = new ObservableField<>(model);
             ItemService service = new ItemService(this);
-            ItemViewModel viewModel = new ItemViewModel(service, itemModel);
+            TestItemViewModel viewModel = new TestItemViewModel(service, itemModel);
             dataList.add(viewModel);
         }
     }

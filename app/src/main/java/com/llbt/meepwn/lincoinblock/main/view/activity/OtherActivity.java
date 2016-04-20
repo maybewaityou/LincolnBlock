@@ -9,7 +9,7 @@ import com.llbt.meepwn.lincoinblock.R;
 import com.llbt.meepwn.lincoinblock.framework.base.BaseActivity;
 import com.llbt.meepwn.lincoinblock.main.model.OtherModel;
 import com.llbt.meepwn.lincoinblock.main.service.OtherService;
-import com.llbt.meepwn.lincoinblock.main.view_model.OtherViewModel;
+import com.llbt.meepwn.lincoinblock.main.view_model.OtherItemViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,9 +23,9 @@ import java.util.List;
  * <p>
  * desc:
  */
-public class OtherActivity extends BaseActivity<OtherModel, OtherViewModel, OtherService> {
+public class OtherActivity extends BaseActivity<OtherModel, OtherItemViewModel, OtherService> {
 
-    private List<OtherViewModel> dataList;
+    private List<OtherItemViewModel> dataList;
     private OtherAdapter adapter;
     private ListView listView;
 
@@ -53,7 +53,7 @@ public class OtherActivity extends BaseActivity<OtherModel, OtherViewModel, Othe
             otherModel.getName().set("== Jake =>>> " + i);
             ObservableField<OtherModel> itemModel = new ObservableField<>(otherModel);
             OtherService service = new OtherService(this);
-            OtherViewModel viewModel = new OtherViewModel(service, itemModel);
+            OtherItemViewModel viewModel = new OtherItemViewModel(service, itemModel);
             dataList.add(viewModel);
         }
         adapter = new OtherAdapter(this, dataList);

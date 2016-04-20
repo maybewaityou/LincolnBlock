@@ -3,21 +3,21 @@ package com.llbt.meepwn.lincoinblock.main.view_model;
 import android.databinding.ObservableField;
 import android.view.View;
 
+import com.llbt.meepwn.lincoinblock.main.model.ItemModel;
 import com.llbt.meepwn.lincoinblock.framework.base.BaseViewModel;
-import com.llbt.meepwn.lincoinblock.main.model.OtherModel;
-import com.llbt.meepwn.lincoinblock.main.service.OtherService;
+import com.llbt.meepwn.lincoinblock.main.service.ItemService;
 
 /**
  * package: com.llbt.meepwn.lincoinblock.main.view_model
  * author: MeePwn
  * email: maybewaityou@gmail.com
  * github: https://github.com/maybewaityou
- * date: 16/4/14 下午1:32
+ * date: 16/4/14 下午1:10
  * desc:
  */
-public class OtherViewModel extends BaseViewModel<OtherModel, OtherService> {
+public class TestItemViewModel extends BaseViewModel<ItemModel, ItemService> {
 
-    public OtherViewModel(OtherService service, ObservableField<OtherModel> model) {
+    public TestItemViewModel(ItemService service, ObservableField<ItemModel> model) {
         super(service, model);
     }
 

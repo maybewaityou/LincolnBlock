@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.llbt.meepwn.lincoinblock.R
 import com.llbt.meepwn.lincoinblock.databinding.ItemBinding
-import com.llbt.meepwn.lincoinblock.main.view_model.ItemViewModel
+import com.llbt.meepwn.lincoinblock.main.view_model.TestItemViewModel
 
 /**
  * package: com.llbt.meepwn.lincoinblock
@@ -18,7 +18,7 @@ import com.llbt.meepwn.lincoinblock.main.view_model.ItemViewModel
  * date: 16/4/12 上午11:50
  * desc:
  */
-class RecycleViewAdapter(private val context: Context, private val list: List<ItemViewModel>) : RecyclerView.Adapter<RecycleViewAdapter.ViewHolder>() {
+class RecycleViewAdapter(private val context: Context, private val list: List<TestItemViewModel>) : RecyclerView.Adapter<RecycleViewAdapter.ViewHolder>() {
     private val inflater: LayoutInflater
 
     init {

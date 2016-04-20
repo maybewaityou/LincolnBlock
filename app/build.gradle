@@ -91,6 +91,15 @@ dependencies {
     compile 'io.reactivex:rxjava:1.1.0'
     // Rx end
 
+    // agera start -- Google Reactive Programming for Android
+    compile 'com.google.android.agera:agera:1.0.0-RC1'
+    // Agera Sample Extensions
+    compile 'com.google.android.agera:content:1.0.0-RC1'
+    compile 'com.google.android.agera:database:1.0.0-RC1'
+    compile 'com.google.android.agera:net:1.0.0-RC1'
+    compile 'com.google.android.agera:rvadapter:1.0.0-RC1'
+    // agera end -- Google Reactive Programming for Android
+
     // retrofit start
     compile 'com.squareup.retrofit2:retrofit:2.0.1'
     compile 'com.squareup.retrofit2:converter-gson:2.0.1'

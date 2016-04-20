@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import com.llbt.meepwn.lincoinblock.R
 import com.llbt.meepwn.lincoinblock.databinding.OtherBinding
-import com.llbt.meepwn.lincoinblock.main.view_model.OtherViewModel
+import com.llbt.meepwn.lincoinblock.main.view_model.OtherItemViewModel
 
 /**
  * package: com.llbt.meepwn.lincoinblock
@@ -18,7 +18,7 @@ import com.llbt.meepwn.lincoinblock.main.view_model.OtherViewModel
  * date: 16/4/6 下午5:06
  * desc:
  */
-class OtherAdapter(context: Context, private val dataList: List<OtherViewModel>) : BaseAdapter() {
+class OtherAdapter(context: Context, private val dataList: List<OtherItemViewModel>) : BaseAdapter() {
     private val inflater: LayoutInflater
 
     init {
