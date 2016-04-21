@@ -21,7 +21,11 @@ public class TestFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
+//        binding = DataBindingUtil.inflate(inflater,R.layout.frag_layout, container, false);
+//        mStu = new Student(20, "loader");
+//        binding.setStu(mStu);
+//        binding.setFrag(this);
+//        return binding.getRoot();
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
