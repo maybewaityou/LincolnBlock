@@ -29,7 +29,6 @@ public class TestCustomView extends View {
         if(text == null) return;
 
         mText = text.toString();
-        System.out.println("== text ===>>>> " + mText);
     }
 
     public final String getText() {
