@@ -21,11 +21,7 @@ public class TestFragmentViewModel extends BaseViewModel<TestFragmentModel, Test
         super(service, model);
     }
 
-    int tag = 0;
     public void handleClick(View view) {
-        TestFragmentModel m = new TestFragmentModel();
-        m.getName().set("张三 == " + tag++);
-        m.getAge().set("age == " + tag);
-        model.set(m);
+        
     }
 }
