@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
 
     <data class="TestFragmentBinding">
         <import type="com.llbt.meepwn.lincoinblock.main.view_model.TestFragmentViewModel"/>
@@ -21,12 +22,14 @@
             android:text="button"
             />
 
-        <TextView
+        <!--<TextView-->
+        <com.llbt.meepwn.lincoinblock.main.view.custom_view.TestCustomView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:text="@{viewModel.model.name}"
+            custom:text="@{viewModel.model.name}"
             />
+            <!--android:text="@{viewModel.model.name}"-->
 
     </LinearLayout>
 
