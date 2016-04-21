@@ -52,6 +52,7 @@
         </activity>
         <activity android:name=".main.view.activity.TestActivity"/>
         <activity android:name=".main.view.activity.OtherActivity"/>
+        <activity android:name=".main.view.activity.TestFragmentActivity"/>
     </application>
 
 </manifest>

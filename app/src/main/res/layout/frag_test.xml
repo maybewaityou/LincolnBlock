@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="TestFragmentBinding">
+        <import type="com.llbt.meepwn.lincoinblock.main.view_model.TestFragmentViewModel"/>
+        <variable
+            name="viewModel"
+            type="TestFragmentViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{viewModel.handleClick}"
+            android:text="button"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:text="@{viewModel.model.name}"
+            />
+
+    </LinearLayout>
+
+</layout>
+

@@ -10,6 +10,6 @@ import com.llbt.meepwn.lincoinblock.framework.base.BaseDataModel;
  * date: 16/4/14 下午1:31
  * desc:
  */
-public class OtherDataModel extends BaseDataModel {
+public class OtherItemDataModel extends BaseDataModel {
 
 }

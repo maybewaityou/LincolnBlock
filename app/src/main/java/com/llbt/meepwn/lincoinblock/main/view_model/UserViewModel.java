@@ -9,6 +9,7 @@ import com.llbt.meepwn.lincoinblock.main.model.UserModel;
 import com.llbt.meepwn.lincoinblock.main.service.UserService;
 import com.llbt.meepwn.lincoinblock.main.view.activity.OtherActivity;
 import com.llbt.meepwn.lincoinblock.main.view.activity.TestActivity;
+import com.llbt.meepwn.lincoinblock.main.view.activity.TestFragmentActivity;
 
 import rx.Observable;
 import rx.functions.Func1;
@@ -34,6 +35,8 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
             service.pushActivityWithDataModel(null, OtherActivity.class);
         } else if (view.getId() == R.id.testButton) {
             service.pushActivityWithDataModel(null, TestActivity.class);
+        } else if (view.getId() == R.id.fragmentButton) {
+            service.pushActivityWithDataModel(null, TestFragmentActivity.class);
         } else {
             service.sendRequest().flatMap((Func1) user -> {
                  // TODO 类型转换
