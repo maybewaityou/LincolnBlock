@@ -45,8 +45,22 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
                     "    \"lastName\": \"Chunnan\",\n" +
                     "    \"dog\": {\n" +
                     "        \"dogName\": \"doge\",\n" +
-                    "       \"age\": \"2333333\"\n" +
-                    "    }\n" +
+                    "        \"age\": \"11\"\n" +
+                    "    },\n" +
+                    "    \"books\": [\n" +
+                    "        {\n" +
+                    "            \"bookName\": \"Swift\",\n" +
+                    "            \"price\": \"¥65\"\n" +
+                    "        },\n" +
+                    "        {\n" +
+                    "            \"bookName\": \"Objective C\",\n" +
+                    "            \"price\": \"¥45\"\n" +
+                    "        },\n" +
+                    "        {\n" +
+                    "            \"bookName\": \"iOS\",\n" +
+                    "            \"price\": \"¥85\"\n" +
+                    "        }\n" +
+                    "    ]\n" +
                     "}";
             TestJsonModel m = TestJsonModel.initWithJsonString(jsonString);
             System.out.println("====>>>> " + m);
