@@ -110,6 +110,10 @@ dependencies {
     compile 'com.squareup.phrase:phrase:1.1.0'
     // phrase end -- Square's StringUtility
 
+    // fastJson start
+    compile 'com.alibaba:fastjson:1.2.9'
+    // fastJson end
+
     // dagger start
 //    apt 'com.google.dagger:dagger-compiler:2.2'
 //    compile 'com.google.dagger:dagger:2.2'
