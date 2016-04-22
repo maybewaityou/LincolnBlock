@@ -65,6 +65,18 @@
             android:text="Test Fragment"
             />
 
+        <Button
+            android:id="@+id/jsonToModel"
+            android:onClick="@{viewModel.handleClick}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fragmentButton"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:text="Json To Model"
+            />
+
         <!--
         <ImageView
             android:id="@+id/imageView"
