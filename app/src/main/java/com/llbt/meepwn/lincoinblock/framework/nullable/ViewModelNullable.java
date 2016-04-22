@@ -10,6 +10,6 @@ import com.llbt.meepwn.lincoinblock.framework.base.NullableValue;
  * date: 16/4/20 下午12:35
  * desc:
  */
-public class ViewModelNullable extends NullableValue {
+public abstract class ViewModelNullable extends NullableValue {
     
 }

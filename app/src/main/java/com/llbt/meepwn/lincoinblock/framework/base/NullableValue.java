@@ -16,7 +16,7 @@ import rx.Observable;
  * date: 16/4/20 上午11:07
  * desc:
  */
-public class NullableValue implements Model, ViewModel, Service, DataModel {
+public abstract class NullableValue implements Model, ViewModel, Service, DataModel {
 
     @Override
     public Observable sendRequest() {

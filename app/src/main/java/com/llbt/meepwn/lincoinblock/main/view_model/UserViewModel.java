@@ -3,7 +3,6 @@ package com.llbt.meepwn.lincoinblock.main.view_model;
 import android.databinding.ObservableField;
 import android.view.View;
 
-import com.alibaba.fastjson.JSON;
 import com.llbt.meepwn.lincoinblock.R;
 import com.llbt.meepwn.lincoinblock.framework.base.BaseViewModel;
 import com.llbt.meepwn.lincoinblock.main.model.TestJsonModel;
@@ -12,6 +11,7 @@ import com.llbt.meepwn.lincoinblock.main.service.UserService;
 import com.llbt.meepwn.lincoinblock.main.view.activity.OtherActivity;
 import com.llbt.meepwn.lincoinblock.main.view.activity.TestActivity;
 import com.llbt.meepwn.lincoinblock.main.view.activity.TestFragmentActivity;
+import com.llbt.meepwn.lincoinblock.utils.network.json_parser.JsonParser;
 
 import rx.Observable;
 import rx.functions.Func1;
@@ -43,11 +43,10 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
             String jsonString = "{" +
                     "\"name\" : " + "\"" + "MeePwn" + "\"" +
                     ", \"age\" : " + "\"" + "233333" + "\"" +
+                    ", \"lastName\" : " + "\"" + "dong" + "\"" +
                     "}";
-            TestJsonModel m = JSON.parseObject(jsonString, TestJsonModel.class);
+            TestJsonModel m = JsonParser.<TestJsonModel>parse(jsonString, TestJsonModel.class);
             System.out.println("====>>>> " + m);
-
-
         } else {
             service.sendRequest().flatMap((Func1) user -> {
                  // TODO 类型转换
