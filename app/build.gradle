@@ -111,7 +111,8 @@ dependencies {
     // phrase end -- Square's StringUtility
 
     // fastJson start
-    compile 'com.alibaba:fastjson:1.2.9'
+    // compile 'com.alibaba:fastjson:1.2.9'         // just for java
+    compile 'com.alibaba:fastjson:1.1.49-android'
     // fastJson end
 
     // dagger start
