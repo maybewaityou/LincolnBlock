@@ -5,7 +5,7 @@ import android.view.View;
 
 import com.llbt.meepwn.lincoinblock.R;
 import com.llbt.meepwn.lincoinblock.framework.base.BaseViewModel;
-import com.llbt.meepwn.lincoinblock.main.model.TestJsonModel;
+import com.llbt.meepwn.lincoinblock.main.model.test_json.TestJsonModel;
 import com.llbt.meepwn.lincoinblock.main.model.UserModel;
 import com.llbt.meepwn.lincoinblock.main.service.UserService;
 import com.llbt.meepwn.lincoinblock.main.view.activity.OtherActivity;
@@ -40,13 +40,17 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
         } else if (view.getId() == R.id.fragmentButton) {
             service.pushActivityWithDataModel(null, TestFragmentActivity.class);
         } else if (view.getId() == R.id.jsonToModel) {
-            String jsonString = "{" +
-                    "\"name\" : " + "\"" + "MeePwn" + "\"" +
-                    ", \"age\" : " + "\"" + "233333" + "\"" +
-                    ", \"lastName\" : " + "\"" + "dong" + "\"" +
+            String jsonString = "{\n" +
+                    "    \"name\": \"MeePwn\",\n" +
+                    "    \"age\": \"233333\",\n" +
+                    "    \"lastName\": \"dong\",\n" +
+                    "    \"dog\": {\n" +
+                    "        \"dogName\": \"daoge\"\n" +
+                    "    }\n" +
                     "}";
             TestJsonModel m = JsonParser.<TestJsonModel>parse(jsonString, TestJsonModel.class);
-            System.out.println("====>>>> " + m);
+//            m.getmDog().get()
+            System.out.println("====>>>> " + m.getmDog().get().getClass());
         } else {
             service.sendRequest().flatMap((Func1) user -> {
                  // TODO 类型转换

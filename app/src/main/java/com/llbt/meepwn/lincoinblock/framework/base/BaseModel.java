@@ -20,7 +20,7 @@ import java.util.Map;
 @SuppressWarnings("unchecked")
 public class BaseModel implements Model {
 
-    protected Map<String, String> attrs;
+    protected Map<String, Object> attrs;
 
     @Override
     public void setupData() {
@@ -38,7 +38,7 @@ public class BaseModel implements Model {
 
                 try {
                     Method m = getClass().getMethod("get"+name);
-                    ObservableField<String> field = (ObservableField<String>) m.invoke(this);    //调用getter方法获取属性值
+                    ObservableField field = (ObservableField) m.invoke(this);    //调用getter方法获取属性值
                     field.set(attrs.get(key));
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -47,7 +47,7 @@ public class BaseModel implements Model {
         }
     }
 
-    public Map<String, String> getAttrs() {
+    public Map<String, Object> getAttrs() {
         if (attrs == null) {
             attrs = new HashMap<>();
         }

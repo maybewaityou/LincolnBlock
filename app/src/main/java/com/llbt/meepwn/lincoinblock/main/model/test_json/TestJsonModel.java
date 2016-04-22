@@ -1,4 +1,4 @@
-package com.llbt.meepwn.lincoinblock.main.model;
+package com.llbt.meepwn.lincoinblock.main.model.test_json;
 
 import android.databinding.ObservableField;
 
@@ -17,6 +17,7 @@ public class TestJsonModel extends BaseModel {
     private ObservableField<String> mName = new ObservableField<>();
     private ObservableField<String> mAge = new ObservableField<>();
     private ObservableField<String> mLastName = new ObservableField<>();
+    private ObservableField<TestInnerJsonModel> mDog = new ObservableField<>();
 
     public ObservableField<String> getmName() {
         return mName;
@@ -42,12 +43,22 @@ public class TestJsonModel extends BaseModel {
         this.mLastName = mLastName;
     }
 
+    public ObservableField<TestInnerJsonModel> getmDog() {
+        return mDog;
+    }
+
+    public void setmDog(ObservableField<TestInnerJsonModel> mDog) {
+        this.mDog = mDog;
+    }
+
     @Override
     public String toString() {
         return "{" +
                 "\"mName\" : " + "\"" + mName.get() + "\"" +
                 ", \"mAge\" : " + "\"" + mAge.get() + "\"" +
                 ", \"mLastName\" : " + "\"" + mLastName.get() + "\"" +
+                ", \"mDog\" : " + "\"" + mDog.get() + "\"" +
                 "}";
     }
+
 }
