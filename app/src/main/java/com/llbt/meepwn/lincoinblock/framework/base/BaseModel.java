@@ -39,7 +39,8 @@ public class BaseModel implements Model {
                 try {
                     Method m = getClass().getMethod("get"+name);
                     ObservableField field = (ObservableField) m.invoke(this);    //调用getter方法获取属性值
-                    field.set(attrs.get(key));
+                    Object value = attrs.get(key);
+                    field.set(value);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

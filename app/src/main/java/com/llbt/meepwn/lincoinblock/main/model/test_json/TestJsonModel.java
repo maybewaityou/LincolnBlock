@@ -2,6 +2,7 @@ package com.llbt.meepwn.lincoinblock.main.model.test_json;
 
 import android.databinding.ObservableField;
 
+import com.alibaba.fastjson.JSONObject;
 import com.llbt.meepwn.lincoinblock.framework.base.BaseModel;
 
 /**
@@ -17,7 +18,8 @@ public class TestJsonModel extends BaseModel {
     private ObservableField<String> mName = new ObservableField<>();
     private ObservableField<String> mAge = new ObservableField<>();
     private ObservableField<String> mLastName = new ObservableField<>();
-    private ObservableField<TestInnerJsonModel> mDog = new ObservableField<>();
+    private ObservableField<JSONObject> mDog = new ObservableField<>();
+    private ObservableField<TestInnerJsonModel> dogModel = new ObservableField<>();
 
     public ObservableField<String> getmName() {
         return mName;
@@ -43,12 +45,20 @@ public class TestJsonModel extends BaseModel {
         this.mLastName = mLastName;
     }
 
-    public ObservableField<TestInnerJsonModel> getmDog() {
+    public ObservableField<JSONObject> getmDog() {
         return mDog;
     }
 
-    public void setmDog(ObservableField<TestInnerJsonModel> mDog) {
+    public void setmDog(ObservableField<JSONObject> mDog) {
         this.mDog = mDog;
+    }
+
+    public ObservableField<TestInnerJsonModel> getDogModel() {
+        return dogModel;
+    }
+
+    public void setDogModel(ObservableField<TestInnerJsonModel> dogModel) {
+        this.dogModel = dogModel;
     }
 
     @Override
@@ -58,6 +68,7 @@ public class TestJsonModel extends BaseModel {
                 ", \"mAge\" : " + "\"" + mAge.get() + "\"" +
                 ", \"mLastName\" : " + "\"" + mLastName.get() + "\"" +
                 ", \"mDog\" : " + "\"" + mDog.get() + "\"" +
+                ", \"dogModel\" : " + "\"" + dogModel.get() + "\"" +
                 "}";
     }
 

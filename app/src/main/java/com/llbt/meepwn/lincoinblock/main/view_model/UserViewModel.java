@@ -5,8 +5,9 @@ import android.view.View;
 
 import com.llbt.meepwn.lincoinblock.R;
 import com.llbt.meepwn.lincoinblock.framework.base.BaseViewModel;
-import com.llbt.meepwn.lincoinblock.main.model.test_json.TestJsonModel;
 import com.llbt.meepwn.lincoinblock.main.model.UserModel;
+import com.llbt.meepwn.lincoinblock.main.model.test_json.TestInnerJsonModel;
+import com.llbt.meepwn.lincoinblock.main.model.test_json.TestJsonModel;
 import com.llbt.meepwn.lincoinblock.main.service.UserService;
 import com.llbt.meepwn.lincoinblock.main.view.activity.OtherActivity;
 import com.llbt.meepwn.lincoinblock.main.view.activity.TestActivity;
@@ -45,12 +46,14 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
                     "    \"age\": \"233333\",\n" +
                     "    \"lastName\": \"dong\",\n" +
                     "    \"dog\": {\n" +
-                    "        \"dogName\": \"daoge\"\n" +
+                    "        \"dogName\": \"doge\"\n" +
                     "    }\n" +
                     "}";
             TestJsonModel m = JsonParser.<TestJsonModel>parse(jsonString, TestJsonModel.class);
-//            m.getmDog().get()
-            System.out.println("====>>>> " + m.getmDog().get().getClass());
+            TestInnerJsonModel im = JsonParser.<TestInnerJsonModel>parse(m.getmDog().get().toString(), TestInnerJsonModel.class);
+            m.getDogModel().set(im);
+            im.getmDogName().set("旺财");
+            System.out.println("====>>>> " + m);
         } else {
             service.sendRequest().flatMap((Func1) user -> {
                  // TODO 类型转换
