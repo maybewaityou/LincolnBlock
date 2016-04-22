@@ -42,7 +42,7 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
             String jsonString = "{\n" +
                     "    \"name\": \"MeePwn\",\n" +
                     "    \"age\": \"233333\",\n" +
-                    "    \"lastName\": \"dong\",\n" +
+                    "    \"lastName\": \"Chunnan\",\n" +
                     "    \"dog\": {\n" +
                     "        \"dogName\": \"doge\"\n" +
                     "    }\n" +
