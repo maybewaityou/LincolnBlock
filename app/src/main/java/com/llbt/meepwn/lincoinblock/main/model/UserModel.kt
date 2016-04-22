@@ -12,7 +12,7 @@ import com.llbt.meepwn.lincoinblock.utils.binding.EditTextWatcher
  * date: 16/4/12 上午10:28
  * desc:
  */
-class UserModel : BaseModel() {
+class UserModel : BaseModel<UserModel>() {
     var lastName = ObservableField<String>("李四")
     var name: String? = "张三"
     var imageUrl = "http://attach.bbs.miui.com/forum/201501/13/141755xbccajc97cbub1tb.png"
@@ -22,6 +22,10 @@ class UserModel : BaseModel() {
                 lastName.set(charSequence.toString())
             }
         }
+    }
+
+    override fun initWithJsonString(jsonString: String): UserModel {
+        return UserModel()
     }
 
     companion object {

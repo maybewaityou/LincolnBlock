@@ -8,7 +8,9 @@ package com.llbt.meepwn.lincoinblock.framework;
  * date: 16/4/12 上午6:56
  * desc:
  */
-public interface Model {
+public interface Model<M extends Model> {
+
+    M initWithJsonString(String jsonString);
 
     // 解析Json之后,生成attrs字典,将attrs字典赋值给Model的属性
     void setupData();

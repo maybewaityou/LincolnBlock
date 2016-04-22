@@ -11,9 +11,13 @@ import com.llbt.meepwn.lincoinblock.framework.base.BaseModel
  * date: 16/4/5 下午5:39
  * desc:
  */
-class TestItemModel : BaseModel() {
+class TestItemModel : BaseModel<TestItemModel>() {
 
     var text = ObservableField<String>()
+
+    override fun initWithJsonString(jsonString: String?): TestItemModel? {
+        return TestItemModel()
+    }
 
     override fun toString(): String {
         return "{\"text\" : \"${text.get()}\"}"

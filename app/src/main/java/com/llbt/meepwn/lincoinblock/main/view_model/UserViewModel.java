@@ -6,13 +6,11 @@ import android.view.View;
 import com.llbt.meepwn.lincoinblock.R;
 import com.llbt.meepwn.lincoinblock.framework.base.BaseViewModel;
 import com.llbt.meepwn.lincoinblock.main.model.UserModel;
-import com.llbt.meepwn.lincoinblock.main.model.test_json.TestInnerJsonModel;
 import com.llbt.meepwn.lincoinblock.main.model.test_json.TestJsonModel;
 import com.llbt.meepwn.lincoinblock.main.service.UserService;
 import com.llbt.meepwn.lincoinblock.main.view.activity.OtherActivity;
 import com.llbt.meepwn.lincoinblock.main.view.activity.TestActivity;
 import com.llbt.meepwn.lincoinblock.main.view.activity.TestFragmentActivity;
-import com.llbt.meepwn.lincoinblock.utils.network.json_parser.JsonParser;
 
 import rx.Observable;
 import rx.functions.Func1;
@@ -49,10 +47,7 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
                     "        \"dogName\": \"doge\"\n" +
                     "    }\n" +
                     "}";
-            TestJsonModel m = JsonParser.<TestJsonModel>parse(jsonString, TestJsonModel.class);
-            TestInnerJsonModel im = JsonParser.<TestInnerJsonModel>parse(m.getmDog().get().toString(), TestInnerJsonModel.class);
-            m.getDogModel().set(im);
-            im.getmDogName().set("旺财");
+            TestJsonModel m = new TestJsonModel().initWithJsonString(jsonString);
             System.out.println("====>>>> " + m);
         } else {
             service.sendRequest().flatMap((Func1) user -> {
