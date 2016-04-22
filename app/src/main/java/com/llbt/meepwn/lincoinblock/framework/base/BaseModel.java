@@ -18,7 +18,7 @@ import java.util.Map;
  * desc: 业务模型类
  */
 @SuppressWarnings("unchecked")
-public abstract class BaseModel<M extends Model> implements Model<M> {
+public abstract class BaseModel implements Model {
 
     protected Map<String, Object> attrs;
 

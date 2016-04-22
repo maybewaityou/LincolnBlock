@@ -47,7 +47,7 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
                     "        \"dogName\": \"doge\"\n" +
                     "    }\n" +
                     "}";
-            TestJsonModel m = new TestJsonModel().initWithJsonString(jsonString);
+            TestJsonModel m = TestJsonModel.initWithJsonString(jsonString);
             System.out.println("====>>>> " + m);
         } else {
             service.sendRequest().flatMap((Func1) user -> {

@@ -14,7 +14,7 @@ import com.llbt.meepwn.lincoinblock.utils.network.json_parser.JsonParser;
  * date: 16/4/22 下午1:25
  * desc:
  */
-public class TestJsonModel extends BaseModel<TestJsonModel> {
+public class TestJsonModel extends BaseModel {
 
     private ObservableField<String> mName = new ObservableField<>();
     private ObservableField<String> mAge = new ObservableField<>();
@@ -22,10 +22,9 @@ public class TestJsonModel extends BaseModel<TestJsonModel> {
     private ObservableField<JSONObject> mDog = new ObservableField<>();
     private ObservableField<TestInnerJsonModel> dogModel = new ObservableField<>();
 
-    @Override
-    public TestJsonModel initWithJsonString(String jsonString) {
+    public static TestJsonModel initWithJsonString(String jsonString) {
         TestJsonModel model = JsonParser.<TestJsonModel>parse(jsonString, TestJsonModel.class);
-        TestInnerJsonModel innerModel = new TestInnerJsonModel().initWithJsonString(model.getmDog().get().toString());
+        TestInnerJsonModel innerModel = TestInnerJsonModel.initWithJsonString(model.getmDog().get().toString());
         model.getDogModel().set(innerModel);
         return model;
     }
