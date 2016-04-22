@@ -41,7 +41,7 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
         } else if (view.getId() == R.id.jsonToModel) {
             String jsonString = "{\n" +
                     "    \"name\": \"MeePwn\",\n" +
-                    "    \"age\": \"23333333\",\n" +
+                    "    \"age\": \"233333\",\n" +
                     "    \"lastName\": \"Chunnan\",\n" +
                     "    \"dog\": {\n" +
                     "        \"dogName\": \"doge\"\n" +
