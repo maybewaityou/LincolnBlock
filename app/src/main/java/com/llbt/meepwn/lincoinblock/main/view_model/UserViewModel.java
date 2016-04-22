@@ -44,7 +44,8 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
                     "    \"age\": \"2333333\",\n" +
                     "    \"lastName\": \"Chunnan\",\n" +
                     "    \"dog\": {\n" +
-                    "        \"dogName\": \"doge\"\n" +
+                    "        \"dogName\": \"doge\",\n" +
+                    "       \"age\": \"2333333\"\n" +
                     "    }\n" +
                     "}";
             TestJsonModel m = TestJsonModel.initWithJsonString(jsonString);

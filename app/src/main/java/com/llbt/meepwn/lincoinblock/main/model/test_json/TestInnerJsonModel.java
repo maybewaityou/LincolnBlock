@@ -16,6 +16,7 @@ import com.llbt.meepwn.lincoinblock.utils.network.json_parser.JsonParser;
 public class TestInnerJsonModel extends BaseModel {
 
     private ObservableField<String> mDogName = new ObservableField<>();
+    private ObservableField<String> mAge = new ObservableField<>();
 
     public static TestInnerJsonModel initWithJsonString(String jsonString) {
         return JsonParser.<TestInnerJsonModel>parse(jsonString, TestInnerJsonModel.class);
@@ -29,11 +30,19 @@ public class TestInnerJsonModel extends BaseModel {
         this.mDogName = mDogName;
     }
 
+    public ObservableField<String> getmAge() {
+        return mAge;
+    }
+
+    public void setmAge(ObservableField<String> mAge) {
+        this.mAge = mAge;
+    }
+
     @Override
     public String toString() {
         return "{" +
                 "\"mDogName\" : " + "\"" + mDogName.get() + "\"" +
+                ", \"mAge\" : " + "\"" + mAge.get() + "\"" +
                 "}";
     }
-
 }
