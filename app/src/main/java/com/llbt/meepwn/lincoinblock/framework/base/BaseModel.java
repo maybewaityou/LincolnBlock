@@ -24,21 +24,22 @@ public abstract class BaseModel<M extends Model> implements Model<M> {
 
     @Override
     public void setupData() {
-        Field[] fields = getClass().getDeclaredFields();        //获取实体类的所有属性，返回Field数组
-        for (Field aField : fields) {   //遍历所有属性
-            String name = aField.getName();     //获取属性的名字
+        Field[] fields = getClass().getDeclaredFields();
+        for (Field aField : fields) {
+            String name = aField.getName();
 
-            // 自动生成
+            // 自动生成的属性
             if ("$change".equals(name)) continue;
 
             for (String key : attrs.keySet()) {
-                String fieldKey = "m" + key.substring(0, 1).toUpperCase() + key.substring(1); //将key的首字符大写，方便构造get，set方法
+                //将key的首字符大写，方便构造get，set方法
+                String fieldKey = "m" + key.substring(0, 1).toUpperCase() + key.substring(1);
 
                 if (!fieldKey.equals(name)) continue;
 
                 try {
                     Method m = getClass().getMethod("get"+name);
-                    ObservableField field = (ObservableField) m.invoke(this);    //调用getter方法获取属性值
+                    ObservableField field = (ObservableField) m.invoke(this);
                     Object value = attrs.get(key);
                     field.set(value);
                 } catch (Exception e) {
