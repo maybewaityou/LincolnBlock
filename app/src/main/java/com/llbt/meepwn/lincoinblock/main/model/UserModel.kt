@@ -3,6 +3,7 @@ package com.llbt.meepwn.lincoinblock.main.model
 import android.databinding.ObservableField
 import com.llbt.meepwn.lincoinblock.framework.base.BaseModel
 import com.llbt.meepwn.lincoinblock.utils.binding.EditTextWatcher
+import com.llbt.meepwn.lincoinblock.utils.network.json_parser.JsonParser
 
 /**
  * package: com.llbt.meepwn.lincoinblock.main.model
@@ -25,12 +26,8 @@ class UserModel : BaseModel() {
     }
 
     companion object {
-        fun create(): UserModel {
-            return UserModel()
-        }
-
         fun initWithJsonString(jsonString: String): UserModel {
-            return UserModel()
+            return JsonParser.parse<UserModel>(jsonString, UserModel::class.java)
         }
     }
 

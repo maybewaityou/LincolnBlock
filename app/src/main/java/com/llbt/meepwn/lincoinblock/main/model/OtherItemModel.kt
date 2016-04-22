@@ -2,6 +2,7 @@ package com.llbt.meepwn.lincoinblock.main.model
 
 import android.databinding.ObservableField
 import com.llbt.meepwn.lincoinblock.framework.base.BaseModel
+import com.llbt.meepwn.lincoinblock.utils.network.json_parser.JsonParser
 
 /**
  * package: com.llbt.meepwn.lincoinblock
@@ -18,7 +19,7 @@ class OtherItemModel : BaseModel() {
 
     companion object {
         fun initWithJsonString(jsonString: String?): OtherItemModel? {
-            return OtherItemModel()
+            return JsonParser.parse<OtherItemModel>(jsonString, OtherItemModel::class.java)
         }
     }
 
