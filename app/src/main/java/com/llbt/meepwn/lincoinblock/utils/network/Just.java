@@ -22,7 +22,7 @@ public class Just {
             // TODO 添加访问网络方法
             subscriber.onNext(new UserModel());
             subscriber.onCompleted();
-            
+
 //            subscriber.onError(new Throwable("网络请求失败", null));
         })
         .subscribeOn(Schedulers.newThread())
