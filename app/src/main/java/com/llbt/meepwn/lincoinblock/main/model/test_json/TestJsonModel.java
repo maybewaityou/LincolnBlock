@@ -24,15 +24,15 @@ public class TestJsonModel extends BaseModel {
     private ObservableField<String> mAge = new ObservableField<>();
     private ObservableField<String> mLastName = new ObservableField<>();
     private ObservableField<JSONObject> mDog = new ObservableField<>();
-    private ObservableField<TestInnerJsonModel> dogModel = new ObservableField<>();
+    private ObservableField<Dog> dogModel = new ObservableField<>();
     private ObservableField<JSONArray> mBooks = new ObservableField<>();
-    private List<ObservableField<TestInnerListJsonModel>> bookModels = new ArrayList<>();
+    private List<ObservableField<Book>> bookModels = new ArrayList<>();
 
     public static TestJsonModel initWithJsonString(String jsonString) {
         TestJsonModel model = JsonParser.<TestJsonModel>parse(jsonString, TestJsonModel.class);
-        TestInnerJsonModel innerModel = TestInnerJsonModel.initWithJsonString(model.getmDog().get().toString());
+        Dog innerModel = Dog.initWithJsonString(model.getmDog().get().toString());
         model.dogModel.set(innerModel);
-        model.bookModels = JsonParser.<TestInnerListJsonModel>parseArray(model.getmBooks().get().toString(), TestInnerListJsonModel.class);
+        model.bookModels = JsonParser.<Book>parseArray(model.getmBooks().get().toString(), Book.class);
         return model;
     }
 
@@ -68,11 +68,11 @@ public class TestJsonModel extends BaseModel {
         this.mDog = mDog;
     }
 
-    public ObservableField<TestInnerJsonModel> getDogModel() {
+    public ObservableField<Dog> getDogModel() {
         return dogModel;
     }
 
-    public void setDogModel(ObservableField<TestInnerJsonModel> dogModel) {
+    public void setDogModel(ObservableField<Dog> dogModel) {
         this.dogModel = dogModel;
     }
 
@@ -84,11 +84,11 @@ public class TestJsonModel extends BaseModel {
         this.mBooks = mBooks;
     }
 
-    public List<ObservableField<TestInnerListJsonModel>> getBookModels() {
+    public List<ObservableField<Book>> getBookModels() {
         return bookModels;
     }
 
-    public void setBookModels(List<ObservableField<TestInnerListJsonModel>> bookModels) {
+    public void setBookModels(List<ObservableField<Book>> bookModels) {
         this.bookModels = bookModels;
     }
 

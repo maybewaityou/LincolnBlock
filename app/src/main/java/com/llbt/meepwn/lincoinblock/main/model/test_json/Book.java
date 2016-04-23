@@ -13,13 +13,13 @@ import com.llbt.meepwn.lincoinblock.utils.network.json_parser.JsonParser;
  * date: 16/4/23 上午6:15
  * desc:
  */
-public class TestInnerListJsonModel extends BaseModel {
+public class Book extends BaseModel {
 
     private ObservableField<String> mBookName = new ObservableField<>();
     private ObservableField<String> mPrice = new ObservableField<>();
 
-    public static TestInnerListJsonModel initWithJsonString(String jsonString) {
-        return JsonParser.<TestInnerListJsonModel>parse(jsonString, TestInnerListJsonModel.class);
+    public static Book initWithJsonString(String jsonString) {
+        return JsonParser.<Book>parse(jsonString, Book.class);
     }
 
     public ObservableField<String> getmBookName() {
