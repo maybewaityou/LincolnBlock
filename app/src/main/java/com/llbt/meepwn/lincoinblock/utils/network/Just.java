@@ -4,6 +4,8 @@ import com.llbt.meepwn.lincoinblock.framework.Model;
 import com.llbt.meepwn.lincoinblock.main.model.UserModel;
 
 import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * package: com.llbt.meepwn.lincoinblock.utils.network
@@ -21,7 +23,9 @@ public class Just {
             subscriber.onNext(new UserModel());
             subscriber.onCompleted();
 //            subscriber.onError(new Throwable("网络请求失败", null));
-        });
+        })
+        .subscribeOn(Schedulers.newThread())
+        .observeOn(AndroidSchedulers.mainThread());
     }
 
 }
