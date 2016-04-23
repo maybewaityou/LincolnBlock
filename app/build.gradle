@@ -75,11 +75,6 @@ dependencies {
 //    compile 'com.facebook.fresco:fresco:0.9.0+'
     // fresco end
 
-    // fast json start
-    compile 'com.alibaba:fastjson:1.2.8'
-    // fast json end
-
-
     // picasso start
     compile 'com.squareup.picasso:picasso:2.5.2'
     // picasso end
@@ -111,8 +106,8 @@ dependencies {
     // phrase end -- Square's StringUtility
 
     // fastJson start
-    // compile 'com.alibaba:fastjson:1.2.9'         // just for java
-    compile 'com.alibaba:fastjson:1.1.49-android'
+    compile 'com.alibaba:fastjson:1.2.9'         // just for java
+//    compile 'com.alibaba:fastjson:1.1.49-android'
     // fastJson end
 
     // dagger start
@@ -124,6 +119,10 @@ dependencies {
     compile 'de.greenrobot:greendao:2.1.0'
     compile 'de.greenrobot:greendao-generator:2.1.0'
     // greenDAO end
+
+    // job queue start
+    compile 'com.birbit:android-priority-jobqueue:2.0.0-alpha2'
+    // job queue end
 }
 // data binding
 kapt {
