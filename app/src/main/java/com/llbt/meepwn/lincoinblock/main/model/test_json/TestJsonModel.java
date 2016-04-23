@@ -31,7 +31,7 @@ public class TestJsonModel extends BaseModel {
     public static TestJsonModel initWithJsonString(String jsonString) {
         TestJsonModel model = JsonParser.<TestJsonModel>parse(jsonString, TestJsonModel.class);
         TestInnerJsonModel innerModel = TestInnerJsonModel.initWithJsonString(model.getmDog().get().toString());
-        model.getDogModel().set(innerModel);
+        model.dogModel.set(innerModel);
         model.bookModels = JsonParser.<TestInnerListJsonModel>parseArray(model.getmBooks().get().toString(), TestInnerListJsonModel.class);
         return model;
     }
