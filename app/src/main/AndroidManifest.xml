@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <!-- 获取用户手机的IMEI，用来唯一的标识用户 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <!-- 缓存资源优先存入SDcard -->
+    <!-- 缓存资源优先存入SDCard -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- 允许应用程序联网，以便向我们的服务器端发送数据 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
