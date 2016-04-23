@@ -10,4 +10,7 @@ package com.llbt.meepwn.lincoinblock.framework;
  */
 public interface ViewModel {
 
+    void onResume();
+    void onPause();
+
 }

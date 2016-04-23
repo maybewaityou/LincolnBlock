@@ -20,7 +20,7 @@ public class TestFragmentService extends BaseService {
     }
 
     @Override
-    protected void pushActivityWithDataModel(DataModel dataModel, Class clazz) {
+    public void pushActivityWithDataModel(DataModel dataModel, Class clazz) {
 
     }
 }

@@ -10,6 +10,11 @@ import rx.Observable;
  * date: 16/4/12 上午11:13
  * desc:
  */
-public interface Service {
+public interface Service<DM extends DataModel> {
+
+    void pushActivityWithDataModel(DM dataModel, Class clazz);
+
+    void popActivity();
+
     Observable sendRequest();
 }

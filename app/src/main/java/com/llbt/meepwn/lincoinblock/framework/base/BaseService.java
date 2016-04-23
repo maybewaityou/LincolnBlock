@@ -1,5 +1,6 @@
 package com.llbt.meepwn.lincoinblock.framework.base;
 
+import android.app.Activity;
 import android.content.Context;
 
 import com.llbt.meepwn.lincoinblock.framework.DataModel;
@@ -18,7 +19,7 @@ import rx.Observable;
  * date: 16/4/12 下午12:46
  * desc: 进行页面间跳转 && 发送网络请求
  */
-public abstract class BaseService<DM extends DataModel> implements Service {
+public abstract class BaseService<DM extends DataModel> implements Service<DM> {
 
     protected WeakReference<Context> context;
 
@@ -35,6 +36,9 @@ public abstract class BaseService<DM extends DataModel> implements Service {
         return Just.sendRequest();
     }
 
-    protected abstract void pushActivityWithDataModel(DM dataModel, Class clazz);
+    @Override
+    public void popActivity() {
+        ((Activity)context.get()).finish();
+    }
 
 }

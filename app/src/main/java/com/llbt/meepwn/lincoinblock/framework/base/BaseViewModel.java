@@ -28,6 +28,16 @@ public class BaseViewModel<M extends Model, S extends Service> implements ViewMo
         this.model = model;
     }
 
+    @Override
+    public void onResume() {
+
+    }
+
+    @Override
+    public void onPause() {
+
+    }
+
     public ObservableField<M> getModel() {
         return model;
     }

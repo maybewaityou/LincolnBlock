@@ -20,7 +20,7 @@ public class OtherService extends BaseService<OtherItemDataModel> {
     }
 
     @Override
-    protected void pushActivityWithDataModel(OtherItemDataModel dataModel, Class clazz) {
+    public void pushActivityWithDataModel(OtherItemDataModel dataModel, Class clazz) {
 
     }
 

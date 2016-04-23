@@ -20,7 +20,7 @@ public class TestItemService extends BaseService<TestItemDataModel> {
     }
 
     @Override
-    protected void pushActivityWithDataModel(TestItemDataModel dataModel, Class clazz) {
+    public void pushActivityWithDataModel(TestItemDataModel dataModel, Class clazz) {
 
     }
 }
