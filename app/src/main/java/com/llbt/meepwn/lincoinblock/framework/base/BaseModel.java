@@ -38,7 +38,7 @@ public abstract class BaseModel implements Model {
                 if (!fieldKey.equals(name)) continue;
 
                 try {
-                    Method m = getClass().getMethod("get"+name);
+                    Method m = getClass().getMethod("get" + name);
                     ObservableField field = (ObservableField) m.invoke(this);
                     Object value = attrs.get(key);
                     field.set(value);
