@@ -28,6 +28,8 @@ apply plugin: 'com.android.databinding'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
+    // 6.0中删除了org.apache.http.*(只保留几个类)
+    useLibrary 'org.apache.http.legacy'
 
     // data binding
     dataBinding {
@@ -38,6 +40,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
 
     defaultConfig {
         applicationId "com.llbt.meepwn.lincoinblock"
