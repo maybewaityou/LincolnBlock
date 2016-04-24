@@ -8,6 +8,7 @@ import com.llbt.meepwn.lincoinblock.framework.Service;
 import com.llbt.meepwn.lincoinblock.utils.network.Just;
 
 import java.lang.ref.WeakReference;
+import java.util.Map;
 
 import rx.Observable;
 
@@ -32,8 +33,8 @@ public abstract class BaseService<DM extends DataModel> implements Service<DM> {
     }
 
     @Override
-    public Observable sendRequest(Class clazz) {
-        return Just.sendRequest(clazz);
+    public Observable sendRequest(String url, Map<String, String> params, Class clazz) {
+        return Just.sendRequest(url, params, clazz);
     }
 
     @Override

@@ -4,9 +4,6 @@ import com.llbt.meepwn.lincoinblock.framework.DataModel;
 import com.llbt.meepwn.lincoinblock.framework.Model;
 import com.llbt.meepwn.lincoinblock.framework.Service;
 import com.llbt.meepwn.lincoinblock.framework.ViewModel;
-import com.llbt.meepwn.lincoinblock.utils.network.Just;
-
-import rx.Observable;
 
 /**
  * package: com.llbt.meepwn.lincoinblock.framework
@@ -18,8 +15,4 @@ import rx.Observable;
  */
 public abstract class NullableValue implements Model, ViewModel, Service, DataModel {
 
-    @Override
-    public Observable sendRequest(Class clazz) {
-        return Just.sendRequest(clazz);
-    }
 }

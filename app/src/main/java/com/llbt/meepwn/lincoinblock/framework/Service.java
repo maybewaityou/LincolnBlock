@@ -1,5 +1,7 @@
 package com.llbt.meepwn.lincoinblock.framework;
 
+import java.util.Map;
+
 import rx.Observable;
 
 /**
@@ -16,5 +18,5 @@ public interface Service<DM extends DataModel> {
 
     void popActivity();
 
-    Observable sendRequest(Class clazz);
+    Observable sendRequest(String url, Map<String, String> params, Class clazz);
 }

@@ -12,6 +12,8 @@ import com.llbt.meepwn.lincoinblock.main.view.activity.OtherActivity;
 import com.llbt.meepwn.lincoinblock.main.view.activity.TestActivity;
 import com.llbt.meepwn.lincoinblock.main.view.activity.TestFragmentActivity;
 
+import java.util.HashMap;
+
 import rx.Observable;
 import rx.functions.Action1;
 import rx.functions.Func1;
@@ -40,14 +42,14 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
         } else if (view.getId() == R.id.fragmentButton) {
             service.pushActivityWithDataModel(null, TestFragmentActivity.class);
         } else if (view.getId() == R.id.jsonToModel) {
-            service.sendRequest(TestJsonModel.class).subscribe(new Action1<TestJsonModel>() {
+            service.sendRequest("", new HashMap<>(), TestJsonModel.class).subscribe(new Action1<TestJsonModel>() {
                 @Override
                 public void call(TestJsonModel model) {
                     System.out.println("== model ===>>>> " + model);
                 }
             });
         } else {
-            service.sendRequest(UserModel.class).flatMap((Func1) user -> {
+            service.sendRequest("", new HashMap<>(), UserModel.class).flatMap((Func1) user -> {
                  // TODO 类型转换
                 return getToken((UserModel) user);
             }).subscribe(userModel -> {
@@ -62,8 +64,8 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
     }
 
     private Observable getToken(UserModel userModel) {
-        service.sendRequest(UserModel.class).subscribeOn(Schedulers.newThread());
-        return service.sendRequest(UserModel.class).doOnNext(o -> {
+        service.sendRequest("", new HashMap<>(), UserModel.class).subscribeOn(Schedulers.newThread());
+        return service.sendRequest("", new HashMap<>(), UserModel.class).doOnNext(o -> {
             System.out.println("==== getToken >>>> " + o);
         });
     }

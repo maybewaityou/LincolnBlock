@@ -3,6 +3,8 @@ package com.llbt.meepwn.lincoinblock.utils.network;
 import com.llbt.meepwn.lincoinblock.framework.Model;
 import com.llbt.meepwn.lincoinblock.main.model.UserModel;
 
+import java.util.Map;
+
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -17,7 +19,7 @@ import rx.schedulers.Schedulers;
  */
 public class Just {
 
-    public static Observable sendRequest(Class clazz) {
+    public static Observable sendRequest(String url, Map<String, String> params, Class clazz) {
         return Observable.create((Observable.OnSubscribe<Model>) subscriber -> {
             // TODO 添加访问网络方法
             if (clazz == UserModel.class) {
