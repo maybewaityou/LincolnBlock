@@ -1,7 +1,6 @@
 package com.llbt.meepwn.lincoinblock.utils.network;
 
 import com.llbt.meepwn.lincoinblock.framework.Model;
-import com.llbt.meepwn.lincoinblock.main.model.UserModel;
 
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
@@ -17,10 +16,33 @@ import rx.schedulers.Schedulers;
  */
 public class Just {
 
-    public static Observable sendRequest() {
+    public static Observable sendRequest(Class clazz) {
         return Observable.create((Observable.OnSubscribe<Model>) subscriber -> {
             // TODO 添加访问网络方法
-            subscriber.onNext(new UserModel());
+            String jsonString = "{\n" +
+                    "    \"name\": \"MeePwn\",\n" +
+                    "    \"age\": \"2333333\",\n" +
+                    "    \"lastName\": \"Chunnan\",\n" +
+                    "    \"dog\": {\n" +
+                    "        \"dogName\": \"doge\",\n" +
+                    "        \"age\": \"11\"\n" +
+                    "    },\n" +
+                    "    \"books\": [\n" +
+                    "        {\n" +
+                    "            \"bookName\": \"Swift\",\n" +
+                    "            \"price\": \"¥65\"\n" +
+                    "        },\n" +
+                    "        {\n" +
+                    "            \"bookName\": \"Objective C\",\n" +
+                    "            \"price\": \"¥45\"\n" +
+                    "        },\n" +
+                    "        {\n" +
+                    "            \"bookName\": \"iOS\",\n" +
+                    "            \"price\": \"¥85\"\n" +
+                    "        }\n" +
+                    "    ]\n" +
+                    "}";
+            subscriber.onNext(ModelAdapter.modelWithJsonString(jsonString, clazz));
             subscriber.onCompleted();
 //            subscriber.onError(new Throwable("网络请求失败", null));
         })

@@ -19,7 +19,7 @@ import rx.Observable;
 public abstract class NullableValue implements Model, ViewModel, Service, DataModel {
 
     @Override
-    public Observable sendRequest() {
-        return Just.sendRequest();
+    public Observable sendRequest(Class clazz) {
+        return Just.sendRequest(clazz);
     }
 }

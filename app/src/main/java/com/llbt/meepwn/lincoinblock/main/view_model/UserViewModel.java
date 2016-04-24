@@ -15,6 +15,7 @@ import com.llbt.meepwn.lincoinblock.main.view.activity.TestFragmentActivity;
 import com.llbt.meepwn.lincoinblock.utils.network.ModelAdapter;
 
 import rx.Observable;
+import rx.functions.Action1;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
@@ -41,43 +42,21 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
         } else if (view.getId() == R.id.fragmentButton) {
             service.pushActivityWithDataModel(null, TestFragmentActivity.class);
         } else if (view.getId() == R.id.jsonToModel) {
-            String jsonString = "{\n" +
-                    "    \"name\": \"MeePwn\",\n" +
-                    "    \"age\": \"2333333\",\n" +
-                    "    \"lastName\": \"Chunnan\",\n" +
-                    "    \"dog\": {\n" +
-                    "        \"dogName\": \"doge\",\n" +
-                    "        \"age\": \"11\"\n" +
-                    "    },\n" +
-                    "    \"books\": [\n" +
-                    "        {\n" +
-                    "            \"bookName\": \"Swift\",\n" +
-                    "            \"price\": \"¥65\"\n" +
-                    "        },\n" +
-                    "        {\n" +
-                    "            \"bookName\": \"Objective C\",\n" +
-                    "            \"price\": \"¥45\"\n" +
-                    "        },\n" +
-                    "        {\n" +
-                    "            \"bookName\": \"iOS\",\n" +
-                    "            \"price\": \"¥85\"\n" +
-                    "        }\n" +
-                    "    ]\n" +
-                    "}";
-            TestJsonModel m = ModelAdapter.modelWithJsonString(jsonString, TestJsonModel.class);
-            System.out.println("====>>>> " + m);
-
             String json = "{\n" +
                     "    \"bookName\": \"Swift\",\n" +
                     "    \"price\": \"¥998\"\n" +
                     "}\n";
             Book book = ModelAdapter.modelWithJsonString(json, Book.class);
-            System.out.println("====>>>> " + book);
+            System.out.println("== book ===>>>> " + book);
 
-            
-
+            service.sendRequest(TestJsonModel.class).subscribe(new Action1<TestJsonModel>() {
+                @Override
+                public void call(TestJsonModel model) {
+                    System.out.println("== model ===>>>> " + model);
+                }
+            });
         } else {
-            service.sendRequest().flatMap((Func1) user -> {
+            service.sendRequest(UserModel.class).flatMap((Func1) user -> {
                  // TODO 类型转换
                 return getToken((UserModel) user);
             }).subscribe(userModel -> {
@@ -92,8 +71,8 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
     }
 
     private Observable getToken(UserModel userModel) {
-        service.sendRequest().subscribeOn(Schedulers.newThread());
-        return service.sendRequest().doOnNext(o -> {
+        service.sendRequest(UserModel.class).subscribeOn(Schedulers.newThread());
+        return service.sendRequest(UserModel.class).doOnNext(o -> {
             System.out.println("==== getToken >>>> " + o);
         });
     }

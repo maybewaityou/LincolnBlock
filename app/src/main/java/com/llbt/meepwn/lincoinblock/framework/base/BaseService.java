@@ -32,8 +32,8 @@ public abstract class BaseService<DM extends DataModel> implements Service<DM> {
     }
 
     @Override
-    public Observable sendRequest() {
-        return Just.sendRequest();
+    public Observable sendRequest(Class clazz) {
+        return Just.sendRequest(clazz);
     }
 
     @Override

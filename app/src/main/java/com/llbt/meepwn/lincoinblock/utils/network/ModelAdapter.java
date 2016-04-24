@@ -20,7 +20,7 @@ public class ModelAdapter {
     public static <T extends BaseModel> T modelWithJsonString(String jsonString, Class clazz) {
         if (clazz == TestJsonModel.class) {
             TestJsonModel model = JsonParser.<TestJsonModel>parse(jsonString, TestJsonModel.class);
-            Dog innerModel = JsonParser.<Dog>parse(jsonString, Dog.class);
+            Dog innerModel = JsonParser.<Dog>parse(model.getmDog().get().toString(), Dog.class);
             model.getDogModel().set(innerModel);
             model.setBookModels(JsonParser.<Book>parseArray(model.getmBooks().get().toString(), Book.class));
             return (T) model;

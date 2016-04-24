@@ -16,5 +16,5 @@ public interface Service<DM extends DataModel> {
 
     void popActivity();
 
-    Observable sendRequest();
+    Observable sendRequest(Class clazz);
 }
