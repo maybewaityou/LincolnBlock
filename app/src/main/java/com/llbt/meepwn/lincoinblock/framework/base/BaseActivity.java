@@ -26,12 +26,14 @@ public class BaseActivity<M extends Model, VM extends ViewModel, S extends Servi
     @Override
     protected void onResume() {
         super.onResume();
+        if (viewModel == null) return;
         viewModel.onResume();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        if (viewModel == null) return;
         viewModel.onPause();
     }
 
