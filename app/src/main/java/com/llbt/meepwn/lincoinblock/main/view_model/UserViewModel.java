@@ -67,11 +67,15 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
             TestJsonModel m = ModelAdapter.modelWithJsonString(jsonString, TestJsonModel.class);
             System.out.println("====>>>> " + m);
 
-            String json = "        {\n" +
-                    "            \"bookName\": \"ssdddaass\",\n" +
-                    "            \"price\": \"¥998\"\n" +
-                    "        }\n";
+            String json = "{\n" +
+                    "    \"bookName\": \"Swift\",\n" +
+                    "    \"price\": \"¥998\"\n" +
+                    "}\n";
             Book book = ModelAdapter.modelWithJsonString(json, Book.class);
+            System.out.println("====>>>> " + book);
+
+            
+
         } else {
             service.sendRequest().flatMap((Func1) user -> {
                  // TODO 类型转换
