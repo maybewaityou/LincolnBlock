@@ -1,6 +1,7 @@
 package com.llbt.meepwn.lincoinblock.utils.network;
 
 import com.llbt.meepwn.lincoinblock.framework.Model;
+import com.llbt.meepwn.lincoinblock.main.model.UserModel;
 
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
@@ -19,6 +20,11 @@ public class Just {
     public static Observable sendRequest(Class clazz) {
         return Observable.create((Observable.OnSubscribe<Model>) subscriber -> {
             // TODO 添加访问网络方法
+            if (clazz == UserModel.class) {
+                subscriber.onNext(new UserModel());
+                subscriber.onCompleted();
+                return;
+            }
             String jsonString = "{\n" +
                     "    \"name\": \"MeePwn\",\n" +
                     "    \"age\": \"2333333\",\n" +

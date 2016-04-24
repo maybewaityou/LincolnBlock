@@ -6,13 +6,11 @@ import android.view.View;
 import com.llbt.meepwn.lincoinblock.R;
 import com.llbt.meepwn.lincoinblock.framework.base.BaseViewModel;
 import com.llbt.meepwn.lincoinblock.main.model.UserModel;
-import com.llbt.meepwn.lincoinblock.main.model.test_json.Book;
 import com.llbt.meepwn.lincoinblock.main.model.test_json.TestJsonModel;
 import com.llbt.meepwn.lincoinblock.main.service.UserService;
 import com.llbt.meepwn.lincoinblock.main.view.activity.OtherActivity;
 import com.llbt.meepwn.lincoinblock.main.view.activity.TestActivity;
 import com.llbt.meepwn.lincoinblock.main.view.activity.TestFragmentActivity;
-import com.llbt.meepwn.lincoinblock.utils.network.ModelAdapter;
 
 import rx.Observable;
 import rx.functions.Action1;
@@ -42,13 +40,6 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
         } else if (view.getId() == R.id.fragmentButton) {
             service.pushActivityWithDataModel(null, TestFragmentActivity.class);
         } else if (view.getId() == R.id.jsonToModel) {
-            String json = "{\n" +
-                    "    \"bookName\": \"Swift\",\n" +
-                    "    \"price\": \"¥998\"\n" +
-                    "}\n";
-            Book book = ModelAdapter.modelWithJsonString(json, Book.class);
-            System.out.println("== book ===>>>> " + book);
-
             service.sendRequest(TestJsonModel.class).subscribe(new Action1<TestJsonModel>() {
                 @Override
                 public void call(TestJsonModel model) {
