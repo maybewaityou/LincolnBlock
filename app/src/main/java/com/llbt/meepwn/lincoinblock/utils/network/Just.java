@@ -15,7 +15,7 @@ import rx.schedulers.Schedulers;
  * email: maybewaityou@gmail.com
  * github: https://github.com/maybewaityou
  * date: 16/4/13 下午3:06
- * desc:
+ * desc: 发送网络请求
  */
 public class Just {
 

@@ -18,7 +18,7 @@ import java.util.List;
  * email: maybewaityou@gmail.com
  * github: https://github.com/maybewaityou
  * date: 16/4/22 下午3:53
- * desc: Json解析工具类
+ * desc: Json解析器
  */
 @SuppressWarnings("unchecked")
 public class JsonParser {

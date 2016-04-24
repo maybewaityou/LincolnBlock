@@ -12,7 +12,7 @@ import com.llbt.meepwn.lincoinblock.utils.network.json_parser.JsonParser;
  * email: maybewaityou@gmail.com
  * github: https://github.com/maybewaityou
  * date: 16/4/24 下午12:03
- * desc:
+ * desc: 模型适配器
  */
 @SuppressWarnings("unchecked")
 public class ModelAdapter {
