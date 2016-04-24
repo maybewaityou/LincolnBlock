@@ -52,7 +52,7 @@ public class Just {
                     "}";
             subscriber.onNext(ModelAdapter.modelWithJsonString(jsonString, clazz));
             subscriber.onCompleted();
-//            subscriber.onError(new Throwable("网络请求失败", null));
+//            subscriber.onError(new Throwable("网络请求失败"));
         })
         .subscribeOn(Schedulers.newThread())
         .observeOn(AndroidSchedulers.mainThread());
