@@ -17,7 +17,6 @@ import java.util.HashMap;
 import rx.Observable;
 import rx.functions.Action1;
 import rx.functions.Func1;
-import rx.schedulers.Schedulers;
 
 /**
  * package: com.llbt.meepwn.lincoinblock.main.view_model
@@ -64,7 +63,6 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
     }
 
     private Observable getToken(UserModel userModel) {
-        service.sendRequest("", new HashMap<>(), UserModel.class).subscribeOn(Schedulers.newThread());
         return service.sendRequest("", new HashMap<>(), UserModel.class).doOnNext(o -> {
             System.out.println("==== getToken >>>> " + o);
         });
