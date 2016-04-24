@@ -24,6 +24,7 @@ import android.os.Build;
 
 import com.llbt.meepwn.lincoinblock.library.volley.Network;
 import com.llbt.meepwn.lincoinblock.library.volley.RequestQueue;
+import com.llbt.meepwn.lincoinblock.utils.network.volley.OkHttpStack;
 
 import java.io.File;
 
@@ -52,11 +53,14 @@ public class Volley {
 
         if (stack == null) {
             if (Build.VERSION.SDK_INT >= 9) {
-                stack = new HurlStack();
+//                stack = new HurlStack();
+                // 使用OkHttp代替
+                stack = new OkHttpStack();
             } else {
                 // Prior to Gingerbread, HttpUrlConnection was unreliable.
                 // See: http://android-developers.blogspot.com/2011/09/androids-http-clients.html
                 stack = new HttpClientStack(AndroidHttpClient.newInstance(userAgent));
+
             }
         }
 
