@@ -5,7 +5,6 @@ import android.databinding.ObservableField;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.llbt.meepwn.lincoinblock.framework.base.BaseModel;
-import com.llbt.meepwn.lincoinblock.utils.network.json_parser.JsonParser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,14 +26,6 @@ public class TestJsonModel extends BaseModel {
     private ObservableField<Dog> dogModel = new ObservableField<>();
     private ObservableField<JSONArray> mBooks = new ObservableField<>();
     private List<ObservableField<Book>> bookModels = new ArrayList<>();
-
-    public static TestJsonModel initWithJsonString(String jsonString) {
-        TestJsonModel model = JsonParser.<TestJsonModel>parse(jsonString, TestJsonModel.class);
-        Dog innerModel = Dog.initWithJsonString(model.getmDog().get().toString());
-        model.dogModel.set(innerModel);
-        model.bookModels = JsonParser.<Book>parseArray(model.getmBooks().get().toString(), Book.class);
-        return model;
-    }
 
     public ObservableField<String> getmName() {
         return mName;

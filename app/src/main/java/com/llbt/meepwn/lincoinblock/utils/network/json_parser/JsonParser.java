@@ -51,5 +51,4 @@ public class JsonParser {
         return models;
     }
 
-
 }

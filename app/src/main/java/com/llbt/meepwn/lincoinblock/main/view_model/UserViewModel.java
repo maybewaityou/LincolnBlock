@@ -6,11 +6,13 @@ import android.view.View;
 import com.llbt.meepwn.lincoinblock.R;
 import com.llbt.meepwn.lincoinblock.framework.base.BaseViewModel;
 import com.llbt.meepwn.lincoinblock.main.model.UserModel;
+import com.llbt.meepwn.lincoinblock.main.model.test_json.Book;
 import com.llbt.meepwn.lincoinblock.main.model.test_json.TestJsonModel;
 import com.llbt.meepwn.lincoinblock.main.service.UserService;
 import com.llbt.meepwn.lincoinblock.main.view.activity.OtherActivity;
 import com.llbt.meepwn.lincoinblock.main.view.activity.TestActivity;
 import com.llbt.meepwn.lincoinblock.main.view.activity.TestFragmentActivity;
+import com.llbt.meepwn.lincoinblock.utils.network.ModelAdapter;
 
 import rx.Observable;
 import rx.functions.Func1;
@@ -62,8 +64,14 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
                     "        }\n" +
                     "    ]\n" +
                     "}";
-            TestJsonModel m = TestJsonModel.initWithJsonString(jsonString);
+            TestJsonModel m = ModelAdapter.modelWithJsonString(jsonString, TestJsonModel.class);
             System.out.println("====>>>> " + m);
+
+            String json = "        {\n" +
+                    "            \"bookName\": \"ssdddaass\",\n" +
+                    "            \"price\": \"¥998\"\n" +
+                    "        }\n";
+            Book book = ModelAdapter.modelWithJsonString(json, Book.class);
         } else {
             service.sendRequest().flatMap((Func1) user -> {
                  // TODO 类型转换

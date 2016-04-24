@@ -3,7 +3,6 @@ package com.llbt.meepwn.lincoinblock.main.model.test_json;
 import android.databinding.ObservableField;
 
 import com.llbt.meepwn.lincoinblock.framework.base.BaseModel;
-import com.llbt.meepwn.lincoinblock.utils.network.json_parser.JsonParser;
 
 /**
  * package: com.llbt.meepwn.lincoinblock.main.model.test_json
@@ -17,10 +16,6 @@ public class Book extends BaseModel {
 
     private ObservableField<String> mBookName = new ObservableField<>();
     private ObservableField<String> mPrice = new ObservableField<>();
-
-    public static Book initWithJsonString(String jsonString) {
-        return JsonParser.<Book>parse(jsonString, Book.class);
-    }
 
     public ObservableField<String> getmBookName() {
         return mBookName;
