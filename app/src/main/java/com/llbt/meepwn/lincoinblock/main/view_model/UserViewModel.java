@@ -9,6 +9,7 @@ import com.llbt.meepwn.lincoinblock.library.volley.Request;
 import com.llbt.meepwn.lincoinblock.library.volley.toolbox.StringRequest;
 import com.llbt.meepwn.lincoinblock.library.volley.toolbox.Volley;
 import com.llbt.meepwn.lincoinblock.main.model.UserModel;
+import com.llbt.meepwn.lincoinblock.main.model.test_json.TestJsonModel;
 import com.llbt.meepwn.lincoinblock.main.service.UserService;
 import com.llbt.meepwn.lincoinblock.main.view.activity.OtherActivity;
 import com.llbt.meepwn.lincoinblock.main.view.activity.TestActivity;
@@ -17,6 +18,7 @@ import com.llbt.meepwn.lincoinblock.main.view.activity.TestFragmentActivity;
 import java.util.HashMap;
 
 import rx.Observable;
+import rx.functions.Action1;
 import rx.functions.Func1;
 
 /**
@@ -42,16 +44,16 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
         } else if (view.getId() == R.id.fragmentButton) {
             service.pushActivityWithDataModel(null, TestFragmentActivity.class);
         } else if (view.getId() == R.id.jsonToModel) {
-//            service.sendRequest("", new HashMap<>(), TestJsonModel.class).subscribe(new Action1<TestJsonModel>() {
-//                @Override
-//                public void call(TestJsonModel model) {
-//                    System.out.println("== model ===>>>> " + model);
-//                }
-//            });
+            service.sendRequest("", new HashMap<>(), TestJsonModel.class).subscribe(new Action1<TestJsonModel>() {
+                @Override
+                public void call(TestJsonModel model) {
+                    System.out.println("== model ===>>>> " + model);
+                }
+            });
+        } else if (view.getId() == R.id.networkButton) {
             StringRequest request = new StringRequest(
                     Request.Method.GET,
                     "https://kyfw.12306.cn/otn/",
-//                    "http://www.baidu.com/",
                     response -> System.out.println("==== response >>>> " + response),
                     error -> System.out.println("==== error >>>> " + error));
             Volley.newRequestQueue(service.getContext()).add(request);
