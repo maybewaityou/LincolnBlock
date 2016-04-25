@@ -37,8 +37,8 @@ public abstract class BaseService<DM extends DataModel> implements Service<DM>, 
     }
 
     @Override
-    public Observable sendRequest(String url, Map<String, String> params, Class clazz) {
-        return Just.sendRequest(context.get(), url, params, clazz);
+    public Observable sendRequest(String url, int method, Map<String, String> params, Class clazz) {
+        return Just.sendRequest(context.get(), url, method, params, clazz);
     }
 
     @Override

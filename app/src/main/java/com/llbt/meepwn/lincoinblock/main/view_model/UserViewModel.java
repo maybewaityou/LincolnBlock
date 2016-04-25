@@ -13,6 +13,7 @@ import com.llbt.meepwn.lincoinblock.main.service.UserService;
 import com.llbt.meepwn.lincoinblock.main.view.activity.OtherActivity;
 import com.llbt.meepwn.lincoinblock.main.view.activity.TestActivity;
 import com.llbt.meepwn.lincoinblock.main.view.activity.TestFragmentActivity;
+import com.llbt.meepwn.lincoinblock.utils.network.Just;
 
 import java.util.HashMap;
 
@@ -43,7 +44,7 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
         } else if (view.getId() == R.id.fragmentButton) {
             service.pushActivityWithDataModel(null, TestFragmentActivity.class);
         } else if (view.getId() == R.id.jsonToModel) {
-            service.sendRequest("", new HashMap<>(), TestJsonModel.class).subscribe(new Action1<TestJsonModel>() {
+            service.sendRequest("", Just.Method.GET, new HashMap<>(), TestJsonModel.class).subscribe(new Action1<TestJsonModel>() {
                 @Override
                 public void call(TestJsonModel model) {
                     System.out.println("== model ===>>>> " + model);
@@ -51,19 +52,17 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
             });
         } else if (view.getId() == R.id.networkButton) {
             // "https://kyfw.12306.cn/otn/",
-            service.sendRequest("https://api.github.com", new HashMap<>(), GitModel.class).subscribe(new Action1<GitModel>() {
-                @Override
-                public void call(GitModel gitModel) {
-                    System.out.println("====>>>> " + gitModel);
-                }
-            });
+            service.sendRequest("https://api.github.com", Just.Method.GET, new HashMap<>(), GitModel.class)
+                .subscribe((Action1<GitModel>)(gitModel -> {
+                    System.out.println("=====>>>>> " + gitModel);
+            }));
         } else if (view.getId() == R.id.permissionButton) {
             service.requestPermission(Manifest.permission.CAMERA)
                 .subscribe(aBoolean -> {
                         System.out.println("=====>>>>> " + aBoolean);
             });
         } else {
-            service.sendRequest("", new HashMap<>(), UserModel.class).flatMap((Func1) user -> {
+            service.sendRequest("", Just.Method.GET, new HashMap<>(), UserModel.class).flatMap((Func1) user -> {
                  // TODO 类型转换
                 return getToken((UserModel) user);
             }).subscribe(userModel -> {
@@ -78,7 +77,7 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
     }
 
     private Observable getToken(UserModel userModel) {
-        return service.sendRequest("", new HashMap<>(), UserModel.class).doOnNext(o -> {
+        return service.sendRequest("", Just.Method.GET, new HashMap<>(), UserModel.class).doOnNext(o -> {
             System.out.println("==== getToken >>>> " + o);
         });
     }
