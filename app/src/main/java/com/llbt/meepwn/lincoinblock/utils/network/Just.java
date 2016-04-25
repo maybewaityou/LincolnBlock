@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.llbt.meepwn.lincoinblock.framework.Model;
 import com.llbt.meepwn.lincoinblock.library.volley.Request;
+import com.llbt.meepwn.lincoinblock.library.volley.Response;
 import com.llbt.meepwn.lincoinblock.library.volley.toolbox.StringRequest;
 import com.llbt.meepwn.lincoinblock.library.volley.toolbox.Volley;
 import com.llbt.meepwn.lincoinblock.main.model.UserModel;
@@ -25,7 +26,7 @@ import rx.schedulers.Schedulers;
  */
 public class Just {
 
-    public static Observable sendRequest(Context context, String url, Map<String, String> params, Class clazz) {
+    public static Observable<Model> sendRequest(Context context, String url, Map<String, String> params, Class clazz) {
         return Observable.create((Observable.OnSubscribe<Model>) subscriber -> {
             // TODO 添加访问网络方法
             if (clazz == UserModel.class) {
@@ -58,17 +59,21 @@ public class Just {
                 subscriber.onNext(ModelAdapter.modelWithJsonString(jsonString, clazz));
                 subscriber.onCompleted();
             } else {
-                StringRequest request = new StringRequest(
-                        Request.Method.GET,
-                        "https://kyfw.12306.cn/otn/",
-                        response -> System.out.println("==== response >>>> " + response),
-                        error -> System.out.println("==== error >>>> " + error));
-                Volley.newRequestQueue(context).add(request);
+                sendRequest(context, url, params,
+                        response -> {
+                            subscriber.onNext(ModelAdapter.modelWithJsonString(response, clazz));
+                            subscriber.onCompleted();
+                        },
+                        error -> subscriber.onError(new Throwable(error.getMessage())));
             }
-//            subscriber.onError(new Throwable("网络请求失败"));
         })
         .subscribeOn(Schedulers.newThread())
         .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    private static void sendRequest(Context context, String url, Map<String, String> params, Response.Listener<String> listener, Response.ErrorListener error) {
+        StringRequest request = new StringRequest(Request.Method.GET, url, listener, error);
+        Volley.newRequestQueue(context).add(request);
     }
 
 }
