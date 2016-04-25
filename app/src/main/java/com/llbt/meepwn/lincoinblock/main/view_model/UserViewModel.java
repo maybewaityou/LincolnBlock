@@ -5,9 +5,6 @@ import android.view.View;
 
 import com.llbt.meepwn.lincoinblock.R;
 import com.llbt.meepwn.lincoinblock.framework.base.BaseViewModel;
-import com.llbt.meepwn.lincoinblock.library.volley.Request;
-import com.llbt.meepwn.lincoinblock.library.volley.toolbox.StringRequest;
-import com.llbt.meepwn.lincoinblock.library.volley.toolbox.Volley;
 import com.llbt.meepwn.lincoinblock.main.model.UserModel;
 import com.llbt.meepwn.lincoinblock.main.model.test_json.TestJsonModel;
 import com.llbt.meepwn.lincoinblock.main.service.UserService;
@@ -51,12 +48,9 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
                 }
             });
         } else if (view.getId() == R.id.networkButton) {
-            StringRequest request = new StringRequest(
-                    Request.Method.GET,
-                    "https://kyfw.12306.cn/otn/",
-                    response -> System.out.println("==== response >>>> " + response),
-                    error -> System.out.println("==== error >>>> " + error));
-            Volley.newRequestQueue(service.getContext()).add(request);
+            service.sendRequest("", new HashMap<>(), null).subscribe(o -> {
+
+            });
         } else {
             service.sendRequest("", new HashMap<>(), UserModel.class).flatMap((Func1) user -> {
                  // TODO 类型转换
