@@ -1,5 +1,6 @@
 package com.llbt.meepwn.lincoinblock.main.view_model;
 
+import android.Manifest;
 import android.databinding.ObservableField;
 import android.view.View;
 
@@ -50,6 +51,11 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
         } else if (view.getId() == R.id.networkButton) {
             service.sendRequest("", new HashMap<>(), null).subscribe(o -> {
 
+            });
+        } else if (view.getId() == R.id.permissionButton) {
+            service.requestPermission(Manifest.permission.CAMERA)
+                .subscribe(aBoolean -> {
+                        System.out.println("=====>>>>> " + aBoolean);
             });
         } else {
             service.sendRequest("", new HashMap<>(), UserModel.class).flatMap((Func1) user -> {

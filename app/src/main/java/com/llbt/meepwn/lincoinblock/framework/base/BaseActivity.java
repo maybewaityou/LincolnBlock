@@ -5,8 +5,12 @@ import android.databinding.ObservableField;
 import android.support.v4.app.FragmentActivity;
 
 import com.llbt.meepwn.lincoinblock.framework.Model;
+import com.llbt.meepwn.lincoinblock.framework.PermissionRequest;
 import com.llbt.meepwn.lincoinblock.framework.Service;
 import com.llbt.meepwn.lincoinblock.framework.ViewModel;
+import com.tbruyelle.rxpermissions.RxPermissions;
+
+import rx.Observable;
 
 /**
  * package: com.llbt.meepwn.lincoinblock.framework
@@ -17,11 +21,17 @@ import com.llbt.meepwn.lincoinblock.framework.ViewModel;
  * desc:
  */
 @SuppressLint("Registered")
-public class BaseActivity<M extends Model, VM extends ViewModel, S extends Service> extends FragmentActivity {
+public class BaseActivity<M extends Model, VM extends ViewModel, S extends Service> extends FragmentActivity implements PermissionRequest {
 
     protected ObservableField<M> model;
     protected VM viewModel;
     protected S service;
+
+    @Override
+    public Observable<Boolean> requestPermission(String permission) {
+        return RxPermissions.getInstance(service.getContext())
+                .request(permission);
+    }
 
     @Override
     protected void onResume() {

@@ -89,6 +89,10 @@ dependencies {
     compile 'io.reactivex:rxjava:1.1.0'
     // Rx end
 
+    // RxPermissions start
+    compile 'com.tbruyelle.rxpermissions:rxpermissions:0.7.0@aar'
+    // RxPermissions end
+
     // agera start -- Google Reactive Programming for Android
     compile 'com.google.android.agera:agera:1.0.0-RC1'
     // Agera Sample Extensions

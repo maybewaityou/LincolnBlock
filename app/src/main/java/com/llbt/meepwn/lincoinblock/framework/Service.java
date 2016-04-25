@@ -1,5 +1,7 @@
 package com.llbt.meepwn.lincoinblock.framework;
 
+import android.content.Context;
+
 import java.util.Map;
 
 import rx.Observable;
@@ -13,6 +15,8 @@ import rx.Observable;
  * desc:
  */
 public interface Service<DM extends DataModel> {
+
+    Context getContext();
 
     void pushActivityWithDataModel(DM dataModel, Class clazz);
 

@@ -88,6 +88,18 @@
             android:text="Test Network"
             />
 
+        <Button
+            android:id="@+id/permissionButton"
+            android:onClick="@{viewModel.handleClick}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/networkButton"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:text="Test Permissions"
+            />
+
         <!--
         <ImageView
             android:id="@+id/imageView"
@@ -105,7 +117,7 @@
             android:text='@{viewModel.model.lastName}'
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/networkButton"
+            android:layout_below="@+id/permissionButton"
             android:layout_centerInParent="true"
             android:gravity="center"
             />
