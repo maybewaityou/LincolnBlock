@@ -8,6 +8,7 @@ import com.llbt.meepwn.lincoinblock.framework.Model;
 import com.llbt.meepwn.lincoinblock.framework.PermissionRequest;
 import com.llbt.meepwn.lincoinblock.framework.Service;
 import com.llbt.meepwn.lincoinblock.framework.ViewModel;
+import com.tbruyelle.rxpermissions.Permission;
 import com.tbruyelle.rxpermissions.RxPermissions;
 
 import rx.Observable;
@@ -31,6 +32,12 @@ public class BaseActivity<M extends Model, VM extends ViewModel, S extends Servi
     public Observable<Boolean> requestPermission(String permission) {
         return RxPermissions.getInstance(service.getContext())
                 .request(permission);
+    }
+
+    @Override
+    public Observable<Permission> requestMutablePermission(String... permission) {
+        return RxPermissions.getInstance(service.getContext())
+                .requestEach(permission);
     }
 
     @Override

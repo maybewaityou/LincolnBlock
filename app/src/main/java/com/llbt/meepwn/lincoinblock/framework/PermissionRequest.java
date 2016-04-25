@@ -1,5 +1,7 @@
 package com.llbt.meepwn.lincoinblock.framework;
 
+import com.tbruyelle.rxpermissions.Permission;
+
 import rx.Observable;
 
 /**
@@ -13,5 +15,7 @@ import rx.Observable;
 public interface PermissionRequest {
 
     Observable<Boolean> requestPermission(String permission);
+
+    Observable<Permission> requestMutablePermission(String ... permission);
 
 }

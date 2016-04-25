@@ -7,6 +7,7 @@ import com.llbt.meepwn.lincoinblock.framework.DataModel;
 import com.llbt.meepwn.lincoinblock.framework.PermissionRequest;
 import com.llbt.meepwn.lincoinblock.framework.Service;
 import com.llbt.meepwn.lincoinblock.utils.network.Just;
+import com.tbruyelle.rxpermissions.Permission;
 import com.tbruyelle.rxpermissions.RxPermissions;
 
 import java.lang.ref.WeakReference;
@@ -44,6 +45,12 @@ public abstract class BaseService<DM extends DataModel> implements Service<DM>, 
     public Observable<Boolean> requestPermission(String permission) {
         return RxPermissions.getInstance(context.get())
                 .request(permission);
+    }
+
+    @Override
+    public Observable<Permission> requestMutablePermission(String... permission) {
+        return RxPermissions.getInstance(context.get())
+                .requestEach(permission);
     }
 
     @Override
