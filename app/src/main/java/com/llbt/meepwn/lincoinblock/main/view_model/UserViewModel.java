@@ -61,7 +61,7 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
         } else if (view.getId() == R.id.permissionButton) {
             service.requestPermission(Manifest.permission.CAMERA)
                 .subscribe(aBoolean -> {
-                        System.out.println("=====>>>>> " + aBoolean);
+                    System.out.println("=====>>>>> " + aBoolean);
             });
         } else {
             service.sendRequest("", Just.Method.GET, new HashMap<>(), UserModel.class).flatMap((Func1) user -> {
