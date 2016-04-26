@@ -135,6 +135,18 @@ dependencies {
     // job queue start
     compile 'com.birbit:android-priority-jobqueue:2.0.0-alpha2'
     // job queue end
+
+    // stetho start
+    compile 'com.facebook.stetho:stetho:1.3.1'
+//    compile 'com.facebook.stetho:stetho-okhttp3:1.3.1'
+    compile 'com.facebook.stetho:stetho-okhttp:1.3.1'
+    compile 'com.facebook.stetho:stetho-urlconnection:1.3.1'
+    // stetho end
+
+    // leakcanary start
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3'
+    // leakcanary end
 }
 // data binding
 kapt {
