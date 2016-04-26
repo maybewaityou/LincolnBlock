@@ -46,17 +46,17 @@ public abstract class BaseService<DM extends DataModel> implements Service<DM>, 
     @Override
     public Observable<Boolean> requestPermission(String permission) {
         return RxPermissions.getInstance(context.get())
-                .request(permission)
-                .subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread());
+            .request(permission)
+            .subscribeOn(Schedulers.newThread())
+            .observeOn(AndroidSchedulers.mainThread());
     }
 
     @Override
     public Observable<Permission> requestMutablePermission(String... permission) {
         return RxPermissions.getInstance(context.get())
-                .requestEach(permission)
-                .subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread());
+            .requestEach(permission)
+            .subscribeOn(Schedulers.newThread())
+            .observeOn(AndroidSchedulers.mainThread());
     }
 
     @Override
