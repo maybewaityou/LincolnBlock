@@ -78,7 +78,7 @@
             />
 
         <Button
-            android:id="@+id/networkButton"
+            android:id="@+id/permissionButton"
             android:onClick="@{viewModel.handleClick}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -86,11 +86,23 @@
             android:layout_marginTop="@dimen/dp_10"
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_marginRight="@dimen/dp_10"
+            android:text="Test Permissions"
+            />
+
+        <Button
+            android:id="@+id/networkButton"
+            android:onClick="@{viewModel.handleClick}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/permissionButton"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
             android:text="Test Network"
             />
 
         <Button
-            android:id="@+id/permissionButton"
+            android:id="@+id/retrofitButton"
             android:onClick="@{viewModel.handleClick}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -98,14 +110,14 @@
             android:layout_marginTop="@dimen/dp_10"
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_marginRight="@dimen/dp_10"
-            android:text="Test Permissions"
+            android:text="Test Retrofit Network"
             />
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_below="@+id/permissionButton"
+            android:layout_below="@+id/retrofitButton"
             android:layout_marginTop="@dimen/dp_10"
             android:layout_centerHorizontal="true"
             android:background="#000000"

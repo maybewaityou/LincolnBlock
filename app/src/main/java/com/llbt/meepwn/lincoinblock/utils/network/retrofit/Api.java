@@ -1,5 +1,7 @@
 package com.llbt.meepwn.lincoinblock.utils.network.retrofit;
 
+import java.util.Map;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -16,10 +18,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class Api {
 
-    public static void send() {
+    public static void sendRequest(String url, Map<String, String> params, Class clazz) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.github.com")
                 .addConverterFactory(GsonConverterFactory.create())
+//                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
 
         ApiService service = retrofit.create(ApiService.class);

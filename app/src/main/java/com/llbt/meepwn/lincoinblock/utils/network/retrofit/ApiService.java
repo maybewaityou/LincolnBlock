@@ -15,4 +15,5 @@ public interface ApiService {
 
     @GET("https://api.github.com")
     Call<Github> fetchData();
+
 }
