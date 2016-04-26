@@ -14,6 +14,8 @@ import java.lang.ref.WeakReference;
 import java.util.Map;
 
 import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * package: com.llbt.meepwn.lincoinblock.framework.base
@@ -44,13 +46,17 @@ public abstract class BaseService<DM extends DataModel> implements Service<DM>, 
     @Override
     public Observable<Boolean> requestPermission(String permission) {
         return RxPermissions.getInstance(context.get())
-                .request(permission);
+                .request(permission)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread());
     }
 
     @Override
     public Observable<Permission> requestMutablePermission(String... permission) {
         return RxPermissions.getInstance(context.get())
-                .requestEach(permission);
+                .requestEach(permission)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread());
     }
 
     @Override
