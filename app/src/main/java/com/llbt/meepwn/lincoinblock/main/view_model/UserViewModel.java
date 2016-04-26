@@ -6,7 +6,6 @@ import android.view.View;
 
 import com.llbt.meepwn.lincoinblock.R;
 import com.llbt.meepwn.lincoinblock.framework.base.BaseViewModel;
-import com.llbt.meepwn.lincoinblock.main.model.GitModel;
 import com.llbt.meepwn.lincoinblock.main.model.UserModel;
 import com.llbt.meepwn.lincoinblock.main.model.test_json.TestJsonModel;
 import com.llbt.meepwn.lincoinblock.main.service.UserService;
@@ -14,6 +13,7 @@ import com.llbt.meepwn.lincoinblock.main.view.activity.OtherActivity;
 import com.llbt.meepwn.lincoinblock.main.view.activity.TestActivity;
 import com.llbt.meepwn.lincoinblock.main.view.activity.TestFragmentActivity;
 import com.llbt.meepwn.lincoinblock.utils.network.Just;
+import com.llbt.meepwn.lincoinblock.utils.network.retrofit.Api;
 
 import java.util.HashMap;
 
@@ -52,12 +52,13 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
             });
         } else if (view.getId() == R.id.networkButton) {
             // "https://kyfw.12306.cn/otn/",
-            service.sendRequest("https://api.github.com", Just.Method.GET, new HashMap<>(), GitModel.class)
-                .subscribe((Action1<GitModel>) gitModel -> {
-                    System.out.println("=====>>>>> " + gitModel);
-                }, (Action1<Throwable>) throwable -> {
-                    System.out.println("=====>>>>> " + throwable.getMessage());
-                });
+//            service.sendRequest("https://api.github.com", Just.Method.GET, new HashMap<>(), GitModel.class)
+//                .subscribe((Action1<GitModel>) gitModel -> {
+//                    System.out.println("=====>>>>> " + gitModel);
+//                }, (Action1<Throwable>) throwable -> {
+//                    System.out.println("=====>>>>> " + throwable.getMessage());
+//                });
+            Api.send();
         } else if (view.getId() == R.id.permissionButton) {
             service.requestPermission(Manifest.permission.CAMERA)
                 .subscribe(aBoolean -> {
