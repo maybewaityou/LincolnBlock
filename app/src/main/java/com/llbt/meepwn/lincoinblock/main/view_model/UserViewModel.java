@@ -54,7 +54,7 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
             // "https://kyfw.12306.cn/otn/",
             service.sendRequest("https://api.github.com", Just.Method.GET, new HashMap<>(), GitModel.class)
                 .subscribe((Action1<GitModel>) gitModel -> {
-                    System.out.println("=====>>>>> " + gitModel.getmCode_search_url());
+                    System.out.println("=====>>>>> " + gitModel);
                 }, (Action1<Throwable>) throwable -> {
                     System.out.println("=====>>>>> " + throwable.getMessage());
                 });
