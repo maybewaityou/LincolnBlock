@@ -59,7 +59,7 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
                         System.out.println("=====>>>>> " + throwable.getMessage());
                     });
         } else if (view.getId() == R.id.retrofitButton) {
-            
+
         } else if (view.getId() == R.id.permissionButton) {
             service.requestPermission(Manifest.permission.CAMERA)
                 .subscribe(aBoolean -> {
