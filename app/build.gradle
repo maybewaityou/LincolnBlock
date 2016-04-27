@@ -103,14 +103,14 @@ dependencies {
     // agera end -- Google Reactive Programming for Android
 
     // retrofit start
-    compile 'com.squareup.retrofit2:retrofit:2.0.1'
-    compile 'com.squareup.retrofit2:converter-gson:2.0.1'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.1'
+//    compile 'com.squareup.retrofit2:retrofit:2.0.1'
+//    compile 'com.squareup.retrofit2:converter-gson:2.0.1'
+//    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.1'
     // retrofit end
 
     // okhttp start
-    compile 'com.squareup.okhttp:okhttp:2.7.5'
-    compile 'com.squareup.okhttp:okhttp-urlconnection:2.7.5'
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.squareup.okhttp3:okhttp-urlconnection:3.2.0'
     // okhttp end
 
     // phrase start -- Square's StringUtility
