@@ -40,6 +40,7 @@ public class JsonPostRequest extends JsonObjectRequest {
         Map<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
         headers.put("AJAX", "Y");
+        
 //        String cookie = BaseApplication.getInstance().getCookie();
 //        if (!"".equals(cookie)||!"null".equals(cookie)||cookie != null) {
 //            headers.put("Cookie", cookie);
