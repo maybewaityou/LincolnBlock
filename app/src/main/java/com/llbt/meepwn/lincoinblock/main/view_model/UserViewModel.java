@@ -60,7 +60,6 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
                     });
         } else if (view.getId() == R.id.retrofitButton) {
             // TODO 添加测试
-
         } else if (view.getId() == R.id.permissionButton) {
             service.requestPermission(Manifest.permission.CAMERA)
                 .subscribe(aBoolean -> {
