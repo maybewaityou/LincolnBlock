@@ -14,8 +14,6 @@ import com.llbt.meepwn.lincoinblock.main.view.activity.OtherActivity;
 import com.llbt.meepwn.lincoinblock.main.view.activity.TestActivity;
 import com.llbt.meepwn.lincoinblock.main.view.activity.TestFragmentActivity;
 import com.llbt.meepwn.lincoinblock.utils.network.Just;
-import com.llbt.meepwn.lincoinblock.utils.network.retrofit.Api;
-import com.llbt.meepwn.lincoinblock.utils.network.retrofit.Github;
 
 import java.util.HashMap;
 
@@ -61,7 +59,7 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
                         System.out.println("=====>>>>> " + throwable.getMessage());
                     });
         } else if (view.getId() == R.id.retrofitButton) {
-            Api.sendRequest("https://api.github.com", new HashMap<>(), Github.class);
+            
         } else if (view.getId() == R.id.permissionButton) {
             service.requestPermission(Manifest.permission.CAMERA)
                 .subscribe(aBoolean -> {
