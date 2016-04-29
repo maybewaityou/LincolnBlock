@@ -1,8 +1,6 @@
 package com.llbt.meepwn.lincoinblock.utils.network.volley;
 
 import com.llbt.meepwn.lincoinblock.library.volley.toolbox.HurlStack;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.OkUrlFactory;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -11,6 +9,9 @@ import java.util.Map;
 
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLSocketFactory;
+
+import okhttp3.OkHttpClient;
+import okhttp3.OkUrlFactory;
 
 /**
  * package: com.llbt.meepwn.lincoinblock.utils.network.volley
