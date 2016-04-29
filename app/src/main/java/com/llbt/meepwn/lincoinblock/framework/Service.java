@@ -23,4 +23,6 @@ public interface Service<DM extends DataModel> {
     void popActivity();
 
     Observable sendRequest(String url, int method, Map<String, String> params, Class clazz);
+
+    void cancelRequest();
 }

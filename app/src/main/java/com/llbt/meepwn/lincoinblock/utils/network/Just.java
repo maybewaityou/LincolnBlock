@@ -3,6 +3,7 @@ package com.llbt.meepwn.lincoinblock.utils.network;
 import android.content.Context;
 
 import com.llbt.meepwn.lincoinblock.framework.Model;
+import com.llbt.meepwn.lincoinblock.library.volley.Request;
 import com.llbt.meepwn.lincoinblock.library.volley.Response;
 import com.llbt.meepwn.lincoinblock.library.volley.toolbox.StringRequest;
 import com.llbt.meepwn.lincoinblock.library.volley.toolbox.Volley;
@@ -39,6 +40,8 @@ public class Just {
         int TRACE = 6;
         int PATCH = 7;
     }
+
+    private static Request request;
 
     public static Observable<Model> sendRequest(Context context, String url, int method, Map<String, String> params, Class clazz) {
         return Observable.create((Observable.OnSubscribe<Model>) subscriber -> {
@@ -85,9 +88,15 @@ public class Just {
         .observeOn(AndroidSchedulers.mainThread());
     }
 
-    private static void sendRequest(Context context, String url, int method, Map<String, String> params, Response.Listener<String> listener, Response.ErrorListener error) {
-        StringRequest request = new StringRequest(method, url, listener, error);
-        Volley.newRequestQueue(context).add(request);
+    @SuppressWarnings("unchecked")
+    private static <T> Request<T> sendRequest(Context context, String url, int method, Map<String, String> params, Response.Listener<String> listener, Response.ErrorListener error) {
+        request = new StringRequest(method, url, listener, error);
+        return Volley.newRequestQueue(context).add((Request<T>) request);
+    }
+
+    public static void cancelRequest() {
+        if (request == null) return;
+        request.cancel();
     }
 
 }

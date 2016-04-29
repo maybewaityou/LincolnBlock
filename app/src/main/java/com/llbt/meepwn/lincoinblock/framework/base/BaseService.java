@@ -52,6 +52,11 @@ public abstract class BaseService<DM extends DataModel> implements Service<DM>, 
     }
 
     @Override
+    public void cancelRequest() {
+        Just.cancelRequest();
+    }
+
+    @Override
     public Observable<Permission> requestMutablePermission(String... permission) {
         return RxPermissions.getInstance(context.get())
             .requestEach(permission)
