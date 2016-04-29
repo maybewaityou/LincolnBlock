@@ -17,8 +17,7 @@
     <!-- 允许应用程序联网，以便向我们的服务器端发送数据 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <!-- 调用摄像头的权限 -->
-    <uses-permission android:name="android.permission.CAMERA" >
-    </uses-permission>
+    <uses-permission android:name="android.permission.CAMERA" />
     <!-- 拨出电话的权限 -->
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
