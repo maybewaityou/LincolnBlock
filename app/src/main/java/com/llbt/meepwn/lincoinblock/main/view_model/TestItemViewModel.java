@@ -3,8 +3,8 @@ package com.llbt.meepwn.lincoinblock.main.view_model;
 import android.databinding.ObservableField;
 import android.view.View;
 
-import com.llbt.meepwn.lincoinblock.main.model.TestItemModel;
 import com.llbt.meepwn.lincoinblock.framework.base.BaseViewModel;
+import com.llbt.meepwn.lincoinblock.main.model.TestItemModel;
 import com.llbt.meepwn.lincoinblock.main.service.TestItemService;
 
 /**
