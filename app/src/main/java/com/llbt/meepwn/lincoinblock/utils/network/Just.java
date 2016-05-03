@@ -10,8 +10,6 @@ import com.llbt.meepwn.lincoinblock.main.model.UserModel;
 import com.llbt.meepwn.lincoinblock.main.model.test_json.TestJsonModel;
 import com.llbt.meepwn.lincoinblock.utils.network.volley.queue.GlobalQueue;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import rx.Observable;
@@ -44,7 +42,6 @@ public class Just {
     }
 
     private static Request request;
-    private static List<Request> requests;
 
     public static Observable<Model> sendRequest(Context context, String url, int method, Map<String, String> params, Class clazz) {
         return Observable.create((Observable.OnSubscribe<Model>) subscriber -> {
@@ -81,16 +78,10 @@ public class Just {
             } else {
                 sendRequest(context, url, method, params,
                         response -> {
-                            // 将request从requests中移除
-                            requests = removeRequestFromRequestsByUrl(requests, url);
-
                             subscriber.onNext(ModelAdapter.modelWithJsonString(response, clazz));
                             subscriber.onCompleted();
                         },
                         error -> {
-                            // 将request从requests中移除
-                            requests = removeRequestFromRequestsByUrl(requests, url);
-
                             subscriber.onError(new Throwable(error.getMessage()));
                         });
             }
@@ -102,7 +93,7 @@ public class Just {
     @SuppressWarnings("unchecked")
     private static <T> Request<T> sendRequest(Context context, String url, int method, Map<String, String> params, Response.Listener<String> listener, Response.ErrorListener error) {
         request = new StringRequest(method, url, listener, error);
-        getRequests().add(request);
+        request.setTag(url);
         return GlobalQueue.getGlobalQueue(context).add((Request<T>) request);
     }
 
@@ -114,35 +105,9 @@ public class Just {
         if (request == null) return;
         if (url == null) {
             request.cancel();
-            requests.remove(request);
             return;
         }
-        requests = removeRequestFromRequestsByUrl(requests, url);
-    }
-
-    /**
-     * 通过Url移除request
-     * @param requests 数组
-     * @param url url
-     * @return 移除之后的数组
-     */
-    private static List<Request> removeRequestFromRequestsByUrl(List<Request>requests, String url) {
-        List<Request> tmpRequests = new ArrayList<>();
-        for (Request r : requests) {
-            if (url.equals(r.getUrl())) {
-                r.cancel();
-            } else {
-                tmpRequests.add(r);
-            }
-        }
-        return tmpRequests;
-    }
-
-    private static List<Request> getRequests() {
-        if (requests == null) {
-            requests = new ArrayList<>();
-        }
-        return requests;
+        GlobalQueue.getGlobalQueue(null).cancelAll(url);
     }
 
 }
