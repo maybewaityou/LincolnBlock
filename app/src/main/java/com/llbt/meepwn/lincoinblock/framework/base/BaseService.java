@@ -44,14 +44,6 @@ public abstract class BaseService<DM extends DataModel> implements Service<DM>, 
     }
 
     @Override
-    public Observable<Boolean> requestPermission(String permission) {
-        return RxPermissions.getInstance(context.get())
-            .request(permission)
-            .subscribeOn(Schedulers.newThread())
-            .observeOn(AndroidSchedulers.mainThread());
-    }
-
-    @Override
     public void cancelRequest() {
         Just.cancelRequest();
     }
@@ -59,6 +51,14 @@ public abstract class BaseService<DM extends DataModel> implements Service<DM>, 
     @Override
     public void cancelRequestWithUrl(String url) {
         Just.cancelRequestWithUrl(url);
+    }
+
+    @Override
+    public Observable<Boolean> requestPermission(String permission) {
+        return RxPermissions.getInstance(context.get())
+                .request(permission)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread());
     }
 
     @Override
