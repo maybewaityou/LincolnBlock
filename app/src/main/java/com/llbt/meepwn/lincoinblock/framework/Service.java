@@ -25,4 +25,6 @@ public interface Service<DM extends DataModel> {
     Observable sendRequest(String url, int method, Map<String, String> params, Class clazz);
 
     void cancelRequest();
+
+    void cancelRequestWithUrl(String url);
 }
