@@ -12,6 +12,8 @@ import com.tbruyelle.rxpermissions.Permission;
 import com.tbruyelle.rxpermissions.RxPermissions;
 
 import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * package: com.llbt.meepwn.lincoinblock.framework
@@ -31,13 +33,17 @@ public class BaseActivity<M extends Model, VM extends ViewModel, S extends Servi
     @Override
     public Observable<Boolean> requestPermission(String permission) {
         return RxPermissions.getInstance(service.getContext())
-                .request(permission);
+                .request(permission)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread());
     }
 
     @Override
     public Observable<Permission> requestMutablePermission(String... permission) {
         return RxPermissions.getInstance(service.getContext())
-                .requestEach(permission);
+                .requestEach(permission)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread());
     }
 
     @Override
