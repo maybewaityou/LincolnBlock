@@ -81,10 +81,16 @@ public class Just {
             } else {
                 sendRequest(context, url, method, params,
                         response -> {
+                            // TODO 将request从requests中移除
+
                             subscriber.onNext(ModelAdapter.modelWithJsonString(response, clazz));
                             subscriber.onCompleted();
                         },
-                        error -> subscriber.onError(new Throwable(error.getMessage())));
+                        error -> {
+                            // TODO 将request从requests中移除
+
+                            subscriber.onError(new Throwable(error.getMessage()));
+                        });
             }
         })
         .subscribeOn(Schedulers.newThread())
@@ -109,12 +115,17 @@ public class Just {
             requests.remove(request);
             return;
         }
+        List<Request> tmpRequests = new ArrayList<>();
         for (Request r : requests) {
             if (url.equals(r.getUrl())) {
                 r.cancel();
-                requests.remove(r);
+            } else {
+                tmpRequests.add(r);
             }
         }
+        requests.clear();
+        requests.addAll(tmpRequests);
+        System.out.println("=====requests>>>> " + requests.size());
     }
 
     private static List<Request> getRequests() {
