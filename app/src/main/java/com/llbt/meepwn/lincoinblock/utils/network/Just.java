@@ -81,13 +81,15 @@ public class Just {
             } else {
                 sendRequest(context, url, method, params,
                         response -> {
-                            // TODO 将request从requests中移除
+                            // 将request从requests中移除
+                            requests = removeRequestFromRequestsByUrl(requests, url);
 
                             subscriber.onNext(ModelAdapter.modelWithJsonString(response, clazz));
                             subscriber.onCompleted();
                         },
                         error -> {
-                            // TODO 将request从requests中移除
+                            // 将request从requests中移除
+                            requests = removeRequestFromRequestsByUrl(requests, url);
 
                             subscriber.onError(new Throwable(error.getMessage()));
                         });
@@ -115,6 +117,16 @@ public class Just {
             requests.remove(request);
             return;
         }
+        requests = removeRequestFromRequestsByUrl(requests, url);
+    }
+
+    /**
+     * 通过Url移除request
+     * @param requests 数组
+     * @param url url
+     * @return 移除之后的数组
+     */
+    private static List<Request> removeRequestFromRequestsByUrl(List<Request>requests, String url) {
         List<Request> tmpRequests = new ArrayList<>();
         for (Request r : requests) {
             if (url.equals(r.getUrl())) {
@@ -123,9 +135,7 @@ public class Just {
                 tmpRequests.add(r);
             }
         }
-        requests.clear();
-        requests.addAll(tmpRequests);
-        System.out.println("=====requests>>>> " + requests.size());
+        return tmpRequests;
     }
 
     private static List<Request> getRequests() {
