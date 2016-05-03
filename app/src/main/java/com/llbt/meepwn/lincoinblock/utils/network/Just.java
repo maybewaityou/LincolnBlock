@@ -10,6 +10,8 @@ import com.llbt.meepwn.lincoinblock.main.model.UserModel;
 import com.llbt.meepwn.lincoinblock.main.model.test_json.TestJsonModel;
 import com.llbt.meepwn.lincoinblock.utils.network.volley.queue.GlobalQueue;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import rx.Observable;
@@ -42,6 +44,7 @@ public class Just {
     }
 
     private static Request request;
+    private static List<Request> requests;
 
     public static Observable<Model> sendRequest(Context context, String url, int method, Map<String, String> params, Class clazz) {
         return Observable.create((Observable.OnSubscribe<Model>) subscriber -> {
@@ -91,12 +94,34 @@ public class Just {
     @SuppressWarnings("unchecked")
     private static <T> Request<T> sendRequest(Context context, String url, int method, Map<String, String> params, Response.Listener<String> listener, Response.ErrorListener error) {
         request = new StringRequest(method, url, listener, error);
+        getRequests().add(request);
         return GlobalQueue.getGlobalQueue(context).add((Request<T>) request);
     }
 
     public static void cancelRequest() {
+        cancelRequestWithUrl(null);
+    }
+
+    public static void cancelRequestWithUrl(String url) {
         if (request == null) return;
-        request.cancel();
+        if (url == null) {
+            request.cancel();
+            requests.remove(request);
+            return;
+        }
+        for (Request r : requests) {
+            if (url.equals(r.getUrl())) {
+                r.cancel();
+                requests.remove(r);
+            }
+        }
+    }
+
+    private static List<Request> getRequests() {
+        if (requests == null) {
+            requests = new ArrayList<>();
+        }
+        return requests;
     }
 
 }
