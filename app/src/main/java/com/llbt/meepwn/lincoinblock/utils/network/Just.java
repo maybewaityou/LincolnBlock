@@ -6,9 +6,9 @@ import com.llbt.meepwn.lincoinblock.framework.Model;
 import com.llbt.meepwn.lincoinblock.library.volley.Request;
 import com.llbt.meepwn.lincoinblock.library.volley.Response;
 import com.llbt.meepwn.lincoinblock.library.volley.toolbox.StringRequest;
-import com.llbt.meepwn.lincoinblock.library.volley.toolbox.Volley;
 import com.llbt.meepwn.lincoinblock.main.model.UserModel;
 import com.llbt.meepwn.lincoinblock.main.model.test_json.TestJsonModel;
+import com.llbt.meepwn.lincoinblock.utils.network.volley.queue.GlobalQueue;
 
 import java.util.Map;
 
@@ -91,7 +91,7 @@ public class Just {
     @SuppressWarnings("unchecked")
     private static <T> Request<T> sendRequest(Context context, String url, int method, Map<String, String> params, Response.Listener<String> listener, Response.ErrorListener error) {
         request = new StringRequest(method, url, listener, error);
-        return Volley.newRequestQueue(context).add((Request<T>) request);
+        return GlobalQueue.getGlobalQueue(context).add((Request<T>) request);
     }
 
     public static void cancelRequest() {
