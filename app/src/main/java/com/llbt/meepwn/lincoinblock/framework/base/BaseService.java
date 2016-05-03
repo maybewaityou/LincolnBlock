@@ -57,6 +57,11 @@ public abstract class BaseService<DM extends DataModel> implements Service<DM>, 
     }
 
     @Override
+    public void cancelRequestWithUrl(String url) {
+        Just.cancelRequestWithUrl(url);
+    }
+
+    @Override
     public Observable<Permission> requestMutablePermission(String... permission) {
         return RxPermissions.getInstance(context.get())
             .requestEach(permission)
