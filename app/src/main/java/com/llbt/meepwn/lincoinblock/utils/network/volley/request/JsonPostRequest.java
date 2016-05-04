@@ -16,7 +16,7 @@ import java.util.Map;
  * email: maybewaityou@gmail.com
  * github: https://github.com/maybewaityou
  * date: 16/4/26 上午5:25
- * desc:
+ * desc: 自定义网络请求
  */
 public class JsonPostRequest extends JsonObjectRequest {
 
