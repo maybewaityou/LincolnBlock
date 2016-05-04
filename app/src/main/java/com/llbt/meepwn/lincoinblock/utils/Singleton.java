@@ -6,7 +6,7 @@ package com.llbt.meepwn.lincoinblock.utils;
  * email: maybewaityou@gmail.com
  * github: https://github.com/maybewaityou
  * date: 16/4/20 下午1:11
- * desc:
+ * desc:  单例
  */
 public class Singleton {
 
