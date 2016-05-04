@@ -6,7 +6,7 @@ package com.llbt.meepwn.lincoinblock.main;
  * email: maybewaityou@gmail.com
  * github: https://github.com/maybewaityou
  * date: 16/4/25 上午11:25
- * desc:
+ * desc: 常量类
  */
 public class Constant {
     // =============================== 证书相关 start =====================================
