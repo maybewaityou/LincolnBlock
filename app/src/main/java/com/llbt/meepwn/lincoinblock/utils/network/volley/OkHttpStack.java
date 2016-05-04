@@ -29,7 +29,7 @@ import okio.Buffer;
  * email: maybewaityou@gmail.com
  * github: https://github.com/maybewaityou
  * date: 16/4/25 上午6:11
- * desc:
+ * desc: 将OkHttpClient作为Volley的底层Client
  */
 public class OkHttpStack extends HurlStack {
 
