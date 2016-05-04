@@ -9,7 +9,7 @@ import android.graphics.drawable.ColorDrawable;
  * email: maybewaityou@gmail.com
  * github: https://github.com/maybewaityou
  * date: 16/4/20 下午12:00
- * desc:
+ * desc: Binding转换器
  */
 public class Conversion {
 

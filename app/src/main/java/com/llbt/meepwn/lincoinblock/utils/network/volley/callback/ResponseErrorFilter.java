@@ -13,5 +13,5 @@ import org.json.JSONObject;
 public interface ResponseErrorFilter {
 
     void onErrorFilter(JSONObject errorResponse);
-    
+
 }

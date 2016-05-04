@@ -12,7 +12,7 @@ import com.squareup.picasso.Picasso;
  * email: maybewaityou@gmail.com
  * github: https://github.com/maybewaityou
  * date: 16/4/13 下午12:33
- * desc: 图片加载
+ * desc: Binding图片加载
  */
 public class ImageLoader {
 
