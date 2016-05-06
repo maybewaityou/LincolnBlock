@@ -26,6 +26,7 @@ public class TestFragmentViewModel extends BaseViewModel<TestFragmentModel, Test
     public void handleClick(View view) {
         startAsyncTask();
     }
+    
 
     void startAsyncTask() {
         new AsyncTask<Void, Void, Void>() {
