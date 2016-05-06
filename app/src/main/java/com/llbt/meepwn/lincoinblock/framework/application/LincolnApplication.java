@@ -18,6 +18,10 @@ public class LincolnApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
+        appConfig();
+    }
+
+    private void appConfig() {
         // 检查内存泄露
         LeakCanary.install(this);
     }
