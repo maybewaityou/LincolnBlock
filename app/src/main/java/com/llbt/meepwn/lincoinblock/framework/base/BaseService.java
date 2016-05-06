@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 
 import com.llbt.meepwn.lincoinblock.framework.DataModel;
-import com.llbt.meepwn.lincoinblock.framework.PermissionRequest;
+import com.llbt.meepwn.lincoinblock.framework.permission.PermissionRequest;
 import com.llbt.meepwn.lincoinblock.framework.Service;
 import com.llbt.meepwn.lincoinblock.framework.application.LincolnApplication;
 import com.llbt.meepwn.lincoinblock.utils.network.Just;

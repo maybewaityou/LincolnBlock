@@ -5,7 +5,7 @@ import android.databinding.ObservableField;
 import android.support.v4.app.FragmentActivity;
 
 import com.llbt.meepwn.lincoinblock.framework.Model;
-import com.llbt.meepwn.lincoinblock.framework.PermissionRequest;
+import com.llbt.meepwn.lincoinblock.framework.permission.PermissionRequest;
 import com.llbt.meepwn.lincoinblock.framework.Service;
 import com.llbt.meepwn.lincoinblock.framework.ViewModel;
 import com.tbruyelle.rxpermissions.Permission;

@@ -1,4 +1,4 @@
-package com.llbt.meepwn.lincoinblock.framework;
+package com.llbt.meepwn.lincoinblock.framework.permission;
 
 import com.tbruyelle.rxpermissions.Permission;
 
