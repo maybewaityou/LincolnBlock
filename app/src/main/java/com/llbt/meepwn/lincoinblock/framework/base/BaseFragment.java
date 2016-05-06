@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import com.llbt.meepwn.lincoinblock.framework.Model;
 import com.llbt.meepwn.lincoinblock.framework.Service;
 import com.llbt.meepwn.lincoinblock.framework.ViewModel;
+import com.llbt.meepwn.lincoinblock.framework.application.LincolnApplication;
 
 /**
  * package: com.llbt.meepwn.lincoinblock.framework.base
@@ -21,4 +22,9 @@ public class BaseFragment<M extends Model, VM extends ViewModel, S extends Servi
     protected VM viewModel;
     protected S service;
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        LincolnApplication.getRefWatcher(getActivity()).watch(this);
+    }
 }
