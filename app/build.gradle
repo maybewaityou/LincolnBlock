@@ -43,7 +43,7 @@ android {
 
 
     defaultConfig {
-        applicationId "com.llbt.meepwn.lincoinblock"
+        applicationId "com.llbt.meepwn.lincolnblock"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1

@@ -3,7 +3,7 @@
     xmlns:custom="http://schemas.android.com/apk/res-auto">
 
     <data class="TestFragmentBinding">
-        <import type="com.llbt.meepwn.lincoinblock.main.view_model.TestFragmentViewModel"/>
+        <import type="com.llbt.meepwn.lincolnblock.main.view_model.TestFragmentViewModel"/>
         <variable
             name="viewModel"
             type="TestFragmentViewModel"/>
@@ -24,7 +24,7 @@
             />
 
         <!--<TextView-->
-        <com.llbt.meepwn.lincoinblock.main.view.custom_view.TestCustomView
+        <com.llbt.meepwn.lincolnblock.main.view.custom_view.TestCustomView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"

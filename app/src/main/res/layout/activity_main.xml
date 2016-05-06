@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data class="MainBinding">
-        <import type="com.llbt.meepwn.lincoinblock.main.view_model.UserViewModel"/>
+        <import type="com.llbt.meepwn.lincolnblock.main.view_model.UserViewModel"/>
 
         <variable
             name="viewModel"

@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data class="OtherBinding">
-        <import type="com.llbt.meepwn.lincoinblock.main.view_model.OtherViewModel"/>
+        <import type="com.llbt.meepwn.lincolnblock.main.view_model.OtherViewModel"/>
 
         <variable
             name="viewModel"

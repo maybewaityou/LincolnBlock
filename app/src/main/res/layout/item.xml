@@ -4,7 +4,7 @@
     <data class="ItemBinding">
         <variable
             name="viewModel"
-            type="com.llbt.meepwn.lincoinblock.main.view_model.TestItemViewModel"/>
+            type="com.llbt.meepwn.lincolnblock.main.view_model.TestItemViewModel"/>
     </data>
 
     <LinearLayout

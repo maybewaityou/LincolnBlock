@@ -3,7 +3,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data class="LeakBinding">
-        <import type="com.llbt.meepwn.lincoinblock.main.view_model.TestLeakViewModel"/>
+        <import type="com.llbt.meepwn.lincolnblock.main.view_model.TestLeakViewModel"/>
         <variable
             name="viewModel"
             type="TestLeakViewModel"/>

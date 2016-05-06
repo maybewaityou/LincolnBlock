@@ -1,4 +1,4 @@
-package com.llbt.meepwn.lincoinblock;
+package com.llbt.meepwn.lincolnblock;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

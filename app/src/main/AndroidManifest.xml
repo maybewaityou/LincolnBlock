@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.llbt.meepwn.lincoinblock">
+    package="com.llbt.meepwn.lincolnblock">
 
     <!-- if you want to load images from the internet -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -38,10 +38,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".framework.application.LincolnApplication"
+        android:name="com.llbt.meepwn.lincolnblock.framework.application.LincolnApplication"
         >
         <activity
-            android:name=".main.view.activity.UserActivity"
+            android:name="com.llbt.meepwn.lincolnblock.main.view.activity.UserActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -50,10 +50,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".main.view.activity.TestActivity"/>
-        <activity android:name=".main.view.activity.OtherActivity"/>
-        <activity android:name=".main.view.activity.TestFragmentActivity"/>
-        <activity android:name=".main.view.activity.TestLeakActivity"/>
+        <activity android:name="com.llbt.meepwn.lincolnblock.main.view.activity.TestActivity"/>
+        <activity android:name="com.llbt.meepwn.lincolnblock.main.view.activity.OtherActivity"/>
+        <activity android:name="com.llbt.meepwn.lincolnblock.main.view.activity.TestFragmentActivity"/>
+        <activity android:name="com.llbt.meepwn.lincolnblock.main.view.activity.TestLeakActivity"/>
     </application>
 
 </manifest>
