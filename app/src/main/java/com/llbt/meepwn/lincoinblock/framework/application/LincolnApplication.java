@@ -1,8 +1,10 @@
 package com.llbt.meepwn.lincoinblock.framework.application;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
 
 /**
  * package: com.llbt.meepwn.lincoinblock.framework.application
@@ -14,6 +16,8 @@ import com.squareup.leakcanary.LeakCanary;
  */
 public class LincolnApplication extends Application {
 
+    private RefWatcher refWatcher;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -23,6 +27,12 @@ public class LincolnApplication extends Application {
 
     private void appConfig() {
         // 检查内存泄露
-        LeakCanary.install(this);
+        refWatcher = LeakCanary.install(this);
     }
+
+    public static RefWatcher getRefWatcher(Context context) {
+        LincolnApplication application = (LincolnApplication) context.getApplicationContext();
+        return application.refWatcher;
+    }
+
 }

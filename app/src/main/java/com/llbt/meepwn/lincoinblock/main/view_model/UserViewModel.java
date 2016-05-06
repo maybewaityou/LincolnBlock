@@ -13,6 +13,7 @@ import com.llbt.meepwn.lincoinblock.main.service.UserService;
 import com.llbt.meepwn.lincoinblock.main.view.activity.OtherActivity;
 import com.llbt.meepwn.lincoinblock.main.view.activity.TestActivity;
 import com.llbt.meepwn.lincoinblock.main.view.activity.TestFragmentActivity;
+import com.llbt.meepwn.lincoinblock.main.view.activity.TestLeakActivity;
 import com.llbt.meepwn.lincoinblock.utils.network.Just;
 
 import java.util.HashMap;
@@ -66,6 +67,8 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
                 .subscribe(aBoolean -> {
                     System.out.println("=====>>>>> " + aBoolean);
             });
+        } else if (view.getId() == R.id.leakCanaryButton) {
+            service.pushActivityWithDataModel(null, TestLeakActivity.class);
         } else {
             service.sendRequest("", Just.Method.GET, new HashMap<>(), UserModel.class).flatMap((Func1) user -> {
                  // TODO 类型转换

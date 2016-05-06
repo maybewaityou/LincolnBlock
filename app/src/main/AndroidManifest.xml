@@ -53,6 +53,7 @@
         <activity android:name=".main.view.activity.TestActivity"/>
         <activity android:name=".main.view.activity.OtherActivity"/>
         <activity android:name=".main.view.activity.TestFragmentActivity"/>
+        <activity android:name=".main.view.activity.TestLeakActivity"/>
     </application>
 
 </manifest>
