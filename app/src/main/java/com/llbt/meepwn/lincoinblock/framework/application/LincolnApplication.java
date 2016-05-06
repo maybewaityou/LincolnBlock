@@ -8,9 +8,9 @@ import android.app.Application;
  * email: maybewaityou@gmail.com
  * github: https://github.com/maybewaityou
  * date: 16/5/5 下午5:08
- * desc: LincoinApplication
+ * desc: LincolnApplication
  */
-public class LincoinApplication extends Application {
+public class LincolnApplication extends Application {
 
     @Override
     public void onCreate() {
