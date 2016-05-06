@@ -6,6 +6,7 @@ import android.content.Context;
 import com.llbt.meepwn.lincoinblock.framework.DataModel;
 import com.llbt.meepwn.lincoinblock.framework.PermissionRequest;
 import com.llbt.meepwn.lincoinblock.framework.Service;
+import com.llbt.meepwn.lincoinblock.framework.application.LincolnApplication;
 import com.llbt.meepwn.lincoinblock.utils.network.Just;
 import com.tbruyelle.rxpermissions.Permission;
 import com.tbruyelle.rxpermissions.RxPermissions;
@@ -31,6 +32,7 @@ public abstract class BaseService<DM extends DataModel> implements Service<DM>, 
 
     public BaseService(Context context) {
         this.context = new WeakReference<>(context);
+        LincolnApplication.getRefWatcher(context).watch(this);
     }
 
     @Override
