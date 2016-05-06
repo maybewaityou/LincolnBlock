@@ -2,6 +2,8 @@ package com.llbt.meepwn.lincoinblock.framework.application;
 
 import android.app.Application;
 
+import com.squareup.leakcanary.LeakCanary;
+
 /**
  * package: com.llbt.meepwn.lincoinblock.framework.application
  * author: MeePwn
@@ -16,5 +18,7 @@ public class LincolnApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
+        // 检查内存泄露
+        LeakCanary.install(this);
     }
 }
