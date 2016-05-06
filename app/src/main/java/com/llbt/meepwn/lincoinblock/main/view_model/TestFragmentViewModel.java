@@ -27,7 +27,6 @@ public class TestFragmentViewModel extends BaseViewModel<TestFragmentModel, Test
         startAsyncTask();
     }
 
-
     void startAsyncTask() {
         new AsyncTask<Void, Void, Void>() {
             @Override protected Void doInBackground(Void... params) {
