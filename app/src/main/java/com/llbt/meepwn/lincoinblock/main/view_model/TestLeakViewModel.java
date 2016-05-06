@@ -5,7 +5,6 @@ import android.os.AsyncTask;
 import android.os.SystemClock;
 import android.view.View;
 
-import com.llbt.meepwn.lincoinblock.framework.application.LincolnApplication;
 import com.llbt.meepwn.lincoinblock.framework.base.BaseViewModel;
 import com.llbt.meepwn.lincoinblock.framework.nullable.ModelNullable;
 import com.llbt.meepwn.lincoinblock.framework.nullable.ServiceNullable;
@@ -21,7 +20,7 @@ import com.llbt.meepwn.lincoinblock.framework.nullable.ServiceNullable;
 public class TestLeakViewModel extends BaseViewModel<ModelNullable, ServiceNullable> {
 
     public TestLeakViewModel(Context context) {
-        LincolnApplication.getRefWatcher(context).watch(this);
+        super(context);
     }
 
     public void handleClick(View view) {
@@ -32,7 +31,7 @@ public class TestLeakViewModel extends BaseViewModel<ModelNullable, ServiceNulla
         new AsyncTask<Void, Void, Void>() {
             @Override protected Void doInBackground(Void... params) {
                 // Do some slow work in background
-                SystemClock.sleep(50000);
+                SystemClock.sleep(5000);
                 return null;
             }
         }.execute();
