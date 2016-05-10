@@ -71,14 +71,14 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
             service.pushActivityWithDataModel(null, TestLeakActivity.class);
         } else {
             service.sendRequest("", Just.Method.GET, new HashMap<>(), UserModel.class).flatMap((Func1) user -> {
-                 // TODO 类型转换
+                // TODO 类型转换
                 return getToken((UserModel) user);
             }).subscribe(userModel -> {
-                 // TODO 解析JSON生成对象
+                // TODO 解析JSON生成对象
                 UserModel user = new UserModel();
                 user.getLastName().set("王五===>>> ");
                 model.set(user);
-                 // TODO 类型转换
+                // TODO 类型转换
                 System.out.println("==== subscribe >>>> " + userModel);
             });
         }
