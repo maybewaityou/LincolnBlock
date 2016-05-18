@@ -5,6 +5,7 @@ import android.databinding.ObservableField;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
+import com.jude.swipbackhelper.SwipeBackHelper;
 import com.llbt.meepwn.lincolnblock.R;
 import com.llbt.meepwn.lincolnblock.databinding.MainBinding;
 import com.llbt.meepwn.lincolnblock.framework.base.BaseActivity;
@@ -26,6 +27,9 @@ public class UserActivity extends BaseActivity<UserModel, UserViewModel, UserSer
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		SwipeBackHelper.getCurrentPage(this) //获取当前页面
+                .setSwipeBackEnable(false); //设置是否可滑动
+
 		MainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 		model = new ObservableField(new UserModel());
 		service = new UserService(this);
