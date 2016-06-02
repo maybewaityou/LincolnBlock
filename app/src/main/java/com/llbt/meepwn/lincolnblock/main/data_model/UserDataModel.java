@@ -1,6 +1,6 @@
 package com.llbt.meepwn.lincolnblock.main.data_model;
 
-import com.llbt.meepwn.lincolnblock.framework.base.BaseDataModel;
+import com.llbt.meepwn.lincolnblock.framework.base.DataModel;
 
 /**
  * package: com.llbt.meepwn.lincolnblock.main.data_model
@@ -10,6 +10,6 @@ import com.llbt.meepwn.lincolnblock.framework.base.BaseDataModel;
  * date: 16/4/13 下午1:17
  * desc:
  */
-public class UserDataModel extends BaseDataModel {
+public class UserDataModel extends DataModel {
 
 }

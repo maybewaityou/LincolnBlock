@@ -10,6 +10,6 @@ import com.llbt.meepwn.lincolnblock.framework.DataModelType;
  * date: 16/4/13 下午1:05
  * desc: 用于传递下一个页面所需要的值
  */
-public class BaseDataModel implements DataModelType {
+public class DataModel implements DataModelType {
 
 }
