@@ -8,7 +8,7 @@ package com.llbt.meepwn.lincolnblock.framework;
  * date: 16/4/12 上午6:56
  * desc:
  */
-public interface ViewModel {
+public interface ViewModelType {
 
     void onResume();
     void onPause();
