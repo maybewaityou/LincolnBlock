@@ -2,7 +2,7 @@ package com.llbt.meepwn.lincolnblock.main.service;
 
 import android.content.Context;
 
-import com.llbt.meepwn.lincolnblock.framework.DataModel;
+import com.llbt.meepwn.lincolnblock.framework.DataModelType;
 import com.llbt.meepwn.lincolnblock.framework.base.BaseService;
 
 /**
@@ -20,7 +20,7 @@ public class TestFragmentService extends BaseService {
     }
 
     @Override
-    public void pushActivityWithDataModel(DataModel dataModel, Class clazz) {
+    public void pushActivityWithDataModel(DataModelType dataModel, Class clazz) {
 
     }
 }

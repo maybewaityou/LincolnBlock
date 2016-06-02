@@ -8,6 +8,6 @@ package com.llbt.meepwn.lincolnblock.framework;
  * date: 16/4/13 下午1:05
  * desc:
  */
-public interface DataModel {
+public interface DataModelType {
 
 }

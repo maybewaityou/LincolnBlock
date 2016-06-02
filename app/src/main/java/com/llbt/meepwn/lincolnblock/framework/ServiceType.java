@@ -10,7 +10,7 @@ import android.content.Context;
  * date: 16/4/12 上午11:13
  * desc:
  */
-public interface ServiceType<DM extends DataModel> extends NetworkService {
+public interface ServiceType<DM extends DataModelType> extends NetworkService {
 
     Context getContext();
 

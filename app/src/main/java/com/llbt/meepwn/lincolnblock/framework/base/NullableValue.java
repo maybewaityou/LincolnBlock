@@ -1,6 +1,6 @@
 package com.llbt.meepwn.lincolnblock.framework.base;
 
-import com.llbt.meepwn.lincolnblock.framework.DataModel;
+import com.llbt.meepwn.lincolnblock.framework.DataModelType;
 import com.llbt.meepwn.lincolnblock.framework.ModelType;
 import com.llbt.meepwn.lincolnblock.framework.ServiceType;
 import com.llbt.meepwn.lincolnblock.framework.ViewModelType;
@@ -13,6 +13,6 @@ import com.llbt.meepwn.lincolnblock.framework.ViewModelType;
  * date: 16/4/20 上午11:07
  * desc:
  */
-public abstract class NullableValue implements ModelType, ViewModelType, ServiceType, DataModel {
+public abstract class NullableValue implements ModelType, ViewModelType, ServiceType, DataModelType {
 
 }

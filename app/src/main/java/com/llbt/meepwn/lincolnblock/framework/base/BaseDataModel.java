@@ -1,6 +1,6 @@
 package com.llbt.meepwn.lincolnblock.framework.base;
 
-import com.llbt.meepwn.lincolnblock.framework.DataModel;
+import com.llbt.meepwn.lincolnblock.framework.DataModelType;
 
 /**
  * package: com.llbt.meepwn.lincolnblock.framework.base
@@ -10,6 +10,6 @@ import com.llbt.meepwn.lincolnblock.framework.DataModel;
  * date: 16/4/13 下午1:05
  * desc: 用于传递下一个页面所需要的值
  */
-public class BaseDataModel implements DataModel {
+public class BaseDataModel implements DataModelType {
 
 }

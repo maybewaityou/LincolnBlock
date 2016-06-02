@@ -3,7 +3,7 @@ package com.llbt.meepwn.lincolnblock.framework.base;
 import android.app.Activity;
 import android.content.Context;
 
-import com.llbt.meepwn.lincolnblock.framework.DataModel;
+import com.llbt.meepwn.lincolnblock.framework.DataModelType;
 import com.llbt.meepwn.lincolnblock.framework.permission.PermissionRequest;
 import com.llbt.meepwn.lincolnblock.framework.ServiceType;
 import com.llbt.meepwn.lincolnblock.framework.application.LincolnApplication;
@@ -26,7 +26,7 @@ import rx.schedulers.Schedulers;
  * date: 16/4/12 下午12:46
  * desc: 进行页面间跳转 && 发送网络请求
  */
-public abstract class BaseService<DM extends DataModel> implements ServiceType<DM>, PermissionRequest {
+public abstract class BaseService<DM extends DataModelType> implements ServiceType<DM>, PermissionRequest {
 
     protected WeakReference<Context> context;
 
