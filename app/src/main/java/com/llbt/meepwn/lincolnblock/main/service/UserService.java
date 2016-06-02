@@ -3,7 +3,7 @@ package com.llbt.meepwn.lincolnblock.main.service;
 import android.content.Context;
 import android.content.Intent;
 
-import com.llbt.meepwn.lincolnblock.framework.base.BaseService;
+import com.llbt.meepwn.lincolnblock.framework.base.Service;
 import com.llbt.meepwn.lincolnblock.main.data_model.UserDataModel;
 
 /**
@@ -14,7 +14,7 @@ import com.llbt.meepwn.lincolnblock.main.data_model.UserDataModel;
  * date: 16/4/13 下午1:02
  * desc:
  */
-public class UserService extends BaseService<UserDataModel> {
+public class UserService extends Service<UserDataModel> {
 
     public UserService(Context context) {
         super(context);

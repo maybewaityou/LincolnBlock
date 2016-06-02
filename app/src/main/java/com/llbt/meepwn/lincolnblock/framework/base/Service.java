@@ -26,11 +26,11 @@ import rx.schedulers.Schedulers;
  * date: 16/4/12 下午12:46
  * desc: 进行页面间跳转 && 发送网络请求
  */
-public abstract class BaseService<DM extends DataModelType> implements ServiceType<DM>, PermissionRequest {
+public abstract class Service<DM extends DataModelType> implements ServiceType<DM>, PermissionRequest {
 
     protected WeakReference<Context> context;
 
-    public BaseService(Context context) {
+    public Service(Context context) {
         this.context = new WeakReference<>(context);
         LincolnApplication.getRefWatcher(context).watch(this);
     }

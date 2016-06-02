@@ -2,7 +2,7 @@ package com.llbt.meepwn.lincolnblock.main.service;
 
 import android.content.Context;
 
-import com.llbt.meepwn.lincolnblock.framework.base.BaseService;
+import com.llbt.meepwn.lincolnblock.framework.base.Service;
 import com.llbt.meepwn.lincolnblock.main.data_model.TestItemDataModel;
 
 /**
@@ -13,7 +13,7 @@ import com.llbt.meepwn.lincolnblock.main.data_model.TestItemDataModel;
  * date: 16/4/14 下午1:10
  * desc:
  */
-public class TestItemService extends BaseService<TestItemDataModel> {
+public class TestItemService extends Service<TestItemDataModel> {
 
     public TestItemService(Context context) {
         super(context);
