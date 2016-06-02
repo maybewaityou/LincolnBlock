@@ -27,7 +27,7 @@ import rx.schedulers.Schedulers;
  * desc:
  */
 @SuppressLint("Registered")
-public class BaseActivity<M extends ModelType, VM extends ViewModelType, S extends ServiceType> extends FragmentActivity implements PermissionRequest {
+public class ActivityController<M extends ModelType, VM extends ViewModelType, S extends ServiceType> extends FragmentActivity implements PermissionRequest {
 
     protected ObservableField<M> model;
     protected VM viewModel;

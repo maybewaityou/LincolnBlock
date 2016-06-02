@@ -16,7 +16,7 @@ import com.llbt.meepwn.lincolnblock.framework.application.LincolnApplication;
  * date: 16/4/21 上午6:50
  * desc:
  */
-public class BaseFragment<M extends ModelType, VM extends ViewModelType, S extends ServiceType> extends Fragment {
+public class FragmentController<M extends ModelType, VM extends ViewModelType, S extends ServiceType> extends Fragment {
 
     protected ObservableField<M> model;
     protected VM viewModel;

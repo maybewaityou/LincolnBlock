@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.llbt.meepwn.lincolnblock.R;
 import com.llbt.meepwn.lincolnblock.databinding.TestFragmentBinding;
-import com.llbt.meepwn.lincolnblock.framework.base.BaseFragment;
+import com.llbt.meepwn.lincolnblock.framework.base.FragmentController;
 import com.llbt.meepwn.lincolnblock.main.model.TestFragmentModel;
 import com.llbt.meepwn.lincolnblock.main.service.TestFragmentService;
 import com.llbt.meepwn.lincolnblock.main.view_model.TestFragmentViewModel;
@@ -23,7 +23,7 @@ import com.llbt.meepwn.lincolnblock.main.view_model.TestFragmentViewModel;
  * date: 16/4/21 上午6:49
  * desc:
  */
-public class TestFragment extends BaseFragment<TestFragmentModel, TestFragmentViewModel, TestFragmentService> {
+public class TestFragment extends FragmentController<TestFragmentModel, TestFragmentViewModel, TestFragmentService> {
 
     @Nullable
     @Override

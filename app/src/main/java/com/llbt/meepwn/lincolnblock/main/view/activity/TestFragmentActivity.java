@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.llbt.meepwn.lincolnblock.R;
-import com.llbt.meepwn.lincolnblock.framework.base.BaseActivity;
+import com.llbt.meepwn.lincolnblock.framework.base.ActivityController;
 import com.llbt.meepwn.lincolnblock.framework.nullable.ModelNullable;
 import com.llbt.meepwn.lincolnblock.framework.nullable.ServiceNullable;
 import com.llbt.meepwn.lincolnblock.framework.nullable.ViewModelNullable;
@@ -18,7 +18,7 @@ import com.llbt.meepwn.lincolnblock.main.view.fragment.TestFragment;
  * date: 16/4/21 上午6:49
  * desc:
  */
-public class TestFragmentActivity extends BaseActivity<ModelNullable, ViewModelNullable, ServiceNullable> {
+public class TestFragmentActivity extends ActivityController<ModelNullable, ViewModelNullable, ServiceNullable> {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
