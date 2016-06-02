@@ -3,7 +3,7 @@ package com.llbt.meepwn.lincolnblock.main.view_model;
 import android.databinding.ObservableField;
 import android.view.View;
 
-import com.llbt.meepwn.lincolnblock.framework.base.ViewModel;
+import com.llbt.meepwn.lincolnblock.framework.ViewModel;
 import com.llbt.meepwn.lincolnblock.main.model.TestItemModel;
 import com.llbt.meepwn.lincolnblock.main.service.TestItemService;
 

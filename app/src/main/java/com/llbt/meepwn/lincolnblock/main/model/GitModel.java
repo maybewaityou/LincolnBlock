@@ -2,7 +2,7 @@ package com.llbt.meepwn.lincolnblock.main.model;
 
 import android.databinding.ObservableField;
 
-import com.llbt.meepwn.lincolnblock.framework.base.Model;
+import com.llbt.meepwn.lincolnblock.framework.Model;
 
 /**
  * package: com.llbt.meepwn.lincolnblock.main.model

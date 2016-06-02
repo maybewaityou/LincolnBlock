@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.llbt.meepwn.lincolnblock.R;
 import com.llbt.meepwn.lincolnblock.databinding.TestFragmentBinding;
-import com.llbt.meepwn.lincolnblock.framework.base.FragmentController;
+import com.llbt.meepwn.lincolnblock.framework.FragmentController;
 import com.llbt.meepwn.lincolnblock.main.model.TestFragmentModel;
 import com.llbt.meepwn.lincolnblock.main.service.TestFragmentService;
 import com.llbt.meepwn.lincolnblock.main.view_model.TestFragmentViewModel;

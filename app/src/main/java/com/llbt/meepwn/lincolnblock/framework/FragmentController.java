@@ -1,4 +1,4 @@
-package com.llbt.meepwn.lincolnblock.framework.base;
+package com.llbt.meepwn.lincolnblock.framework;
 
 import android.databinding.ObservableField;
 import android.support.v4.app.Fragment;

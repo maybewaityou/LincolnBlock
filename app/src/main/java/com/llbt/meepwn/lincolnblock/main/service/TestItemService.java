@@ -2,7 +2,7 @@ package com.llbt.meepwn.lincolnblock.main.service;
 
 import android.content.Context;
 
-import com.llbt.meepwn.lincolnblock.framework.base.Service;
+import com.llbt.meepwn.lincolnblock.framework.Service;
 import com.llbt.meepwn.lincolnblock.main.data_model.TestItemDataModel;
 
 /**

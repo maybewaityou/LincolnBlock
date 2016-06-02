@@ -3,7 +3,7 @@ package com.llbt.meepwn.lincolnblock.main.service;
 import android.content.Context;
 
 import com.llbt.meepwn.lincolnblock.framework.types.DataModelType;
-import com.llbt.meepwn.lincolnblock.framework.base.Service;
+import com.llbt.meepwn.lincolnblock.framework.Service;
 
 /**
  * package: com.llbt.meepwn.lincolnblock.main.service

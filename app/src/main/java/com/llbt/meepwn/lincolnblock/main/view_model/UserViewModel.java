@@ -5,7 +5,7 @@ import android.databinding.ObservableField;
 import android.view.View;
 
 import com.llbt.meepwn.lincolnblock.R;
-import com.llbt.meepwn.lincolnblock.framework.base.ViewModel;
+import com.llbt.meepwn.lincolnblock.framework.ViewModel;
 import com.llbt.meepwn.lincolnblock.main.model.GitModel;
 import com.llbt.meepwn.lincolnblock.main.model.UserModel;
 import com.llbt.meepwn.lincolnblock.main.model.test_json.TestJsonModel;

@@ -4,7 +4,7 @@ import android.databinding.ObservableField;
 import android.view.View;
 import android.widget.AdapterView;
 
-import com.llbt.meepwn.lincolnblock.framework.base.ViewModel;
+import com.llbt.meepwn.lincolnblock.framework.ViewModel;
 import com.llbt.meepwn.lincolnblock.framework.nullable.ModelNullable;
 import com.llbt.meepwn.lincolnblock.main.model.OtherItemModel;
 import com.llbt.meepwn.lincolnblock.main.service.OtherItemService;

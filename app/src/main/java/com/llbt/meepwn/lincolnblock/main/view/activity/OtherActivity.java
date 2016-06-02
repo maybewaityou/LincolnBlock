@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.llbt.meepwn.lincolnblock.R;
 import com.llbt.meepwn.lincolnblock.databinding.OtherBinding;
-import com.llbt.meepwn.lincolnblock.framework.base.ActivityController;
+import com.llbt.meepwn.lincolnblock.framework.ActivityController;
 import com.llbt.meepwn.lincolnblock.framework.nullable.ModelNullable;
 import com.llbt.meepwn.lincolnblock.main.service.OtherService;
 import com.llbt.meepwn.lincolnblock.main.view_model.OtherViewModel;

@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.llbt.meepwn.lincolnblock.R;
-import com.llbt.meepwn.lincolnblock.framework.base.ActivityController;
+import com.llbt.meepwn.lincolnblock.framework.ActivityController;
 import com.llbt.meepwn.lincolnblock.framework.nullable.ModelNullable;
 import com.llbt.meepwn.lincolnblock.framework.nullable.ServiceNullable;
 import com.llbt.meepwn.lincolnblock.framework.nullable.ViewModelNullable;

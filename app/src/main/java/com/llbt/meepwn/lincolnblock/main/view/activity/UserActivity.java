@@ -8,7 +8,7 @@ import android.support.annotation.Nullable;
 import com.jude.swipbackhelper.SwipeBackHelper;
 import com.llbt.meepwn.lincolnblock.R;
 import com.llbt.meepwn.lincolnblock.databinding.MainBinding;
-import com.llbt.meepwn.lincolnblock.framework.base.ActivityController;
+import com.llbt.meepwn.lincolnblock.framework.ActivityController;
 import com.llbt.meepwn.lincolnblock.main.model.UserModel;
 import com.llbt.meepwn.lincolnblock.main.service.UserService;
 import com.llbt.meepwn.lincolnblock.main.view_model.UserViewModel;

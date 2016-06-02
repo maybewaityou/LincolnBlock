@@ -4,7 +4,7 @@ import android.databinding.ObservableField;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.llbt.meepwn.lincolnblock.framework.base.Model;
+import com.llbt.meepwn.lincolnblock.framework.Model;
 
 import java.util.ArrayList;
 import java.util.List;

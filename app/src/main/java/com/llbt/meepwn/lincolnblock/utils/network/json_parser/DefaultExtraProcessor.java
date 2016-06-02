@@ -1,7 +1,7 @@
 package com.llbt.meepwn.lincolnblock.utils.network.json_parser;
 
 import com.alibaba.fastjson.parser.deserializer.ExtraProcessor;
-import com.llbt.meepwn.lincolnblock.framework.base.Model;
+import com.llbt.meepwn.lincolnblock.framework.Model;
 
 /**
  * package: com.llbt.meepwn.lincolnblock.utils.network.json_parser

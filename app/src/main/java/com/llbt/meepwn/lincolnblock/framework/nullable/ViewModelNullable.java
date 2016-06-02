@@ -1,6 +1,6 @@
 package com.llbt.meepwn.lincolnblock.framework.nullable;
 
-import com.llbt.meepwn.lincolnblock.framework.base.NullableValue;
+import com.llbt.meepwn.lincolnblock.framework.NullableValue;
 
 /**
  * package: com.llbt.meepwn.lincolnblock.framework.nullable

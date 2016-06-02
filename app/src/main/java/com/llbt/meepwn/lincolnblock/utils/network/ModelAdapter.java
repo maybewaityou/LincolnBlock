@@ -1,6 +1,6 @@
 package com.llbt.meepwn.lincolnblock.utils.network;
 
-import com.llbt.meepwn.lincolnblock.framework.base.Model;
+import com.llbt.meepwn.lincolnblock.framework.Model;
 import com.llbt.meepwn.lincolnblock.main.model.test_json.Book;
 import com.llbt.meepwn.lincolnblock.main.model.test_json.Dog;
 import com.llbt.meepwn.lincolnblock.main.model.test_json.TestJsonModel;

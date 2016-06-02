@@ -1,6 +1,6 @@
 package com.llbt.meepwn.lincolnblock.main.data_model;
 
-import com.llbt.meepwn.lincolnblock.framework.base.DataModel;
+import com.llbt.meepwn.lincolnblock.framework.DataModel;
 
 /**
  * package: com.llbt.meepwn.lincolnblock.main.data_model

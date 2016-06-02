@@ -5,7 +5,7 @@ import android.os.AsyncTask;
 import android.os.SystemClock;
 import android.view.View;
 
-import com.llbt.meepwn.lincolnblock.framework.base.ViewModel;
+import com.llbt.meepwn.lincolnblock.framework.ViewModel;
 import com.llbt.meepwn.lincolnblock.main.model.TestFragmentModel;
 import com.llbt.meepwn.lincolnblock.main.service.TestFragmentService;
 

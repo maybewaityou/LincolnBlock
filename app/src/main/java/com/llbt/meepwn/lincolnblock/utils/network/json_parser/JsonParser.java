@@ -4,7 +4,7 @@ import android.databinding.ObservableField;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.parser.deserializer.ExtraProcessor;
-import com.llbt.meepwn.lincolnblock.framework.base.Model;
+import com.llbt.meepwn.lincolnblock.framework.Model;
 
 import org.json.JSONArray;
 import org.json.JSONException;

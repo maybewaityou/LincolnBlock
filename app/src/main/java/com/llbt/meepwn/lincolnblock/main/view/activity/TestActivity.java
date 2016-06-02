@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.llbt.meepwn.lincolnblock.R;
-import com.llbt.meepwn.lincolnblock.framework.base.ActivityController;
+import com.llbt.meepwn.lincolnblock.framework.ActivityController;
 import com.llbt.meepwn.lincolnblock.main.model.TestItemModel;
 import com.llbt.meepwn.lincolnblock.main.service.TestItemService;
 import com.llbt.meepwn.lincolnblock.main.view.adapter.RecycleViewAdapter;

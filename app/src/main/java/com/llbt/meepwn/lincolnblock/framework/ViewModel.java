@@ -1,4 +1,4 @@
-package com.llbt.meepwn.lincolnblock.framework.base;
+package com.llbt.meepwn.lincolnblock.framework;
 
 import android.content.Context;
 import android.databinding.ObservableField;
