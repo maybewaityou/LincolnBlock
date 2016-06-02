@@ -56,7 +56,7 @@ public class UserViewModel extends BaseViewModel<UserModel, UserService> {
             service.sendRequest("https://api.github.com", Just.Method.GET, new HashMap<>(), GitModel.class)
                     .subscribe((Action1<GitModel>) gitModel -> {
                         System.out.println("=====>>>>> " + gitModel);
-                    }, (Action1<Throwable>) throwable -> {
+                    }, throwable -> {
                         System.out.println("=====>>>>> " + throwable.getMessage());
                     });
         } else if (view.getId() == R.id.retrofitButton) {
