@@ -1,9 +1,9 @@
 package com.llbt.meepwn.lincolnblock.framework.base;
 
-import com.llbt.meepwn.lincolnblock.framework.DataModelType;
-import com.llbt.meepwn.lincolnblock.framework.ModelType;
-import com.llbt.meepwn.lincolnblock.framework.ServiceType;
-import com.llbt.meepwn.lincolnblock.framework.ViewModelType;
+import com.llbt.meepwn.lincolnblock.framework.types.DataModelType;
+import com.llbt.meepwn.lincolnblock.framework.types.ModelType;
+import com.llbt.meepwn.lincolnblock.framework.types.ServiceType;
+import com.llbt.meepwn.lincolnblock.framework.types.ViewModelType;
 
 /**
  * package: com.llbt.meepwn.lincolnblock.framework

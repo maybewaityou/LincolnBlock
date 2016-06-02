@@ -7,9 +7,9 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 
 import com.jude.swipbackhelper.SwipeBackHelper;
-import com.llbt.meepwn.lincolnblock.framework.ModelType;
-import com.llbt.meepwn.lincolnblock.framework.ServiceType;
-import com.llbt.meepwn.lincolnblock.framework.ViewModelType;
+import com.llbt.meepwn.lincolnblock.framework.types.ModelType;
+import com.llbt.meepwn.lincolnblock.framework.types.ServiceType;
+import com.llbt.meepwn.lincolnblock.framework.types.ViewModelType;
 import com.llbt.meepwn.lincolnblock.framework.permission.PermissionRequest;
 import com.tbruyelle.rxpermissions.Permission;
 import com.tbruyelle.rxpermissions.RxPermissions;

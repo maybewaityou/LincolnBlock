@@ -3,9 +3,9 @@ package com.llbt.meepwn.lincolnblock.framework.base;
 import android.app.Activity;
 import android.content.Context;
 
-import com.llbt.meepwn.lincolnblock.framework.DataModelType;
+import com.llbt.meepwn.lincolnblock.framework.types.DataModelType;
 import com.llbt.meepwn.lincolnblock.framework.permission.PermissionRequest;
-import com.llbt.meepwn.lincolnblock.framework.ServiceType;
+import com.llbt.meepwn.lincolnblock.framework.types.ServiceType;
 import com.llbt.meepwn.lincolnblock.framework.application.LincolnApplication;
 import com.llbt.meepwn.lincolnblock.utils.network.Just;
 import com.tbruyelle.rxpermissions.Permission;

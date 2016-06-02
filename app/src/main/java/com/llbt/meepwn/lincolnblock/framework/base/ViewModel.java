@@ -3,9 +3,9 @@ package com.llbt.meepwn.lincolnblock.framework.base;
 import android.content.Context;
 import android.databinding.ObservableField;
 
-import com.llbt.meepwn.lincolnblock.framework.ModelType;
-import com.llbt.meepwn.lincolnblock.framework.ServiceType;
-import com.llbt.meepwn.lincolnblock.framework.ViewModelType;
+import com.llbt.meepwn.lincolnblock.framework.types.ModelType;
+import com.llbt.meepwn.lincolnblock.framework.types.ServiceType;
+import com.llbt.meepwn.lincolnblock.framework.types.ViewModelType;
 import com.llbt.meepwn.lincolnblock.framework.application.LincolnApplication;
 
 /**

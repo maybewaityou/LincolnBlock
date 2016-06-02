@@ -2,7 +2,7 @@ package com.llbt.meepwn.lincolnblock.utils.network;
 
 import android.content.Context;
 
-import com.llbt.meepwn.lincolnblock.framework.ModelType;
+import com.llbt.meepwn.lincolnblock.framework.types.ModelType;
 import com.llbt.meepwn.lincolnblock.library.volley.Request;
 import com.llbt.meepwn.lincolnblock.library.volley.Response;
 import com.llbt.meepwn.lincolnblock.library.volley.toolbox.StringRequest;

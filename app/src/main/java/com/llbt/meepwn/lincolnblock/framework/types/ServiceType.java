@@ -1,4 +1,4 @@
-package com.llbt.meepwn.lincolnblock.framework;
+package com.llbt.meepwn.lincolnblock.framework.types;
 
 import android.content.Context;
 
