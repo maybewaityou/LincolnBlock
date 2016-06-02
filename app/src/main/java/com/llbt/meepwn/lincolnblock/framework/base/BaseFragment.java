@@ -4,7 +4,7 @@ import android.databinding.ObservableField;
 import android.support.v4.app.Fragment;
 
 import com.llbt.meepwn.lincolnblock.framework.Model;
-import com.llbt.meepwn.lincolnblock.framework.Service;
+import com.llbt.meepwn.lincolnblock.framework.ServiceType;
 import com.llbt.meepwn.lincolnblock.framework.ViewModel;
 import com.llbt.meepwn.lincolnblock.framework.application.LincolnApplication;
 
@@ -16,7 +16,7 @@ import com.llbt.meepwn.lincolnblock.framework.application.LincolnApplication;
  * date: 16/4/21 上午6:50
  * desc:
  */
-public class BaseFragment<M extends Model, VM extends ViewModel, S extends Service> extends Fragment {
+public class BaseFragment<M extends Model, VM extends ViewModel, S extends ServiceType> extends Fragment {
 
     protected ObservableField<M> model;
     protected VM viewModel;
