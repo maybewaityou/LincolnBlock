@@ -3,7 +3,7 @@ package com.llbt.meepwn.lincolnblock.main.view_model;
 import android.databinding.ObservableField;
 import android.view.View;
 
-import com.llbt.meepwn.lincolnblock.framework.base.BaseViewModel;
+import com.llbt.meepwn.lincolnblock.framework.base.ViewModel;
 import com.llbt.meepwn.lincolnblock.main.model.TestItemModel;
 import com.llbt.meepwn.lincolnblock.main.service.TestItemService;
 
@@ -15,7 +15,7 @@ import com.llbt.meepwn.lincolnblock.main.service.TestItemService;
  * date: 16/4/14 下午1:10
  * desc:
  */
-public class TestItemViewModel extends BaseViewModel<TestItemModel, TestItemService> {
+public class TestItemViewModel extends ViewModel<TestItemModel, TestItemService> {
 
     public TestItemViewModel(TestItemService service, ObservableField<TestItemModel> model) {
         super(service, model);

@@ -4,7 +4,7 @@ import android.databinding.ObservableField;
 import android.view.View;
 import android.widget.AdapterView;
 
-import com.llbt.meepwn.lincolnblock.framework.base.BaseViewModel;
+import com.llbt.meepwn.lincolnblock.framework.base.ViewModel;
 import com.llbt.meepwn.lincolnblock.framework.nullable.ModelNullable;
 import com.llbt.meepwn.lincolnblock.main.model.OtherItemModel;
 import com.llbt.meepwn.lincolnblock.main.service.OtherItemService;
@@ -22,7 +22,7 @@ import java.util.List;
  * date: 16/4/20 上午10:54
  * desc:
  */
-public class OtherViewModel extends BaseViewModel<ModelNullable, OtherService> implements AdapterView.OnItemClickListener {
+public class OtherViewModel extends ViewModel<ModelNullable, OtherService> implements AdapterView.OnItemClickListener {
 
     private OtherAdapter adapter;
 

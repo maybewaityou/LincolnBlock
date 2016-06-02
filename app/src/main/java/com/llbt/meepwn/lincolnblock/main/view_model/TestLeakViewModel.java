@@ -5,7 +5,7 @@ import android.os.AsyncTask;
 import android.os.SystemClock;
 import android.view.View;
 
-import com.llbt.meepwn.lincolnblock.framework.base.BaseViewModel;
+import com.llbt.meepwn.lincolnblock.framework.base.ViewModel;
 import com.llbt.meepwn.lincolnblock.framework.nullable.ModelNullable;
 import com.llbt.meepwn.lincolnblock.framework.nullable.ServiceNullable;
 
@@ -17,7 +17,7 @@ import com.llbt.meepwn.lincolnblock.framework.nullable.ServiceNullable;
  * date: 16/5/6 上午9:53
  * desc:
  */
-public class TestLeakViewModel extends BaseViewModel<ModelNullable, ServiceNullable> {
+public class TestLeakViewModel extends ViewModel<ModelNullable, ServiceNullable> {
 
     public TestLeakViewModel(Context context) {
         super(context);

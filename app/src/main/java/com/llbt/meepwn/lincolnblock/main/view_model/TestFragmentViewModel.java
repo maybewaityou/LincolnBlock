@@ -5,7 +5,7 @@ import android.os.AsyncTask;
 import android.os.SystemClock;
 import android.view.View;
 
-import com.llbt.meepwn.lincolnblock.framework.base.BaseViewModel;
+import com.llbt.meepwn.lincolnblock.framework.base.ViewModel;
 import com.llbt.meepwn.lincolnblock.main.model.TestFragmentModel;
 import com.llbt.meepwn.lincolnblock.main.service.TestFragmentService;
 
@@ -17,7 +17,7 @@ import com.llbt.meepwn.lincolnblock.main.service.TestFragmentService;
  * date: 16/4/21 上午8:39
  * desc:
  */
-public class TestFragmentViewModel extends BaseViewModel<TestFragmentModel, TestFragmentService> {
+public class TestFragmentViewModel extends ViewModel<TestFragmentModel, TestFragmentService> {
 
     public TestFragmentViewModel(TestFragmentService service, ObservableField<TestFragmentModel> model) {
         super(service, model);

@@ -5,7 +5,7 @@ import android.databinding.ObservableField;
 import android.view.View;
 
 import com.llbt.meepwn.lincolnblock.R;
-import com.llbt.meepwn.lincolnblock.framework.base.BaseViewModel;
+import com.llbt.meepwn.lincolnblock.framework.base.ViewModel;
 import com.llbt.meepwn.lincolnblock.main.model.GitModel;
 import com.llbt.meepwn.lincolnblock.main.model.UserModel;
 import com.llbt.meepwn.lincolnblock.main.model.test_json.TestJsonModel;
@@ -31,7 +31,7 @@ import rx.functions.Func1;
  * desc:
  */
 @SuppressWarnings("unchecked")
-public class UserViewModel extends BaseViewModel<UserModel, UserService> {
+public class UserViewModel extends ViewModel<UserModel, UserService> {
 
     public UserViewModel(UserService service, ObservableField<UserModel> model) {
         super(service, model);

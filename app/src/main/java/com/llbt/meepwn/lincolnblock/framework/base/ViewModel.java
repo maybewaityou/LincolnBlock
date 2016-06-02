@@ -16,21 +16,21 @@ import com.llbt.meepwn.lincolnblock.framework.application.LincolnApplication;
  * date: 16/4/12 上午11:34
  * desc: 处理业务逻辑
  */
-public class BaseViewModel<M extends ModelType, S extends ServiceType> implements ViewModelType {
+public class ViewModel<M extends ModelType, S extends ServiceType> implements ViewModelType {
 
     protected ObservableField<M> model;
     protected S service;
 
-    public BaseViewModel(Context context) {
+    public ViewModel(Context context) {
         LincolnApplication.getRefWatcher(context).watch(this);
     }
 
-    public BaseViewModel(S service) {
+    public ViewModel(S service) {
         this.service = service;
         LincolnApplication.getRefWatcher(service.getContext()).watch(this);
     }
 
-    public BaseViewModel(S service, ObservableField<M> model) {
+    public ViewModel(S service, ObservableField<M> model) {
         this.service = service;
         this.model = model;
         LincolnApplication.getRefWatcher(service.getContext()).watch(this);
