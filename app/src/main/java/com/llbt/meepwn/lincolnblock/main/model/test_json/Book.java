@@ -2,7 +2,7 @@ package com.llbt.meepwn.lincolnblock.main.model.test_json;
 
 import android.databinding.ObservableField;
 
-import com.llbt.meepwn.lincolnblock.framework.base.BaseModel;
+import com.llbt.meepwn.lincolnblock.framework.base.Model;
 
 /**
  * package: com.llbt.meepwn.lincolnblock.main.model.test_json
@@ -12,7 +12,7 @@ import com.llbt.meepwn.lincolnblock.framework.base.BaseModel;
  * date: 16/4/23 上午6:15
  * desc:
  */
-public class Book extends BaseModel {
+public class Book extends Model {
 
     private ObservableField<String> mBookName = new ObservableField<>();
     private ObservableField<String> mPrice = new ObservableField<>();

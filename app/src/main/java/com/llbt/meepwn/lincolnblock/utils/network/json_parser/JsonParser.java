@@ -4,7 +4,7 @@ import android.databinding.ObservableField;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.parser.deserializer.ExtraProcessor;
-import com.llbt.meepwn.lincolnblock.framework.base.BaseModel;
+import com.llbt.meepwn.lincolnblock.framework.base.Model;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,17 +23,17 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class JsonParser {
 
-    public static <T extends BaseModel> T parse(String jsonString, Class clazz, ExtraProcessor processor) {
+    public static <T extends Model> T parse(String jsonString, Class clazz, ExtraProcessor processor) {
         T t = (T) JSON.parseObject(jsonString, clazz, processor);
         t.setupData();
         return t;
     }
 
-    public static <T extends BaseModel> T parse(String jsonString, Class clazz) {
+    public static <T extends Model> T parse(String jsonString, Class clazz) {
         return (T) parse(jsonString, clazz, new DefaultExtraProcessor<T>());
     }
 
-    public static <T extends BaseModel> List<ObservableField<T>> parseArray(String jsonArrayString, Class clazz) {
+    public static <T extends Model> List<ObservableField<T>> parseArray(String jsonArrayString, Class clazz) {
         List<org.json.JSONObject> list = new ArrayList<>();
         try {
             JSONArray jsonArray = new JSONArray(jsonArrayString);

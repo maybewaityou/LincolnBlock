@@ -1,7 +1,7 @@
 package com.llbt.meepwn.lincolnblock.utils.network.json_parser;
 
 import com.alibaba.fastjson.parser.deserializer.ExtraProcessor;
-import com.llbt.meepwn.lincolnblock.framework.base.BaseModel;
+import com.llbt.meepwn.lincolnblock.framework.base.Model;
 
 /**
  * package: com.llbt.meepwn.lincolnblock.utils.network.json_parser
@@ -12,7 +12,7 @@ import com.llbt.meepwn.lincolnblock.framework.base.BaseModel;
  * desc:
  */
 @SuppressWarnings("unchecked")
-public class DefaultExtraProcessor<T extends BaseModel> implements ExtraProcessor {
+public class DefaultExtraProcessor<T extends Model> implements ExtraProcessor {
 
     @Override
     public void processExtra(Object object, String key, Object value) {

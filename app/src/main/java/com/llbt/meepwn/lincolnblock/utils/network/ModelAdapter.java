@@ -1,6 +1,6 @@
 package com.llbt.meepwn.lincolnblock.utils.network;
 
-import com.llbt.meepwn.lincolnblock.framework.base.BaseModel;
+import com.llbt.meepwn.lincolnblock.framework.base.Model;
 import com.llbt.meepwn.lincolnblock.main.model.test_json.Book;
 import com.llbt.meepwn.lincolnblock.main.model.test_json.Dog;
 import com.llbt.meepwn.lincolnblock.main.model.test_json.TestJsonModel;
@@ -17,7 +17,7 @@ import com.llbt.meepwn.lincolnblock.utils.network.json_parser.JsonParser;
 @SuppressWarnings("unchecked")
 public class ModelAdapter {
 
-    public static <T extends BaseModel> T modelWithJsonString(String jsonString, Class clazz) {
+    public static <T extends Model> T modelWithJsonString(String jsonString, Class clazz) {
         if (clazz == TestJsonModel.class) {
             TestJsonModel model = JsonParser.<TestJsonModel>parse(jsonString, TestJsonModel.class);
             Dog innerModel = JsonParser.<Dog>parse(model.getmDog().get().toString(), Dog.class);

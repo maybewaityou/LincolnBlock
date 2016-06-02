@@ -2,7 +2,7 @@ package com.llbt.meepwn.lincolnblock.main.model;
 
 import android.databinding.ObservableField;
 
-import com.llbt.meepwn.lincolnblock.framework.base.BaseModel;
+import com.llbt.meepwn.lincolnblock.framework.base.Model;
 import com.llbt.meepwn.lincolnblock.utils.binding.EditTextWatcher;
 import com.llbt.meepwn.lincolnblock.utils.network.json_parser.JsonParser;
 
@@ -14,7 +14,7 @@ import com.llbt.meepwn.lincolnblock.utils.network.json_parser.JsonParser;
  * date: 16/4/29 下午3:05
  * desc:
  */
-public class UserModel extends BaseModel {
+public class UserModel extends Model {
 
 	private ObservableField<String> lastName = new ObservableField<>("李四");
 	private String name = "张三";

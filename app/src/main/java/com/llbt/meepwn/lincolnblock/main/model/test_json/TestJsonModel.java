@@ -4,7 +4,7 @@ import android.databinding.ObservableField;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.llbt.meepwn.lincolnblock.framework.base.BaseModel;
+import com.llbt.meepwn.lincolnblock.framework.base.Model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ import java.util.List;
  * date: 16/4/22 下午1:25
  * desc:
  */
-public class TestJsonModel extends BaseModel {
+public class TestJsonModel extends Model {
 
     private ObservableField<String> mName = new ObservableField<>();
     private ObservableField<String> mAge = new ObservableField<>();

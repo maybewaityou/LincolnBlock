@@ -2,7 +2,7 @@ package com.llbt.meepwn.lincolnblock.main.model;
 
 import android.databinding.ObservableField;
 
-import com.llbt.meepwn.lincolnblock.framework.base.BaseModel;
+import com.llbt.meepwn.lincolnblock.framework.base.Model;
 
 /**
  * package: com.llbt.meepwn.lincolnblock.main.model
@@ -12,7 +12,7 @@ import com.llbt.meepwn.lincolnblock.framework.base.BaseModel;
  * date: 16/4/25 下午5:39
  * desc:
  */
-public class GitModel extends BaseModel {
+public class GitModel extends Model {
 
     private ObservableField<String> mCurrent_user_url = new ObservableField<>();
     private ObservableField<String> mCurrent_user_authorizations_html_url = new ObservableField<>();
