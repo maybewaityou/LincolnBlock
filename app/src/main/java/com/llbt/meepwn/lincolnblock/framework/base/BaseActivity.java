@@ -7,7 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 
 import com.jude.swipbackhelper.SwipeBackHelper;
-import com.llbt.meepwn.lincolnblock.framework.Model;
+import com.llbt.meepwn.lincolnblock.framework.ModelType;
 import com.llbt.meepwn.lincolnblock.framework.ServiceType;
 import com.llbt.meepwn.lincolnblock.framework.ViewModelType;
 import com.llbt.meepwn.lincolnblock.framework.permission.PermissionRequest;
@@ -27,7 +27,7 @@ import rx.schedulers.Schedulers;
  * desc:
  */
 @SuppressLint("Registered")
-public class BaseActivity<M extends Model, VM extends ViewModelType, S extends ServiceType> extends FragmentActivity implements PermissionRequest {
+public class BaseActivity<M extends ModelType, VM extends ViewModelType, S extends ServiceType> extends FragmentActivity implements PermissionRequest {
 
     protected ObservableField<M> model;
     protected VM viewModel;

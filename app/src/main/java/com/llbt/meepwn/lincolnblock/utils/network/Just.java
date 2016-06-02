@@ -2,7 +2,7 @@ package com.llbt.meepwn.lincolnblock.utils.network;
 
 import android.content.Context;
 
-import com.llbt.meepwn.lincolnblock.framework.Model;
+import com.llbt.meepwn.lincolnblock.framework.ModelType;
 import com.llbt.meepwn.lincolnblock.library.volley.Request;
 import com.llbt.meepwn.lincolnblock.library.volley.Response;
 import com.llbt.meepwn.lincolnblock.library.volley.toolbox.StringRequest;
@@ -43,8 +43,8 @@ public class Just {
 
     private static Request request;
 
-    public static Observable<Model> sendRequest(Context context, String url, int method, Map<String, String> params, Class clazz) {
-        return Observable.create((Observable.OnSubscribe<Model>) subscriber -> {
+    public static Observable<ModelType> sendRequest(Context context, String url, int method, Map<String, String> params, Class clazz) {
+        return Observable.create((Observable.OnSubscribe<ModelType>) subscriber -> {
             // TODO 添加访问网络方法
             if (clazz == UserModel.class) {
                 subscriber.onNext(new UserModel());

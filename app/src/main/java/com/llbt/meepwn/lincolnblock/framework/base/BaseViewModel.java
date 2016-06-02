@@ -3,7 +3,7 @@ package com.llbt.meepwn.lincolnblock.framework.base;
 import android.content.Context;
 import android.databinding.ObservableField;
 
-import com.llbt.meepwn.lincolnblock.framework.Model;
+import com.llbt.meepwn.lincolnblock.framework.ModelType;
 import com.llbt.meepwn.lincolnblock.framework.ServiceType;
 import com.llbt.meepwn.lincolnblock.framework.ViewModelType;
 import com.llbt.meepwn.lincolnblock.framework.application.LincolnApplication;
@@ -16,7 +16,7 @@ import com.llbt.meepwn.lincolnblock.framework.application.LincolnApplication;
  * date: 16/4/12 上午11:34
  * desc: 处理业务逻辑
  */
-public class BaseViewModel<M extends Model, S extends ServiceType> implements ViewModelType {
+public class BaseViewModel<M extends ModelType, S extends ServiceType> implements ViewModelType {
 
     protected ObservableField<M> model;
     protected S service;

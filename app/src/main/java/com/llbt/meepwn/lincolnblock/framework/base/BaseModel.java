@@ -2,7 +2,7 @@ package com.llbt.meepwn.lincolnblock.framework.base;
 
 import android.databinding.ObservableField;
 
-import com.llbt.meepwn.lincolnblock.framework.Model;
+import com.llbt.meepwn.lincolnblock.framework.ModelType;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -18,7 +18,7 @@ import java.util.Map;
  * desc: 业务模型类
  */
 @SuppressWarnings("unchecked")
-public abstract class BaseModel implements Model {
+public abstract class BaseModel implements ModelType {
 
     protected Map<String, Object> attrs;
 
