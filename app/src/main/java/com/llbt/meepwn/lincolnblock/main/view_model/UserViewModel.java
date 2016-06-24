@@ -37,6 +37,7 @@ public class UserViewModel extends ViewModel<UserModel, UserService> {
         super(service, model);
     }
 
+    // TODO JSON转模型: 提供一个User模型类 -> UserModel映射类(ObserverField)
     public void handleClick(View view) {
         if (view.getId() == R.id.otherButton) {
             service.pushActivityWithDataModel(null, OtherActivity.class);
