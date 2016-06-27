@@ -10,142 +10,150 @@
             type="UserViewModel"/>
     </data>
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
         >
 
-        <Button
-            android:id="@+id/otherButton"
-            android:onClick="@{viewModel.handleClick}"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_10"
-            android:layout_marginLeft="@dimen/dp_10"
-            android:layout_marginRight="@dimen/dp_10"
-            android:text="Other Activity"
-            />
+            android:fitsSystemWindows="true"
+            >
 
-        <Button
-            android:id="@+id/testButton"
-            android:onClick="@{viewModel.handleClick}"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/otherButton"
-            android:layout_marginTop="@dimen/dp_10"
-            android:layout_marginLeft="@dimen/dp_10"
-            android:layout_marginRight="@dimen/dp_10"
-            android:text="Test Activity"
-            />
+            <Button
+                android:id="@+id/otherButton"
+                android:onClick="@{viewModel.handleClick}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:text="Other Activity"
+                />
 
-        <Button
-            android:id="@+id/rxButton"
-            android:onClick="@{viewModel.handleClick}"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/testButton"
-            android:layout_marginTop="@dimen/dp_10"
-            android:layout_marginLeft="@dimen/dp_10"
-            android:layout_marginRight="@dimen/dp_10"
-            android:text="Test RX"
-            />
+            <Button
+                android:id="@+id/testButton"
+                android:onClick="@{viewModel.handleClick}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/otherButton"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:text="Test Activity"
+                />
 
-        <Button
-            android:id="@+id/fragmentButton"
-            android:onClick="@{viewModel.handleClick}"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/rxButton"
-            android:layout_marginTop="@dimen/dp_10"
-            android:layout_marginLeft="@dimen/dp_10"
-            android:layout_marginRight="@dimen/dp_10"
-            android:text="Test Fragment"
-            />
+            <Button
+                android:id="@+id/rxButton"
+                android:onClick="@{viewModel.handleClick}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/testButton"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:text="Test RX"
+                />
 
-        <Button
-            android:id="@+id/jsonToModel"
-            android:onClick="@{viewModel.handleClick}"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/fragmentButton"
-            android:layout_marginTop="@dimen/dp_10"
-            android:layout_marginLeft="@dimen/dp_10"
-            android:layout_marginRight="@dimen/dp_10"
-            android:text="Json To Model"
-            />
+            <Button
+                android:id="@+id/fragmentButton"
+                android:onClick="@{viewModel.handleClick}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rxButton"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:text="Test Fragment"
+                />
 
-        <Button
-            android:id="@+id/permissionButton"
-            android:onClick="@{viewModel.handleClick}"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/jsonToModel"
-            android:layout_marginTop="@dimen/dp_10"
-            android:layout_marginLeft="@dimen/dp_10"
-            android:layout_marginRight="@dimen/dp_10"
-            android:text="Test Permissions"
-            />
+            <Button
+                android:id="@+id/jsonToModel"
+                android:onClick="@{viewModel.handleClick}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fragmentButton"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:text="Json To Model"
+                />
 
-        <Button
-            android:id="@+id/networkButton"
-            android:onClick="@{viewModel.handleClick}"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/permissionButton"
-            android:layout_marginTop="@dimen/dp_10"
-            android:layout_marginLeft="@dimen/dp_10"
-            android:layout_marginRight="@dimen/dp_10"
-            android:text="Test Network"
-            />
+            <Button
+                android:id="@+id/permissionButton"
+                android:onClick="@{viewModel.handleClick}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/jsonToModel"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:text="Test Permissions"
+                />
 
-        <Button
-            android:id="@+id/retrofitButton"
-            android:onClick="@{viewModel.handleClick}"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/networkButton"
-            android:layout_marginTop="@dimen/dp_10"
-            android:layout_marginLeft="@dimen/dp_10"
-            android:layout_marginRight="@dimen/dp_10"
-            android:text="Test Retrofit Network"
-            />
+            <Button
+                android:id="@+id/networkButton"
+                android:onClick="@{viewModel.handleClick}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/permissionButton"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:text="Test Network"
+                />
 
-        <Button
-            android:id="@+id/leakCanaryButton"
-            android:onClick="@{viewModel.handleClick}"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/retrofitButton"
-            android:layout_marginTop="@dimen/dp_10"
-            android:layout_marginLeft="@dimen/dp_10"
-            android:layout_marginRight="@dimen/dp_10"
-            android:text="Test LeakCanary"
-            />
+            <Button
+                android:id="@+id/retrofitButton"
+                android:onClick="@{viewModel.handleClick}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/networkButton"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:text="Test Retrofit Network"
+                />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/leakCanaryButton"
-            android:layout_marginTop="@dimen/dp_10"
-            android:layout_centerHorizontal="true"
-            app:imageUrl="@{viewModel.model.imageUrl}"
-            />
+            <Button
+                android:id="@+id/leakCanaryButton"
+                android:onClick="@{viewModel.handleClick}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/retrofitButton"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:text="Test LeakCanary"
+                />
 
-        <TextView
-            android:text='@{viewModel.model.lastName}'
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/imageView"
-            android:layout_marginTop="@dimen/dp_10"
-            android:layout_centerInParent="true"
-            android:gravity="center"
-            />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/leakCanaryButton"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_centerHorizontal="true"
+                app:imageUrl="@{viewModel.model.imageUrl}"
+                />
+
+            <TextView
+                android:text='@{viewModel.model.lastName}'
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/imageView"
+                android:layout_margin="@dimen/dp_10"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                />
             <!--android:background="@{viewModel.isError ? @color/red : @color/white}"-->
 
             <!--android:addTextChangedListener="@{viewModel.model.watcher}"-->
 
-    </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
 
 </layout>
