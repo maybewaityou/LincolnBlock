@@ -3,7 +3,6 @@ package com.llbt.meepwn.lincolnblock.framework;
 import android.databinding.ObservableField;
 
 import com.llbt.meepwn.lincolnblock.framework.types.ModelType;
-import com.llbt.meepwn.lincolnblock.main.model.test_json.BookModel;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -23,22 +22,22 @@ public abstract class Model implements ModelType {
 
     @Override
     public Model mapToTargetModel(Class clazz, Class targetClazz) {
-        Field[] selfFields = clazz.getDeclaredFields();
-        Field[] targetFields = targetClazz.getDeclaredFields();
-        Model targetModel = null;
+        Field[] selfFields = clazz.getDeclaredFields(); // 获取调用者的属性列表
+        Field[] targetFields = targetClazz.getDeclaredFields(); // 目标类的属性列表
+        Model targetModel = null; // 返回目标类
         try {
-            targetModel = (Model) targetClazz.newInstance();
+            targetModel = (Model) targetClazz.newInstance(); // 初始化
         } catch (Exception e) {
             e.printStackTrace();
         }
         for (Field aField : selfFields) {
-            String aName = aField.getName();
+            String aName = aField.getName(); // 调用者的属性
 
             // 自动生成的属性
             if ("$change".equals(aName)) continue;
 
             for (Field bField : targetFields) {
-                String bName = bField.getName();
+                String bName = bField.getName(); // 目标类的属性
 
                 // 自动生成的属性
                 if ("$change".equals(bName)) continue;
@@ -49,31 +48,29 @@ public abstract class Model implements ModelType {
                 String fieldKey = bName.substring(0, 1).toUpperCase() + bName.substring(1);
 
                 try {
-                    Method m = clazz.getMethod("get" + fieldKey);
-                    Object o = m.invoke(this);
-                    if (o instanceof Model) {
+                    Method m = clazz.getMethod("get" + fieldKey); // 获取get方法
+                    Object o = m.invoke(this); // 调用get方法,获得返回值,用来判断
+                    if (o instanceof Model) { // 包含Model
                         String className = "com.llbt.meepwn.lincolnblock.main.model.test_json." + aField.getName().substring(0,1).toUpperCase() + aField.getName().substring(1) + "Model";
-                        Model subModel = ((Model) o).mapToTargetModel(aField.getType(), Class.forName(className));
+                        Model subModel = ((Model) o).mapToTargetModel(aField.getType(), Class.forName(className)); // 递归
 
-                        Method tm = targetClazz.getMethod("set" + fieldKey, ObservableField.class);
-                        tm.invoke(targetModel, new ObservableField(subModel));
-                    } else if (o instanceof List) {
+                        Method tm = targetClazz.getMethod("set" + fieldKey, ObservableField.class); // 获取set方法
+                        tm.invoke(targetModel, new ObservableField(subModel)); // 调用set方法
+                    } else if (o instanceof List) { // 包含List<Model>
                         List subModels = new ArrayList<>();
                         List selfModelList = (ArrayList) o;
-                        String className = aField.getName().substring(0,1).toUpperCase() + aField.getName().substring(1);
-                        className = className.substring(0, className.length()-1);
-                        String AllClassName = "com.llbt.meepwn.lincolnblock.main.model.test_json." + className + "Model";
+                        String className = aField.getName().substring(0,1).toUpperCase() + aField.getName().substring(1); // 属性名叫books -> Books
+                        className = className.substring(0, className.length()-1); // Books -> Book
+                        String AllClassName = "com.llbt.meepwn.lincolnblock.main.model.test_json." + className + "Model"; // BookModel的全路径
                         for (int i=0; i<selfModelList.size(); i++) {
-                            Model subModel = ((Model) selfModelList.get(i)).mapToTargetModel(selfModelList.get(i).getClass(), Class.forName(AllClassName));
+                            Model subModel = ((Model) selfModelList.get(i)).mapToTargetModel(selfModelList.get(i).getClass(), Class.forName(AllClassName)); // 递归
                             subModels.add(subModel);
                         }
-                        Method tm = targetClazz.getMethod("set" + fieldKey, List.class);
-                        tm.invoke(targetModel, subModels);
-                    } else {
-                        Method tm = targetClazz.getMethod("set" + fieldKey, ObservableField.class);
-                        if (targetClazz == BookModel.class) {
-                        }
-                        tm.invoke(targetModel, new ObservableField(o));
+                        Method tm = targetClazz.getMethod("set" + fieldKey, List.class); // 获取set方法
+                        tm.invoke(targetModel, subModels); // 调用set方法
+                    } else { // 包含的String
+                        Method tm = targetClazz.getMethod("set" + fieldKey, ObservableField.class); // 获取set方法
+                        tm.invoke(targetModel, new ObservableField(o)); // 调用set方法
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
