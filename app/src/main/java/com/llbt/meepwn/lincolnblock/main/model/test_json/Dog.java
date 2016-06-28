@@ -14,30 +14,30 @@ import com.llbt.meepwn.lincolnblock.framework.Model;
  */
 public class Dog extends Model {
 
-    private ObservableField<String> mDogName = new ObservableField<>();
-    private ObservableField<String> mAge = new ObservableField<>();
+    private ObservableField<String> dogName = new ObservableField<>();
+    private ObservableField<String> age = new ObservableField<>();
 
-    public ObservableField<String> getmDogName() {
-        return mDogName;
+    public ObservableField<String> getDogName() {
+        return dogName;
     }
 
-    public void setmDogName(ObservableField<String> mDogName) {
-        this.mDogName = mDogName;
+    public void setDogName(ObservableField<String> dogName) {
+        this.dogName = dogName;
     }
 
-    public ObservableField<String> getmAge() {
-        return mAge;
+    public ObservableField<String> getAge() {
+        return age;
     }
 
-    public void setmAge(ObservableField<String> mAge) {
-        this.mAge = mAge;
+    public void setAge(ObservableField<String> age) {
+        this.age = age;
     }
 
     @Override
     public String toString() {
         return "{" +
-                "\"mDogName\" : " + "\"" + mDogName.get() + "\"" +
-                ", \"mAge\" : " + "\"" + mAge.get() + "\"" +
+                "\"dogName\" : " + "\"" + dogName + "\"" +
+                ", \"age\" : " + "\"" + age + "\"" +
                 "}";
     }
 }

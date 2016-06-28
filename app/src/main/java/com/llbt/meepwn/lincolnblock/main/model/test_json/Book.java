@@ -14,30 +14,30 @@ import com.llbt.meepwn.lincolnblock.framework.Model;
  */
 public class Book extends Model {
 
-    private ObservableField<String> mBookName = new ObservableField<>();
-    private ObservableField<String> mPrice = new ObservableField<>();
+    private ObservableField<String> bookName = new ObservableField<>();
+    private ObservableField<String> price = new ObservableField<>();
 
-    public ObservableField<String> getmBookName() {
-        return mBookName;
+    public ObservableField<String> getBookName() {
+        return bookName;
     }
 
-    public void setmBookName(ObservableField<String> mBookName) {
-        this.mBookName = mBookName;
+    public void setBookName(ObservableField<String> bookName) {
+        this.bookName = bookName;
     }
 
-    public ObservableField<String> getmPrice() {
-        return mPrice;
+    public ObservableField<String> getPrice() {
+        return price;
     }
 
-    public void setmPrice(ObservableField<String> mPrice) {
-        this.mPrice = mPrice;
+    public void setPrice(ObservableField<String> price) {
+        this.price = price;
     }
 
     @Override
     public String toString() {
         return "{" +
-                "\"mBookName\" : " + "\"" + mBookName.get() + "\"" +
-                ", \"mPrice\" : " + "\"" + mPrice.get() + "\"" +
+                "\"bookName\" : " + "\"" + bookName + "\"" +
+                ", \"price\" : " + "\"" + price + "\"" +
                 "}";
     }
 }

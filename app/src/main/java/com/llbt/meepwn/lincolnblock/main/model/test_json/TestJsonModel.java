@@ -2,8 +2,6 @@ package com.llbt.meepwn.lincolnblock.main.model.test_json;
 
 import android.databinding.ObservableField;
 
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import com.llbt.meepwn.lincolnblock.framework.Model;
 
 import java.util.ArrayList;
@@ -19,44 +17,34 @@ import java.util.List;
  */
 public class TestJsonModel extends Model {
 
-    private ObservableField<String> mName = new ObservableField<>();
-    private ObservableField<String> mAge = new ObservableField<>();
-    private ObservableField<String> mLastName = new ObservableField<>();
-    private ObservableField<JSONObject> mDog = new ObservableField<>();
+    private ObservableField<String> name = new ObservableField<>();
+    private ObservableField<String> age = new ObservableField<>();
+    private ObservableField<String> lastName = new ObservableField<>();
     private ObservableField<Dog> dogModel = new ObservableField<>();
-    private ObservableField<JSONArray> mBooks = new ObservableField<>();
     private List<ObservableField<Book>> bookModels = new ArrayList<>();
 
-    public ObservableField<String> getmName() {
-        return mName;
+    public ObservableField<String> getName() {
+        return name;
     }
 
-    public void setmName(ObservableField<String> mName) {
-        this.mName = mName;
+    public void setName(ObservableField<String> name) {
+        this.name = name;
     }
 
-    public ObservableField<String> getmAge() {
-        return mAge;
+    public ObservableField<String> getAge() {
+        return age;
     }
 
-    public void setmAge(ObservableField<String> mAge) {
-        this.mAge = mAge;
+    public void setAge(ObservableField<String> age) {
+        this.age = age;
     }
 
-    public ObservableField<String> getmLastName() {
-        return mLastName;
+    public ObservableField<String> getLastName() {
+        return lastName;
     }
 
-    public void setmLastName(ObservableField<String> mLastName) {
-        this.mLastName = mLastName;
-    }
-
-    public ObservableField<JSONObject> getmDog() {
-        return mDog;
-    }
-
-    public void setmDog(ObservableField<JSONObject> mDog) {
-        this.mDog = mDog;
+    public void setLastName(ObservableField<String> lastName) {
+        this.lastName = lastName;
     }
 
     public ObservableField<Dog> getDogModel() {
@@ -65,14 +53,6 @@ public class TestJsonModel extends Model {
 
     public void setDogModel(ObservableField<Dog> dogModel) {
         this.dogModel = dogModel;
-    }
-
-    public ObservableField<JSONArray> getmBooks() {
-        return mBooks;
-    }
-
-    public void setmBooks(ObservableField<JSONArray> mBooks) {
-        this.mBooks = mBooks;
     }
 
     public List<ObservableField<Book>> getBookModels() {
@@ -86,12 +66,10 @@ public class TestJsonModel extends Model {
     @Override
     public String toString() {
         return "{" +
-                "\"mName\" : " + "\"" + mName.get() + "\"" +
-                ", \"mAge\" : " + "\"" + mAge.get() + "\"" +
-                ", \"mLastName\" : " + "\"" + mLastName.get() + "\"" +
-                ", \"mDog\" : " + "\"" + mDog.get() + "\"" +
-                ", \"dogModel\" : " + "\"" + dogModel.get() + "\"" +
-                ", \"mBooks\" : " + "\"" + mBooks.get() + "\"" +
+                "\"name\" : " + "\"" + name + "\"" +
+                ", \"age\" : " + "\"" + age + "\"" +
+                ", \"lastName\" : " + "\"" + lastName + "\"" +
+                ", \"dogModel\" : " + "\"" + dogModel + "\"" +
                 ", \"bookModels\" : " + "\"" + bookModels + "\"" +
                 "}";
     }
