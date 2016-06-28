@@ -1,7 +1,5 @@
 package com.llbt.meepwn.lincolnblock.main.model.test_json;
 
-import android.databinding.ObservableField;
-
 import com.llbt.meepwn.lincolnblock.framework.Model;
 
 /**
@@ -14,22 +12,22 @@ import com.llbt.meepwn.lincolnblock.framework.Model;
  */
 public class Book extends Model {
 
-    private ObservableField<String> bookName = new ObservableField<>();
-    private ObservableField<String> price = new ObservableField<>();
+    private String bookName;
+    private String price;
 
-    public ObservableField<String> getBookName() {
+    public String getBookName() {
         return bookName;
     }
 
-    public void setBookName(ObservableField<String> bookName) {
+    public void setBookName(String bookName) {
         this.bookName = bookName;
     }
 
-    public ObservableField<String> getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(ObservableField<String> price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 

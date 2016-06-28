@@ -41,8 +41,8 @@ public abstract class Service<DM extends DataModelType> implements ServiceType<D
     }
 
     @Override
-    public Observable sendRequest(String url, int method, Map<String, String> params, Class clazz) {
-        return Just.sendRequest(context.get(), url, method, params, clazz);
+    public Observable sendRequest(String url, int method, Map<String, String> params, Class clazz, Class targetClass) {
+        return Just.sendRequest(context.get(), url, method, params, clazz, targetClass);
     }
 
     @Override

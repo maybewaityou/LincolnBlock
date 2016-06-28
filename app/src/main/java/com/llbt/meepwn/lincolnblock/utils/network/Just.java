@@ -7,7 +7,7 @@ import com.llbt.meepwn.lincolnblock.library.volley.Request;
 import com.llbt.meepwn.lincolnblock.library.volley.Response;
 import com.llbt.meepwn.lincolnblock.library.volley.toolbox.StringRequest;
 import com.llbt.meepwn.lincolnblock.main.model.UserModel;
-import com.llbt.meepwn.lincolnblock.main.model.test_json.TestJsonModel;
+import com.llbt.meepwn.lincolnblock.main.model.test_json.JsonModel;
 import com.llbt.meepwn.lincolnblock.utils.network.volley.queue.GlobalQueue;
 
 import java.util.Map;
@@ -43,13 +43,13 @@ public class Just {
 
     private static Request request;
 
-    public static Observable<ModelType> sendRequest(Context context, String url, int method, Map<String, String> params, Class clazz) {
+    public static Observable<ModelType> sendRequest(Context context, String url, int method, Map<String, String> params, Class clazz, Class targetClass) {
         return Observable.create((Observable.OnSubscribe<ModelType>) subscriber -> {
             // TODO 添加访问网络方法
             if (clazz == UserModel.class) {
                 subscriber.onNext(new UserModel());
                 subscriber.onCompleted();
-            } else if (clazz == TestJsonModel.class) {
+            } else if (clazz == JsonModel.class) {
                 String jsonString = "{\n" +
                         "    \"name\": \"MeePwn\",\n" +
                         "    \"age\": \"2333333\",\n" +
@@ -73,12 +73,12 @@ public class Just {
                         "        }\n" +
                         "    ]\n" +
                         "}";
-                subscriber.onNext(ModelAdapter.modelWithJsonString(jsonString, clazz));
+                subscriber.onNext(ModelAdapter.modelWithJsonString(jsonString, clazz, targetClass));
                 subscriber.onCompleted();
             } else {
                 sendRequest(context, url, method, params,
                         response -> {
-                            subscriber.onNext(ModelAdapter.modelWithJsonString(response, clazz));
+                            subscriber.onNext(ModelAdapter.modelWithJsonString(response, clazz, targetClass));
                             subscriber.onCompleted();
                         },
                         error -> {

@@ -20,8 +20,8 @@ public class TestJsonModel extends Model {
     private ObservableField<String> name = new ObservableField<>();
     private ObservableField<String> age = new ObservableField<>();
     private ObservableField<String> lastName = new ObservableField<>();
-    private ObservableField<Dog> dogModel = new ObservableField<>();
-    private List<ObservableField<Book>> bookModels = new ArrayList<>();
+    private ObservableField<DogModel> dog = new ObservableField<>();
+    private List<ObservableField<BookModel>> books = new ArrayList<>();
 
     public ObservableField<String> getName() {
         return name;
@@ -47,30 +47,30 @@ public class TestJsonModel extends Model {
         this.lastName = lastName;
     }
 
-    public ObservableField<Dog> getDogModel() {
-        return dogModel;
+    public ObservableField<DogModel> getDog() {
+        return dog;
     }
 
-    public void setDogModel(ObservableField<Dog> dogModel) {
-        this.dogModel = dogModel;
+    public void setDog(ObservableField<DogModel> dog) {
+        this.dog = dog;
     }
 
-    public List<ObservableField<Book>> getBookModels() {
-        return bookModels;
+    public List<ObservableField<BookModel>> getBooks() {
+        return books;
     }
 
-    public void setBookModels(List<ObservableField<Book>> bookModels) {
-        this.bookModels = bookModels;
+    public void setBooks(List<ObservableField<BookModel>> books) {
+        this.books = books;
     }
 
     @Override
     public String toString() {
         return "{" +
-                "\"name\" : " + "\"" + name + "\"" +
-                ", \"age\" : " + "\"" + age + "\"" +
-                ", \"lastName\" : " + "\"" + lastName + "\"" +
-                ", \"dogModel\" : " + "\"" + dogModel + "\"" +
-                ", \"bookModels\" : " + "\"" + bookModels + "\"" +
+                "\"name\" : " + "\"" + name.get() + "\"" +
+                ", \"age\" : " + "\"" + age.get() + "\"" +
+                ", \"lastName\" : " + "\"" + lastName.get() + "\"" +
+                ", \"dog\" : " + "\"" + dog.get() + "\"" +
+                ", \"books\" : " + "\"" + books + "\"" +
                 "}";
     }
 }

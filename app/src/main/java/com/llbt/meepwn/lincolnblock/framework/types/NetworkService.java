@@ -16,7 +16,7 @@ public interface NetworkService {
 
     void popActivity();
 
-    Observable sendRequest(String url, int method, Map<String, String> params, Class clazz);
+    Observable sendRequest(String url, int method, Map<String, String> params, Class clazz, Class targetClass);
 
     void cancelRequest();
 

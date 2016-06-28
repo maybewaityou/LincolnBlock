@@ -1,16 +1,8 @@
 package com.llbt.meepwn.lincolnblock.utils.network.json_parser;
 
-import android.databinding.ObservableField;
-
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.parser.deserializer.ExtraProcessor;
 import com.llbt.meepwn.lincolnblock.framework.Model;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * package: com.llbt.meepwn.lincolnblock.utils.network.json_parser
@@ -23,32 +15,13 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class JsonParser {
 
-    public static <T extends Model> T parse(String jsonString, Class clazz, ExtraProcessor processor) {
+    public static <T extends Model, TT extends Model> TT parse(String jsonString, Class clazz, Class targetClass, ExtraProcessor processor) {
         T t = (T) JSON.parseObject(jsonString, clazz, processor);
-        t.setupData();
-        return t;
+        return (TT) t.mapToTargetModel(t.getClass(), targetClass);
     }
 
-    public static <T extends Model> T parse(String jsonString, Class clazz) {
-        return (T) parse(jsonString, clazz, new DefaultExtraProcessor<T>());
-    }
-
-    public static <T extends Model> List<ObservableField<T>> parseArray(String jsonArrayString, Class clazz) {
-        List<org.json.JSONObject> list = new ArrayList<>();
-        try {
-            JSONArray jsonArray = new JSONArray(jsonArrayString);
-            for (int i=0; i<jsonArray.length(); i++) {
-                list.add(jsonArray.optJSONObject(i));
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        List<ObservableField<T>> models = new ArrayList<>();
-        for (int i=0; i<list.size(); i++) {
-            T model= JsonParser.<T>parse(list.get(i).toString(), clazz);
-            models.add(new ObservableField(model));
-        }
-        return models;
+    public static <T extends Model> T parse(String jsonString, Class clazz, Class targetClass) {
+        return (T) parse(jsonString, clazz, targetClass, new DefaultExtraProcessor<T>());
     }
 
 }

@@ -8,6 +8,7 @@ import com.llbt.meepwn.lincolnblock.R;
 import com.llbt.meepwn.lincolnblock.framework.ViewModel;
 import com.llbt.meepwn.lincolnblock.main.model.GitModel;
 import com.llbt.meepwn.lincolnblock.main.model.UserModel;
+import com.llbt.meepwn.lincolnblock.main.model.test_json.JsonModel;
 import com.llbt.meepwn.lincolnblock.main.model.test_json.TestJsonModel;
 import com.llbt.meepwn.lincolnblock.main.service.UserService;
 import com.llbt.meepwn.lincolnblock.main.view.activity.OtherActivity;
@@ -46,7 +47,7 @@ public class UserViewModel extends ViewModel<UserModel, UserService> {
         } else if (view.getId() == R.id.fragmentButton) {
             service.pushActivityWithDataModel(null, TestFragmentActivity.class);
         } else if (view.getId() == R.id.jsonToModel) {
-            service.sendRequest("", Just.Method.GET, new HashMap<>(), TestJsonModel.class).subscribe(new Action1<TestJsonModel>() {
+            service.sendRequest("", Just.Method.GET, new HashMap<>(), JsonModel.class, TestJsonModel.class).subscribe(new Action1<TestJsonModel>() {
                 @Override
                 public void call(TestJsonModel model) {
                     System.out.println("== model ===>>>> " + model);
@@ -54,7 +55,7 @@ public class UserViewModel extends ViewModel<UserModel, UserService> {
             });
         } else if (view.getId() == R.id.networkButton) {
             // "https://kyfw.12306.cn/otn/",
-            service.sendRequest("https://api.github.com", Just.Method.GET, new HashMap<>(), GitModel.class)
+            service.sendRequest("https://api.github.com", Just.Method.GET, new HashMap<>(), GitModel.class, GitModel.class)
                     .subscribe((Action1<GitModel>) gitModel -> {
                         System.out.println("=====>>>>> " + gitModel);
                     }, (Action1<Throwable>)throwable -> {
@@ -71,7 +72,7 @@ public class UserViewModel extends ViewModel<UserModel, UserService> {
         } else if (view.getId() == R.id.leakCanaryButton) {
             service.pushActivityWithDataModel(null, TestLeakActivity.class);
         } else {
-            service.sendRequest("", Just.Method.GET, new HashMap<>(), UserModel.class).flatMap((Func1) user -> {
+            service.sendRequest("", Just.Method.GET, new HashMap<>(), UserModel.class, UserModel.class).flatMap((Func1) user -> {
                 // TODO 类型转换
                 return getToken((UserModel) user);
             }).subscribe(userModel -> {
@@ -86,7 +87,7 @@ public class UserViewModel extends ViewModel<UserModel, UserService> {
     }
 
     private Observable getToken(UserModel userModel) {
-        return service.sendRequest("", Just.Method.GET, new HashMap<>(), UserModel.class).doOnNext(o -> {
+        return service.sendRequest("", Just.Method.GET, new HashMap<>(), UserModel.class, UserModel.class).doOnNext(o -> {
             System.out.println("==== getToken >>>> " + o);
         });
     }

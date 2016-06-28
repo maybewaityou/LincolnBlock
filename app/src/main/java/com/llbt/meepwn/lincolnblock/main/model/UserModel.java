@@ -4,7 +4,6 @@ import android.databinding.ObservableField;
 
 import com.llbt.meepwn.lincolnblock.framework.Model;
 import com.llbt.meepwn.lincolnblock.utils.binding.EditTextWatcher;
-import com.llbt.meepwn.lincolnblock.utils.network.json_parser.JsonParser;
 
 /**
  * package: com.llbt.meepwn.lincolnblock.main.model
@@ -27,10 +26,6 @@ public class UserModel extends Model {
 			}
 		}
 	};
-
-	public static UserModel initWithJsonString(String jsonString) {
-		return JsonParser.parse(jsonString, UserModel.class);
-	}
 
 	public ObservableField<String> getLastName() {
 		return lastName;

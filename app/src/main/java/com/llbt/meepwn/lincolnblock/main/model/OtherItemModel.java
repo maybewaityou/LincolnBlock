@@ -3,7 +3,6 @@ package com.llbt.meepwn.lincolnblock.main.model;
 import android.databinding.ObservableField;
 
 import com.llbt.meepwn.lincolnblock.framework.Model;
-import com.llbt.meepwn.lincolnblock.utils.network.json_parser.JsonParser;
 
 /**
  * package: com.llbt.meepwn.lincolnblock.main.model
@@ -17,10 +16,6 @@ public class OtherItemModel extends Model {
 
 	private ObservableField<String> name = new ObservableField<>();
 	private ObservableField<String> age = new ObservableField<>();
-
-	public static OtherItemModel initWithJsonString(String jsonString) {
-		return JsonParser.parse(jsonString, OtherItemModel.class);
-	}
 
 	public ObservableField<String> getName() {
 		return name;

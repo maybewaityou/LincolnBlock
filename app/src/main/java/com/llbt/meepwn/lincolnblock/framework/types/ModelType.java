@@ -1,5 +1,7 @@
 package com.llbt.meepwn.lincolnblock.framework.types;
 
+import com.llbt.meepwn.lincolnblock.framework.Model;
+
 /**
  * package: com.llbt.meepwn.lincolnblock.framework
  * author: MeePwn
@@ -10,6 +12,6 @@ package com.llbt.meepwn.lincolnblock.framework.types;
  */
 public interface ModelType {
 
-    // 解析Json之后,生成attrs字典,将attrs字典赋值给Model的属性
-    void setupData();
+    // 解析Json之后,clazz -> targetClazz
+    Model mapToTargetModel(Class clazz, Class targetClazz);
 }

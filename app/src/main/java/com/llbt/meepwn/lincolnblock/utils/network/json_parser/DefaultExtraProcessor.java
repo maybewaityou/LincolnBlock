@@ -16,7 +16,6 @@ public class DefaultExtraProcessor<T extends Model> implements ExtraProcessor {
 
     @Override
     public void processExtra(Object object, String key, Object value) {
-        T jsonModel = (T) object;
-        jsonModel.getAttrs().put(key, value);
+
     }
 }
