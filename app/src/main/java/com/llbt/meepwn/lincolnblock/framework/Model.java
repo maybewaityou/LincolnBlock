@@ -31,7 +31,7 @@ public abstract class Model implements ModelType {
             // 自动生成的属性
             if ("$change".equals(name)) continue;
 
-            for (String key : attrs.keySet()) {
+            for (String key : getAttrs().keySet()) {
                 //将key的首字符大写，方便构造get，set方法
                 String fieldKey = "m" + key.substring(0, 1).toUpperCase() + key.substring(1);
 
@@ -40,7 +40,7 @@ public abstract class Model implements ModelType {
                 try {
                     Method m = getClass().getMethod("get" + name);
                     ObservableField field = (ObservableField) m.invoke(this);
-                    Object value = attrs.get(key);
+                    Object value = getAttrs().get(key);
                     field.set(value);
                 } catch (Exception e) {
                     e.printStackTrace();
